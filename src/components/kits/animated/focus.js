@@ -1,0 +1,36 @@
+import React from 'react';
+import styled, { keyframes } from "styled-components";
+import { FaSync } from 'react-icons/fa'
+
+const RotateInstruction = () => {
+
+    const animation = keyframes`
+0% {width:150px}
+50% {width:180px}
+100% {width:150px}
+`
+    const Wrapper = styled.div`
+height:30px;
+border-radius:5px;
+animation:${animation} 2s ease-in-out infinite;
+position:absolute;
+bottom:5%;
+right:5%;
+display:flex;
+flex-direction:row;
+justify-content:center;
+align-items:center;
+div{
+    color:white;
+    margin-left:5px;
+}
+`
+    return (
+        <Wrapper>
+            <FaSync color="white" size={14} />
+            <div>Use mouse to rote me</div>
+        </Wrapper>
+    )
+}
+
+export default RotateInstruction
