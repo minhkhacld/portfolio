@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/profilo/static/css/main.b33ae8a7.css",
+    "main.js": "/profilo/static/js/main.e2421dbd.js",
+    "static/js/787.720a0598.chunk.js": "/profilo/static/js/787.720a0598.chunk.js",
+    "static/media/sound.wav": "/profilo/static/media/sound.6a8fe8dd2dbbd7d92012.wav",
+    "static/media/star.png": "/profilo/static/media/star.0aab94ff65f0deab773c.png",
+    "static/media/ic_launcher.png": "/profilo/static/media/ic_launcher.63cc1e671dd330e2f55e.png",
+    "static/media/dashboard.png": "/profilo/static/media/dashboard.a3c89362dbd8f93d5941.png",
+    "static/media/youtube.png": "/profilo/static/media/youtube.59225dd83f6bea3d0f16.png",
+    "static/media/lession.png": "/profilo/static/media/lession.e5ab4fe8e865fc5b0942.png",
+    "static/media/home.png": "/profilo/static/media/home.f59b9301a5e7d0dcd87a.png",
+    "static/media/qr.png": "/profilo/static/media/qr.bbd4b42e5e5d711a3247.png",
+    "static/media/config.png": "/profilo/static/media/config.aeb5614a2ba0f3197e70.png",
+    "static/media/instagram.png": "/profilo/static/media/instagram.e719d8b29f452a16302d.png",
+    "static/media/app-development.png": "/profilo/static/media/app-development.7ab74e755f69935c9bc1.png",
+    "static/media/edit.png": "/profilo/static/media/edit.c325d84045ef501183c5.png",
+    "static/media/planet.png": "/profilo/static/media/planet.b1f69fbfada76b0df108.png",
+    "static/media/smartphone.png": "/profilo/static/media/smartphone.cde198440966ad5aa1aa.png",
+    "static/media/code.png": "/profilo/static/media/code.2e0870f212ca633e2bf9.png",
+    "static/media/stats.png": "/profilo/static/media/stats.770b25012178e7c7f5fe.png",
+    "static/media/satellite.png": "/profilo/static/media/satellite.09385dbd6bdcd0f8b5b3.png",
+    "static/media/logo.webp": "/profilo/static/media/logo.84f42949680df5043db3.webp",
+    "static/media/ux.png": "/profilo/static/media/ux.ffa3e0dd754dc923e50b.png",
+    "static/media/github.png": "/profilo/static/media/github.22cfdd1cba253783ce51.png",
+    "static/media/cloud-computing.png": "/profilo/static/media/cloud-computing.c26d84c0c395cebfe467.png",
+    "static/media/facebook.png": "/profilo/static/media/facebook.4f037d961598aff2a0a4.png",
+    "index.html": "/profilo/index.html",
+    "static/media/wave.svg": "/profilo/static/media/wave.acb4bda32ce5bf8476c4.svg",
+    "main.b33ae8a7.css.map": "/profilo/static/css/main.b33ae8a7.css.map",
+    "main.e2421dbd.js.map": "/profilo/static/js/main.e2421dbd.js.map",
+    "787.720a0598.chunk.js.map": "/profilo/static/js/787.720a0598.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b33ae8a7.css",
+    "static/js/main.e2421dbd.js"
+  ]
+}
