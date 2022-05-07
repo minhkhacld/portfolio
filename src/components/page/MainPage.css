@@ -60,7 +60,7 @@
     flex-direction: row !important;
   }
   .cv-sound {
-    width: 25%;
-    position: absolute;
+    width: 35%;
+    position: absolute !important;
   }
 }

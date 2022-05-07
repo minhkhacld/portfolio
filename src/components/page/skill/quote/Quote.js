@@ -5,7 +5,7 @@ import { Col } from '../../../kits/stucture/component.stucture';
 import RotateFrame from './textaniamtion/Rotate.Frame';
 import TextAnimation from './textaniamtion/Text.Animation';
 import TitleAnimation from './textaniamtion/Title.Animation';
-
+import './Quote.css'
 
 const Quote = () => {
 

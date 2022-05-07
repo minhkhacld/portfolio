@@ -35,7 +35,7 @@ export default function TextAnimation() {
     return (
         <Wrapper style={{ marginBottom: '20px' }}>
             {reactArray.map((item, index) => (
-                <span key={index} style={{ color: 'white', marginLeft: '5px', fontWeight: 'bold', fontSize: '25px' }}>{item}</span>
+                <span key={index} className="quote-text">{item}</span>
             ))}
         </Wrapper>
     );

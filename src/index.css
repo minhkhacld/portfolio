@@ -21,3 +21,21 @@ body {
   /* overflow: hidden; */
   /* background-color:#1a1a1a76; */
 }
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: white;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--lightBlue);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--organ);
+}

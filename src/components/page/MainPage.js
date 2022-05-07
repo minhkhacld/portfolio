@@ -8,8 +8,7 @@ import './MainPage.css';
 import NavBar from './navBar/NavBar';
 import Project from './project/Project';
 import Skill from './skill/Skill';
-
-
+import { Navigate } from 'react-router-dom';
 
 const MainPage = () => {
 
@@ -23,6 +22,7 @@ const MainPage = () => {
                     <Route path="skill" element={<Skill />} />
                     <Route path="projects" element={<Project />} />
                     <Route path="contact" element={<Contact />} />
+                    <Route path="*" element={<Navigate to="/" />} />
                 </Routes>
             </ColCenter>
         </ColCenter>

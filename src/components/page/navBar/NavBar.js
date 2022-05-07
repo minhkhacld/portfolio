@@ -39,7 +39,7 @@ const NavBar = () => {
                     <FaBars className="cv-nav-left-menu-icon" onClick={() => _onOpenMenu()} />
                 </div>
                 <div className="cv-nav-left-logo">
-                    <img className="cv-nav-left-logo-picture" src={require('../../../assets/picture/logo.webp')} alt={'Logo'} />
+                    <img className="cv-nav-left-logo-picture" src={require('../../../assets/picture/logo.png')} alt={'Logo'} />
                 </div>
             </div>
 

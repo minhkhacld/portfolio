@@ -49,9 +49,11 @@
 @media only screen and (max-width: 600px) {
   .skill-container {
     flex-direction: column;
+    padding: 5rem 1.5rem 0rem 1.5rem;
   }
   .skill-range,
   .skill-quote {
-    width: 100%;
+    width: 100%;   
+      
   }
 }

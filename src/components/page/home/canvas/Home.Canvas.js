@@ -1,5 +1,5 @@
-import { Billboard, Stars, Text, TrackballControls } from '@react-three/drei'
-import { Canvas, useFrame } from '@react-three/fiber'
+import { Billboard, Stars, Text, TrackballControls, ScreenQuad, useCursor, Bounds, Center, Html } from '@react-three/drei'
+import { Canvas, useFrame, } from '@react-three/fiber'
 import React, { useEffect, useMemo, useRef, useState } from 'react'
 import * as THREE from 'three'
 import RotateInstruction from '../../../kits/animated/focus'
@@ -37,12 +37,10 @@ function Word({ children, ...props }) {
             textAlign={'left'}
         />
     )
-
 }
 
 function Cloud({ count, radius }) {
     // Create a count x count random words with spherical distribution
-
     const words = useMemo(() => {
         const temp = []
         const spherical = new THREE.Spherical()
@@ -57,15 +55,7 @@ function Cloud({ count, radius }) {
 
     return words.map(([pos, word], index) => {
         return (
-            <Billboard
-                key={index}
-                follow={false}
-                lockX={false}
-                lockY={true}
-                lockZ={false} // Lock the rotation on the z axis (default=false)
-            >
-                <Word position={pos} children={word} />
-            </Billboard>
+            <Word position={pos} children={word} />
         )
     })
 }
@@ -90,7 +80,8 @@ function Cloud({ count, radius }) {
 //             }}
 //         >
 //             <Cloud count={6} radius={20} />
-//         </ScreenQuad>
+//         </ScreenQuad >
+
 //     )
 // }
 
@@ -103,11 +94,13 @@ export default function HomeCanvas() {
             <React.Suspense fallback={null}>
                 <Canvas dpr={[1, 1]} camera={{ position: [0, 0, 35], fov: 90 }} className="chart-canvas"
                 >
-                    <fog attach="fog" args={['#202025', 0, 500]} />
-                    <Cloud count={6} radius={20} />
-                    {/* <BoxContain /> */}
-                    <TrackballControls />
-                    <Stars radius={100} depth={50} count={1000} factor={4} saturation={0} fade speed={1} />
+                    <Center position={[5, 5, 10]}>
+                        <fog attach="fog" args={['#202025', 0, 500]} />
+                        <Cloud count={6} radius={20} />
+                        {/* <BoxContain /> */}
+                        <TrackballControls />
+                        <Stars radius={100} depth={50} count={1000} factor={5} saturation={1} fade speed={5} />
+                    </Center>
                 </Canvas>
             </React.Suspense>
         </div>

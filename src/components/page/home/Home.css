@@ -44,7 +44,7 @@
 .chart-canvas {
   width: 100%;
   height: 100%;
-  min-height: 95vh;
+  min-height: 90vh;
 }
 .home-quote-link {
   font-size: 18px;
@@ -62,13 +62,28 @@
   .cv-home {
     direction: flex;
     flex-direction: column;
+    padding-top: 5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 
   .home-quote {
     width: 100%;
+    height: fit-content;
   }
 
   .home-canvas {
     width: 100%;
+    height: 400px;
+  }
+
+  .quote-text {
+    color: white;
+    padding-left: 5px;
+    font-size: 15px;
+  }
+  .home-quote-link {
+    font-size: 14px;
+    padding-left: 8px;
   }
 }

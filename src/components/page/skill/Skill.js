@@ -9,6 +9,5 @@ export default function Skill() {
       <Quote />
       <SkillRange />
     </div>
-
   )
 }

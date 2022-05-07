@@ -8,7 +8,7 @@ const TitleAnimation = () => {
     const pathname = location.pathname.split("/")[1];
 
     const string = pathname === "skill" ? "What  is  Lorem  Ipsum S?" : "What  is  Lorem  Ipsum H?";
-    const title = string.split("");
+    const title = string.trim().split("");
 
     const animation = keyframes`
 0% { opacity: 0; transform: translateY(-100px) skewX(10deg) skewY(10deg) rotateZ(30deg); filter: blur(10px); }
@@ -17,17 +17,18 @@ const TitleAnimation = () => {
 `;
     let Wrapper = styled.span`
     display: inline-block;
+    font-size:2rem;
+    className:"quote-title";
     span {
   opacity: 0;
   display: inline-block;
   animation-name: ${animation};
-  animation-duration: 0.5s;
+  animation-duration: 0.2s;
   animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
   animation-fill-mode: forwards;
   animation-iteration-count: 1;
   color:var(--lightBlue);
-  margin-left:8px;
-  font-size:35px;
+  margin-left:5px;
   font-weight:bold;
   margin-bottom:20px;
   cursor:pointer;
@@ -45,7 +46,7 @@ const TitleAnimation = () => {
     }
 
     return (
-        <Wrapper>
+        <Wrapper id="quote-title">
             {
                 title.map((item, index) => {
                     return (

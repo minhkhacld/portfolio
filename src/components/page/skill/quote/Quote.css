@@ -1,0 +1,23 @@
+.quote-text {
+  color: white;
+  margin-left: 5px;
+  font-size: 25px;
+}
+.quote-title {
+}
+
+@media only screen and (max-width: 600px) {
+  #quote-title {
+    font-size: 18px;
+    padding-left: 8px;
+  }
+  .quote-text {
+    color: white;
+    padding-left: 8px;
+    font-size: 15px;
+  }
+  .skill-quote-link {
+    font-size: 14px;
+    padding-left: 8px;
+  }
+}
