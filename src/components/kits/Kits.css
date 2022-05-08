@@ -1,0 +1,31 @@
+.cv-sound-popup {
+  position: fixed;
+  display: none !important;
+  top: 8%;
+  right: 2%;
+  width: 20%;
+  height: fit-content;
+  background-color: white;
+  z-index: 10000;
+  padding-left: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 0.3rem;
+}
+
+.cv-sound:hover .cv-sound-popup {
+  display: block !important;
+  color: black;
+}
+.sound-popup-text {
+  text-decoration: none;
+  margin-bottom: 0.3rem;
+}
+.cv-sound-popup:hover {
+  display: block !important;
+}
+
+@media only screen and (max-width: 600px) {
+  .cv-sound-popup {
+    width: 50%;
+  }
+}

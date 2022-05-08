@@ -58,3 +58,13 @@
 .exp-description {
   font-size: 14px;
 }
+
+@media only screen and (max-width: 600px) {
+  .skill-experience {
+    flex-direction: column !important;
+  }
+  .exp-job {
+    width: 96%;
+    margin-bottom: 2%;
+  }
+}

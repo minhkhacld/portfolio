@@ -21,13 +21,13 @@ flex-direction:row;
 justify-content:center;
 align-items:center;
 div{
-    color:white;
+    color:var(--lightBlue);
     margin-left:5px;
 }
 `
     return (
         <Wrapper>
-            <FaSync color="white" size={14} />
+            <FaSync color="var(--lightBlue)" size={14} />
             <div>Use mouse to rote me</div>
         </Wrapper>
     )

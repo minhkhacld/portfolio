@@ -21,19 +21,19 @@
 }
 
 .home-quote {
-  width: 40%;
+  width: 50%;
   height: 100%;
   position: relative;
   display: inline-block;
   min-height: 600px;
   /* padding: 2rem 0rem 0rem 2rem; */
   z-index: 1;
-  padding: 1rem;
+  padding-left: 2rem;
 }
 
 .home-canvas {
   position: relative;
-  width: 60%;
+  width: 50%;
   height: 100%;
   display: flex;
   justify-content: flex-start;
@@ -46,7 +46,7 @@
   height: 100%;
   min-height: 90vh;
 }
-.home-quote-link {
+/* .home-quote-link {
   font-size: 18px;
   color: var(--lightBlue);
   width: 95%;
@@ -56,6 +56,36 @@
 }
 .home-quote-link:hover {
   color: var(--organ);
+} */
+.home-quote-link {
+  font-size: 18px;
+  width: 25%;
+  height: 50px;
+  text-align: left;
+  cursor: pointer;
+  z-index: 100000 !important;
+  background-image: linear-gradient(
+    to right,
+    var(--lightBlue) 0%,
+    #e22a6c 51%,
+    var(--lightYellow) 100%
+  );
+  /* margin: 10px;
+  padding: 15px 45px; */
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 5px var(--black);
+  border-radius: 10px;
+  display: block;
+}
+
+.home-quote-link:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: white;
+  text-decoration: none;
 }
 
 @media only screen and (max-width: 600px) {
@@ -69,12 +99,12 @@
 
   .home-quote {
     width: 100%;
-    height: fit-content;
+    height: fit-content !important;
   }
 
   .home-canvas {
     width: 100%;
-    height: 400px;
+    height: fit-content !important;
   }
 
   .quote-text {

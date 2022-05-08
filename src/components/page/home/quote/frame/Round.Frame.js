@@ -12,19 +12,16 @@ to {transform: rotate(360deg);  border-radius: 77% 23% 39% 61% / 61% 37% 63% 39%
 `
     const Wrapper = styled.div`
  position: absolute;
- top:50px;
- left:10%;
- margin-top:5px;
- margin-left:5px;
- padding:5px;
+ top:10%;
+ left:20%;
  animation-name:${animation};
  animation-duration:20s;
  animation-delay:${delay}s;
  animation-timing-function:linear;
  animation-fill-mode: forwards;
  animation-iteration-count: infinite;   
- width: 80%;
- height: 400px;   
+ width: 60%;
+ height: 60%;   
  z-index:-1;
  `
     return (

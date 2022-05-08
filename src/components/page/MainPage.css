@@ -29,7 +29,8 @@
 }
 
 .cv-sound {
-  position: absolute;
+  position: fixed;
+  display: block;
   z-index: 1000;
   top: 2%;
   right: 2%;
@@ -61,6 +62,6 @@
   }
   .cv-sound {
     width: 35%;
-    position: absolute !important;
+    position: fixed !important;
   }
 }

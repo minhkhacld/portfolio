@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaSoundcloud } from 'react-icons/fa';
-import { RowEvenly } from '../stucture/component.stucture';
+import { RowEvenly, Col } from '../stucture/component.stucture';
+import '../Kits.css';
 
 const Sound = () => {
     const [play, setPlay] = React.useState(false);
@@ -25,7 +26,7 @@ const Sound = () => {
     }
     return (
         <RowEvenly className="cv-sound" onClick={() => playSound()}>
-            <audio id="myAudio" src={require("../../../assets/sound/sound.wav")}></audio>
+            <audio id="myAudio" src={require("../../../assets/sound/sound.mp3")}></audio>
             <FaSoundcloud size={30} style={styles.sound.icon} />
             <p style={styles.sound.text}>Sound</p>
             {play ?
@@ -33,6 +34,16 @@ const Sound = () => {
                 :
                 <p style={styles.sound.off}>OFF</p>
             }
+            <Col className="cv-sound-popup">
+                <p className="sound-popup-text">
+                    Battle Metal by Alexander Nakarada | https://www.serpentsoundstudios.com
+                </p>
+                <a className="sound-popup-text" href="https://www.chosic.com/free-music/all/"> Music promoted by https://www.chosic.com/free-music/all/
+                </a>
+                <p className="sound-popup-text"> Attribution 4.0 International (CC BY 4.0)
+                </p>
+                <a className="sound-popup-text" href=" https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a>
+            </Col>
         </RowEvenly>
     )
 }

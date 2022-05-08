@@ -3,10 +3,9 @@
   margin-left: 5px;
   font-size: 25px;
 }
-.quote-title {
-}
 
 @media only screen and (max-width: 600px) {
+ 
   #quote-title {
     font-size: 18px;
     padding-left: 8px;

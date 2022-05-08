@@ -1,5 +1,5 @@
-import { Billboard, Stars, Text, TrackballControls, ScreenQuad, useCursor, Bounds, Center, Html } from '@react-three/drei'
-import { Canvas, useFrame, } from '@react-three/fiber'
+import { Center, Stars, Text, TrackballControls } from '@react-three/drei'
+import { Canvas, useFrame } from '@react-three/fiber'
 import React, { useEffect, useMemo, useRef, useState } from 'react'
 import * as THREE from 'three'
 import RotateInstruction from '../../../kits/animated/focus'
@@ -26,12 +26,13 @@ function Word({ children, ...props }) {
         // Make text face the camera
         ref.current.quaternion.copy(camera.quaternion)
         // Animate font color
-        ref.current.material.color.lerp(color.set(hovered ? '#08fdd8' : 'white'), 0.9)
+        ref.current.material.color.lerp(color.set(hovered ? '#08fdd8' : '#FFEF82'), 1)
     })
 
     return (
         <Text ref={ref} onPointerOver={over} onPointerOut={out} {...props} {...fontProps} children={children}
-            color={'#EC2D2D'}
+            // color={'#EC2D2D'}
+            // color={"#03f3cf"}
             lineHeight={1}
             letterSpacing={0.02}
             textAlign={'left'}

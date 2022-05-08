@@ -158,7 +158,7 @@ const Contact = () => {
 
             <ColCenter className="contact-form-msg">
               {errorMsg &&
-                <p className="contact-form-msg-text">Please fill in required information!</p>}    
+                <p className="contact-form-msg-text">Please fill in required information!</p>}
               {sending === 2 ?
                 <p className="contact-form-msg-text">Thank you! Your message has been sent. I will check and reply to you as soon as possible.</p>
                 : null
@@ -181,9 +181,7 @@ const Contact = () => {
           <Message />
         </ColCenter>
       </RowCenter>
-
       <Footer />
-
 
     </ColLeft>
   )

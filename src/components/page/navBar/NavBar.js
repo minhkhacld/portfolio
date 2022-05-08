@@ -8,7 +8,7 @@ import './NavBar.css';
 const NavBar = () => {
 
     const screenSize = useScreenSize();
-    const [menuOpen, setMenuOpen] = React.useState(true);
+    const [menuOpen, setMenuOpen] = React.useState(false);
 
     React.useEffect(() => {
         if (screenSize.isXSmall) {
@@ -31,6 +31,12 @@ const NavBar = () => {
     //Javascript split method to get the name of the path in array
     const splitLocation = pathname.split("/");
 
+    const _onSwitchRoute = () => {
+        if (screenSize.isXSmall || screenSize.isSmall) {
+            setMenuOpen(false)
+        }
+    };
+
     return (
         <div className="cv-nav-container">
 
@@ -46,26 +52,25 @@ const NavBar = () => {
             {menuOpen &&
                 <div className="cv-nav-right">
                     <Link to='/' className={splitLocation[1] === "" ? "navbar-active-link" : "navbar-link"}
-                        onClick={() => setMenuOpen(true)}
+                        onClick={() => _onSwitchRoute()}
                         style={{ textDecoration: 'none' }}>
                         <div className="nav-child-middle">
                             <ColLeft className={splitLocation[1] === "" ? "navbar-active-link-text" : "navbar-link-text"}>
-                                Home
+                                About
                             </ColLeft>
                         </div>
-
                     </Link>
                     <Link to='/skill' className={splitLocation[1] === "skill" ? "navbar-active-link" : "navbar-link"}
-                        onClick={() => setMenuOpen(true)}
+                        onClick={() => _onSwitchRoute()}
                         style={{ textDecoration: 'none' }}>
                         <div className="nav-child-middle">
                             <ColLeft className={splitLocation[1] === "skill" ? "navbar-active-link-text" : "navbar-link-text"}>
-                                Skill
+                                My skill
                             </ColLeft>
                         </div>
                     </Link>
                     <Link to='/projects' className={splitLocation[1] === "projects" ? "navbar-active-link" : "navbar-link"}
-                        onClick={() => setMenuOpen(true)}
+                        onClick={() => _onSwitchRoute()}
                         style={{ textDecoration: 'none' }}>
                         <div className="nav-child-middle">
                             <ColLeft className={splitLocation[1] === "projects" ? "navbar-active-link-text" : "navbar-link-text"}>
@@ -74,7 +79,7 @@ const NavBar = () => {
                         </div>
                     </Link>
                     <Link to='/contact' className={splitLocation[1] === "contact" ? "navbar-active-link" : "navbar-link"}
-                        onClick={() => setMenuOpen(true)}
+                        onClick={() => _onSwitchRoute()}
                         style={{ textDecoration: 'none' }}>
                         <div className="nav-child-middle">
                             <ColLeft className={splitLocation[1] === "contact" ? "navbar-active-link-text" : "navbar-link-text"}>

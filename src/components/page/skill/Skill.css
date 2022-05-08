@@ -43,7 +43,7 @@
   z-index: 100000 !important;
 }
 .skill-quote-link:hover {
-  color: var(--organ);
+  color: var(--lightYellow);
 }
 
 @media only screen and (max-width: 600px) {
@@ -51,9 +51,15 @@
     flex-direction: column;
     padding: 5rem 1.5rem 0rem 1.5rem;
   }
-  .skill-range,
-  .skill-quote {
-    width: 100%;   
-      
+  .skill-quote,
+  .skill-range {
+    width: 96%;
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+
+  #rotate-rectangle {
+    width: 60%;
+    left: 20%;
   }
 }
