@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/profilo/static/css/main.b33ae8a7.css",
-    "main.js": "/profilo/static/js/main.e2421dbd.js",
+    "main.css": "/profilo/static/css/main.84e5a364.css",
+    "main.js": "/profilo/static/js/main.2e6c708a.js",
     "static/js/787.720a0598.chunk.js": "/profilo/static/js/787.720a0598.chunk.js",
     "static/media/sound.wav": "/profilo/static/media/sound.6a8fe8dd2dbbd7d92012.wav",
     "static/media/star.png": "/profilo/static/media/star.0aab94ff65f0deab773c.png",
@@ -20,19 +20,18 @@
     "static/media/code.png": "/profilo/static/media/code.2e0870f212ca633e2bf9.png",
     "static/media/stats.png": "/profilo/static/media/stats.770b25012178e7c7f5fe.png",
     "static/media/satellite.png": "/profilo/static/media/satellite.09385dbd6bdcd0f8b5b3.png",
-    "static/media/logo.webp": "/profilo/static/media/logo.84f42949680df5043db3.webp",
     "static/media/ux.png": "/profilo/static/media/ux.ffa3e0dd754dc923e50b.png",
     "static/media/github.png": "/profilo/static/media/github.22cfdd1cba253783ce51.png",
     "static/media/cloud-computing.png": "/profilo/static/media/cloud-computing.c26d84c0c395cebfe467.png",
     "static/media/facebook.png": "/profilo/static/media/facebook.4f037d961598aff2a0a4.png",
     "index.html": "/profilo/index.html",
-    "static/media/wave.svg": "/profilo/static/media/wave.acb4bda32ce5bf8476c4.svg",
-    "main.b33ae8a7.css.map": "/profilo/static/css/main.b33ae8a7.css.map",
-    "main.e2421dbd.js.map": "/profilo/static/js/main.e2421dbd.js.map",
+    "static/media/wave.svg": "/profilo/static/media/wave.becc0398aa6d5c6d2637.svg",
+    "main.84e5a364.css.map": "/profilo/static/css/main.84e5a364.css.map",
+    "main.2e6c708a.js.map": "/profilo/static/js/main.2e6c708a.js.map",
     "787.720a0598.chunk.js.map": "/profilo/static/js/787.720a0598.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b33ae8a7.css",
-    "static/js/main.e2421dbd.js"
+    "static/css/main.84e5a364.css",
+    "static/js/main.2e6c708a.js"
   ]
 }
