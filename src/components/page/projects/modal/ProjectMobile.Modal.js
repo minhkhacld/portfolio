@@ -23,9 +23,24 @@ const ProjectMobileModal = () => {
         // references are now sync'd and can be accessed.
         subtitle.style.color = '#f00';
     }
+
+    const customStyles = {
+        content: {
+            top: '50%',
+            left: '50%',
+            width: '90%',
+            minHeight: 500,
+            minWidth: 450,
+            right: 'auto',
+            bottom: 'auto',
+            marginRight: '-50%',
+            transform: 'translate(-50%, -50%)',
+            overflowY: 'scroll'
+        },
+    };
     return (
         <div className="modal-background">
-            <div className="modal-project-mobile">
+            {/* <div className="modal-project-mobile">
                 <div className="modal-title">
                     <div className="modal-title-text">Project details</div>
                     <div className="close-btn">
@@ -36,15 +51,15 @@ const ProjectMobileModal = () => {
                     <General />
                     <Details />
                 </div>
-            </div>
+            </div> */}
 
-            {/* <Modal
+            <Modal
                 isOpen={store.isModalOpen}
                 onAfterOpen={afterOpenModal}
                 onRequestClose={closeModal}
-                style={{ width: '100%', height: '100%', backgroundColor: 'yellow' }}
+                style={customStyles}
                 contentLabel="Example Modal"
-                className="modal-project-mobile"
+            // className="modal-project-mobile"
             >
                 <div className="modal-title">
                     <div className="modal-title-text">Project details</div>
@@ -56,9 +71,7 @@ const ProjectMobileModal = () => {
                     <General />
                     <Details />
                 </div>
-
-
-            </Modal> */}
+            </Modal>
         </div>
 
     )
