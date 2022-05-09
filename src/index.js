@@ -1,19 +1,23 @@
 import React from 'react';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from "react-router-dom";
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+import { HashRouter } from "react-router-dom";
+import App from './App';
+import './index.css';
 import store from './redux/store';
+import reportWebVitals from './reportWebVitals';
+
+// import Modal from 'react-modal';
+
+// Modal.setAppElement(document.getElementById('root'));
 
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter>
+    <HashRouter>
       <React.StrictMode>
         <App />
       </React.StrictMode>
-    </BrowserRouter>
+    </HashRouter>
   </Provider>
   ,
   document.getElementById('root')

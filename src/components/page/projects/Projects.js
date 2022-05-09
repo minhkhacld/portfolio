@@ -15,6 +15,7 @@ const Projects = () => {
             {store.isModalOpen &&
                 <ProjectMobileModal />
             }
+            
         </div>
     )
 }
