@@ -6,8 +6,9 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  position: fixed;
-  background-color: rgba(53, 53, 53, 0.625);
+  position: absolute;
+  /* background-color: rgba(53, 53, 53, 0.625); */
+  background-color: red;
 }
 
 .modal-project-mobile {

@@ -6,6 +6,7 @@ import Details from './content/detail/Detail';
 import General from './content/general/General';
 import './Modal.css';
 
+
 const ProjectMobileModal = () => {
     const dispatch = useDispatch();
 
@@ -34,3 +35,5 @@ const ProjectMobileModal = () => {
 }
 
 export default ProjectMobileModal
+
+
