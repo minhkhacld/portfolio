@@ -8,11 +8,6 @@ const RotateFrame = ({ from, to }) => {
     }
      `
 
-  // border: 10px solid;
-  // border-image-slice: 1;
-  // border-width: 5px;
-  // border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
-
   const Wrapper = styled.div`
      position: absolute;
      top:15%;
@@ -26,6 +21,8 @@ const RotateFrame = ({ from, to }) => {
      height: 400px;   
      z-index:-1;
      `
+
+
   return (
     <Wrapper id='rotate-rectangle'></Wrapper>
   )

@@ -11,7 +11,6 @@ export const Reducer = createSlice({
             state.isModalOpen = action.payload.isModalOpen;
             state.app = action.payload.app
         }
-
     }
 })
 

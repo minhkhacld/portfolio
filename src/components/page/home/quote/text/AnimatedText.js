@@ -23,7 +23,7 @@ const AnimatedText = ({ text, delay }) => {
         animation-fill-mode: forwards;
         animation-iteration-count: 1;
         color:var(--lightBlue);
-        font-size:${screenSize.isXSmall || screenSize.isSmall ? 60 : 80}px;
+        font-size:${screenSize.isXSmall || screenSize.isSmall ? 50 : 80}px;
         font-weight:bold;
     }    
     `

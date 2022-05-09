@@ -18,7 +18,7 @@ const HomeQuote = () => {
     const text3Str = "web developer";
 
     return (
-        <Col className="home-quote">          
+        <Col className="home-quote">
             <RotateFrame from={0} to={360} />
             <RotateFrame from={5} to={365} />
             <RotateFrame from={10} to={370} />

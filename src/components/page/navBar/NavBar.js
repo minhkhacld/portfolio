@@ -62,7 +62,16 @@ const NavBar = () => {
                         onClick={() => _onSwitchRoute()}
                         style={{ textDecoration: 'none' }}>
                         <div className="nav-child-middle">
-                            <ColLeft className={splitLocation[1] === "" ? "navbar-active-link-text" : "navbar-link-text"}>
+                            <ColLeft className={splitLocation[1] === "" ? "navbar-active-link-text" : "navbar-link-text"} id="nav-home">
+                                Home
+                            </ColLeft>
+                        </div>
+                    </Link>
+                    <Link to='/about' className={splitLocation[1] === "about" ? "navbar-active-link" : "navbar-link"}
+                        onClick={() => _onSwitchRoute()}
+                        style={{ textDecoration: 'none' }}>
+                        <div className="nav-child-middle">
+                            <ColLeft className={splitLocation[1] === "about" ? "navbar-active-link-text" : "navbar-link-text"} id="nav-about">
                                 About
                             </ColLeft>
                         </div>
@@ -71,7 +80,7 @@ const NavBar = () => {
                         onClick={() => _onSwitchRoute()}
                         style={{ textDecoration: 'none' }}>
                         <div className="nav-child-middle">
-                            <ColLeft className={splitLocation[1] === "skill" ? "navbar-active-link-text" : "navbar-link-text"}>
+                            <ColLeft className={splitLocation[1] === "skill" ? "navbar-active-link-text" : "navbar-link-text"} id="nav-skill">
                                 My skill
                             </ColLeft>
                         </div>
@@ -80,7 +89,7 @@ const NavBar = () => {
                         onClick={() => _onSwitchRoute()}
                         style={{ textDecoration: 'none' }}>
                         <div className="nav-child-middle">
-                            <ColLeft className={splitLocation[1] === "projects" ? "navbar-active-link-text" : "navbar-link-text"}>
+                            <ColLeft className={splitLocation[1] === "projects" ? "navbar-active-link-text" : "navbar-link-text"} id="nav-projects">
                                 Projects
                             </ColLeft>
                         </div>
@@ -89,7 +98,7 @@ const NavBar = () => {
                         onClick={() => _onSwitchRoute()}
                         style={{ textDecoration: 'none' }}>
                         <div className="nav-child-middle">
-                            <ColLeft className={splitLocation[1] === "contact" ? "navbar-active-link-text" : "navbar-link-text"}>
+                            <ColLeft className={splitLocation[1] === "contact" ? "navbar-active-link-text" : "navbar-link-text"} id="nav-contact">
                                 Contact
                             </ColLeft>
                         </div>

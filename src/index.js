@@ -7,9 +7,6 @@ import './index.css';
 import store from './redux/store';
 import reportWebVitals from './reportWebVitals';
 
-// import Modal from 'react-modal';
-
-// Modal.setAppElement(document.getElementById('root'));
 
 ReactDOM.render(
   <Provider store={store}>

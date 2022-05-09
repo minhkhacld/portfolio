@@ -10,20 +10,21 @@ const RoundFrame = ({ delay }) => {
 from {transform: rotate(0deg); border-radius: 42% 58% 39% 61% / 39% 37% 63% 61% ;border: ${fromWidth} solid ${fromColor}}
 to {transform: rotate(360deg);  border-radius: 77% 23% 39% 61% / 61% 37% 63% 39% ; border: ${toWidth} solid ${toColor}}
 `
-    const Wrapper = styled.div`
- position: absolute;
- top:10%;
- left:20%;
- animation-name:${animation};
- animation-duration:20s;
- animation-delay:${delay}s;
- animation-timing-function:linear;
- animation-fill-mode: forwards;
- animation-iteration-count: infinite;   
- width: 60%;
- height: 60%;   
- z-index:-1;
- `
+        const Wrapper = styled.div`
+     position: absolute;
+     top:15%;
+     left:20%;
+     animation-name:${animation};
+     animation-duration:20s;
+     animation-delay:${delay}s;
+     animation-timing-function:linear;
+     animation-fill-mode: forwards;
+     animation-iteration-count: infinite;   
+     width: 60%;
+     height: 400px;   
+     z-index:-1;
+     `
+
     return (
         <Wrapper>
         </Wrapper>

@@ -13,9 +13,10 @@ import { Navigate } from 'react-router-dom';
 import ScrollToTop from '../kits/animated/ScrollToTop';
 import useScreenSize from '../kits/media/Device.Measuring';
 import MouseParticles from "react-mouse-particles";
+import Main from './main/Main';
+
 
 const MainPage = () => {
-
     const screenSize = useScreenSize();
     return (
         <ColCenter className="cv-container">
@@ -37,7 +38,8 @@ const MainPage = () => {
             }
             <ColCenter className="cv-content-container">
                 <Routes>
-                    <Route path="/" element={<Home />} />
+                    <Route path="/" element={<Main />} />
+                    <Route path="/about" element={<Home />} />
                     <Route path="skill" element={<Skill />} />
                     <Route path="projects" element={<Projects />} />
                     <Route path="contact" element={<Contact />} />

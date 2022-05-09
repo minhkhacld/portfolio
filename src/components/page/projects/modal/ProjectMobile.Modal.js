@@ -18,29 +18,30 @@ const ProjectMobileModal = () => {
         dispatch(setModal({ isModalOpen: false, app: {} }));
     }
 
-    let subtitle;
-    function afterOpenModal() {
-        // references are now sync'd and can be accessed.
-        subtitle.style.color = '#f00';
-    }
+    // let subtitle;
+    // function afterOpenModal() {
+    //     // references are now sync'd and can be accessed.
+    //     subtitle.style.color = '#f00';
+    // }
 
-    const customStyles = {
-        content: {
-            top: '50%',
-            left: '50%',
-            width: '90%',
-            minHeight: 500,
-            minWidth: 450,
-            right: 'auto',
-            bottom: 'auto',
-            marginRight: '-50%',
-            transform: 'translate(-50%, -50%)',
-            overflowY: 'scroll'
-        },
-    };
+    // const customStyles = {
+    //     content: {
+    //         top: '50%',
+    //         left: '50%',
+    //         width: '90%',
+    //         minHeight: 500,
+    //         minWidth: 450,
+    //         right: 'auto',
+    //         bottom: 'auto',
+    //         marginRight: '-50%',
+    //         transform: 'translate(-50%, -50%)',
+    //         overflowY: 'scroll'
+    //     },
+    // };
+
     return (
         <div className="modal-background">
-            {/* <div className="modal-project-mobile">
+            <div className="modal-project-mobile">
                 <div className="modal-title">
                     <div className="modal-title-text">Project details</div>
                     <div className="close-btn">
@@ -51,9 +52,9 @@ const ProjectMobileModal = () => {
                     <General />
                     <Details />
                 </div>
-            </div> */}
+            </div>
 
-            <Modal
+            {/* <Modal
                 isOpen={store.isModalOpen}
                 onAfterOpen={afterOpenModal}
                 onRequestClose={closeModal}
@@ -71,7 +72,7 @@ const ProjectMobileModal = () => {
                     <General />
                     <Details />
                 </div>
-            </Modal>
+            </Modal> */}
         </div>
 
     )

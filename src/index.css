@@ -3,14 +3,15 @@
   --lightBlue: #03f3cf;
   --organ: #f09819;
   --grey: #112b3c;
-  --lightYellow: #FFEF82;
-  --purple:#764AF1;
-  --darkBlue:#112B3C;
+  --lightYellow: #ffef82;
+  --purple: #764af1;
+  --darkBlue: #112b3c;
 }
 
 html,
 body {
   margin: 0;
+  padding: 0;
   height: 100%;
   width: 100%;
   min-height: 100vh;
@@ -20,8 +21,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* overflow: hidden; */
-  /* background-color:#1a1a1a76; */
 }
 
 ::-webkit-scrollbar {

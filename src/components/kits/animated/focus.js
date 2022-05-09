@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { keyframes } from "styled-components";
 import { FaSync } from 'react-icons/fa'
 
-const RotateInstruction = () => {
+const RotateInstruction = ({ screenSize }) => {
 
     const animation = keyframes`
 0% {width:150px}
@@ -28,7 +28,7 @@ div{
     return (
         <Wrapper>
             <FaSync color="var(--lightBlue)" size={14} />
-            <div>Use mouse to rote me</div>
+            <div><span>Use</span><span> {screenSize.isXSmall || screenSize.isSmall ? "finger" : "mouse"}</span> <span>to rote me</span></div>
         </Wrapper>
     )
 }

@@ -7,41 +7,36 @@ const Web = () => {
 
     const data = [
         {
-            appName: 'Học Excel',
-            des: 'Học Excel is.........................................',
-            details: [
-                "React native", "Firebase", "Youtube API"
+            appName: 'Sewing Line Layout',
+            des: `The wep application that allow user create dynamic Sewing Line Layout for mass prodution. The app aim to help user make layout more faster, easier and accuracy and then use it as a key tool for line balancing improvement. The app is also help manager to manage the work by providing data visualization and so all...`,
+            details: `ReactJs, DevExtreme,Redux`,
+            link: "",
+            picture: [
+                require('../../../../assets/picture/project/webapp/layout/feature.png'),
+                require('../../../../assets/picture/project/webapp/layout/dashboard.PNG'),
+                require('../../../../assets/picture/project/webapp/layout/layout.png'),
+                require('../../../../assets/picture/project/webapp/layout/lblchart.PNG'),
+                require('../../../../assets/picture/project/webapp/layout/chart.PNG'),
             ],
-            link: "https://play.google.com/store/apps/details?id=com.hocexcel",
-            picture: [require('../../../../assets/picture/project/hocexcel/feature.png')],
+            icon: require('../../../../assets/picture/project/webapp/layout/ic.png'),
+            publishDate: "2021-10-31",
+            projectType: 'Company project',
         },
         {
-            appName: 'Scan To Google Sheets',
-            des: 'Scan To Google Sheets is.........................................',
-            details: [
-                "React native", "Firebase", "Google Sheets", "Google App script"
+            appName: 'Support Center',
+            des: `In mass production, we always need every thing go fast and continuously. Support Center was built to provide a simple way to send and respone the request among each the partment in the company. At Support Center, every can be measured, from the time the requester send a request asking for helping to the time the solver react and solve that request. All will be collected and presentated`,
+            details: `ReactJs, DevExtreme, Redux, Socket.IO`,
+            link: "",
+            picture: [
+                require('../../../../assets/picture/project/webapp/spct/dashboard.PNG'),
+                require('../../../../assets/picture/project/webapp/spct/summary.PNG'),
+                require('../../../../assets/picture/project/webapp/spct/pending.PNG'),
+                require('../../../../assets/picture/project/webapp/spct/detail.PNG'),
             ],
-            link: "https://play.google.com/store/apps/details?id=com.scantogooglesheets",
-            picture: [require('../../../../assets/picture/project/stggs/feature.png')],
+            icon: require('../../../../assets/picture/project/webapp/spct/dashboard.PNG'),
+            publishDate: "2022-04-30",
+            projectType: 'Company project',
         },
-        {
-            appName: 'Play and Grow Animal',
-            des: 'Play and Grow Animal is.........................................',
-            details: [
-                "React native", "Firebase",
-            ],
-            link: "https://play.google.com/store/apps/details?id=com.playandgrowanimal",
-            picture: [require('../../../../assets/picture/project/paga/feature.png')],
-        },
-        {
-            appName: 'Stopwatch To Google Sheets',
-            des: 'Stopwatch To Google Sheets is.........................................',
-            details: [
-                "React native", "Firebase", "Google Sheets", "Google App script"
-            ],
-            link: "https://play.google.com/store/apps/details?id=com.stopwatchtogooglesheets",
-            picture: [require('../../../../assets/picture/project/swtggs/feature.png')],
-        }
     ]
 
     return (
@@ -63,4 +58,4 @@ const Web = () => {
     )
 }
 
-export default Web
+export default Web;
