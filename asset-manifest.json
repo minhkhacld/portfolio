@@ -1,19 +1,26 @@
 {
   "files": {
-    "main.css": "/profilo/static/css/main.88949795.css",
-    "main.js": "/profilo/static/js/main.d8e074fb.js",
+    "main.css": "/profilo/static/css/main.8408023b.css",
+    "main.js": "/profilo/static/js/main.6dfdf02e.js",
     "static/js/787.720a0598.chunk.js": "/profilo/static/js/787.720a0598.chunk.js",
     "static/media/sound.mp3": "/profilo/static/media/sound.7c469f29e83762f6b030.mp3",
     "static/media/star.png": "/profilo/static/media/star.0aab94ff65f0deab773c.png",
+    "static/media/layout.png": "/profilo/static/media/layout.2c33a1a0cd3ab59b7938.png",
+    "static/media/dashboard.PNG": "/profilo/static/media/dashboard.5546f9cf3713fff94549.PNG",
     "static/media/home.png": "/profilo/static/media/home.f59b9301a5e7d0dcd87a.png",
     "static/media/feature.png": "/profilo/static/media/feature.6cbb3f61a11f696df488.png",
     "static/media/play.png": "/profilo/static/media/play.e3acdd6652a46c2c0e03.png",
     "static/media/list.png": "/profilo/static/media/list.cf41305f2ae58c4350bd.png",
     "static/media/ic_launcher.png": "/profilo/static/media/ic_launcher.63cc1e671dd330e2f55e.png",
+    "static/media/detail.PNG": "/profilo/static/media/detail.76b409e111c2b498f88b.PNG",
     "static/media/dashboard.png": "/profilo/static/media/dashboard.a3c89362dbd8f93d5941.png",
     "static/media/youtube.png": "/profilo/static/media/youtube.59225dd83f6bea3d0f16.png",
+    "static/media/pending.PNG": "/profilo/static/media/pending.8eb4b6d28895e2bdf538.PNG",
     "static/media/lession.png": "/profilo/static/media/lession.e5ab4fe8e865fc5b0942.png",
+    "static/media/lblchart.PNG": "/profilo/static/media/lblchart.c1a2f083378e20189a1d.PNG",
     "static/media/game.png": "/profilo/static/media/game.4948f21694fd0978ba73.png",
+    "static/media/chart.PNG": "/profilo/static/media/chart.038a24f9f3ef7cc4ce48.PNG",
+    "static/media/summary.PNG": "/profilo/static/media/summary.5552f6f56ad49def571d.PNG",
     "static/media/qr.png": "/profilo/static/media/qr.bbd4b42e5e5d711a3247.png",
     "static/media/config.png": "/profilo/static/media/config.aeb5614a2ba0f3197e70.png",
     "static/media/instagram.png": "/profilo/static/media/instagram.e719d8b29f452a16302d.png",
@@ -30,12 +37,12 @@
     "static/media/facebook.png": "/profilo/static/media/facebook.4f037d961598aff2a0a4.png",
     "index.html": "/profilo/index.html",
     "static/media/wave.svg": "/profilo/static/media/wave.becc0398aa6d5c6d2637.svg",
-    "main.88949795.css.map": "/profilo/static/css/main.88949795.css.map",
-    "main.d8e074fb.js.map": "/profilo/static/js/main.d8e074fb.js.map",
+    "main.8408023b.css.map": "/profilo/static/css/main.8408023b.css.map",
+    "main.6dfdf02e.js.map": "/profilo/static/js/main.6dfdf02e.js.map",
     "787.720a0598.chunk.js.map": "/profilo/static/js/787.720a0598.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.88949795.css",
-    "static/js/main.d8e074fb.js"
+    "static/css/main.8408023b.css",
+    "static/js/main.6dfdf02e.js"
   ]
 }
