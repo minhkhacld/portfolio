@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaBars } from 'react-icons/fa';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useScreenSize from '../../kits/media/Device.Measuring';
 import { ColLeft } from '../../kits/stucture/component.stucture';
 import './NavBar.css';
@@ -24,6 +24,7 @@ const NavBar = () => {
 
     //assigning location variable
     const location = useLocation();
+    const navigate = useNavigate();
 
     //destructuring pathname from location
     const { pathname } = location;
@@ -37,6 +38,10 @@ const NavBar = () => {
         }
     };
 
+    const _onGoToFirstPage = () => {
+        navigate('/');
+    }
+
     return (
         <div className="cv-nav-container">
 
@@ -45,7 +50,9 @@ const NavBar = () => {
                     <FaBars className="cv-nav-left-menu-icon" onClick={() => _onOpenMenu()} />
                 </div>
                 <div className="cv-nav-left-logo">
-                    <img className="cv-nav-left-logo-picture" src={require('../../../assets/picture/logo.png')} alt={'Logo'} />
+                    <img className="cv-nav-left-logo-picture" src={require('../../../assets/picture/logo.png')} alt={'Logo'}
+                        onClick={() => _onGoToFirstPage()}
+                    />
                 </div>
             </div>
 

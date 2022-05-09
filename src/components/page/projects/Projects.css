@@ -10,6 +10,7 @@
   background-color: var(--black);
   min-height: 95vh;
 }
+
 .projects-mobile,
 .projects-web {
   width: 98%;
@@ -20,6 +21,10 @@
   align-items: center;
   padding-left: 1%;
   padding-right: 1%;
+}
+
+.projects-mobile {
+  margin-bottom: 1.5rem;
 }
 
 @media only screen and (max-width: 600px) {

@@ -1,0 +1,39 @@
+.general-icon-group {
+  width: 100%;
+  height: 7rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.general-icon {
+  width: 30%;
+  max-width: 90px;
+  min-width: 50px;
+  border-radius: 0.3rem;
+}
+
+.general-row {
+  margin-bottom: 1rem;
+  width: 95%;
+  color: black;
+  padding: 0.5rem;
+}
+.general-row-cap {
+  font-size: 14px;
+  font-weight: bold;
+}
+.general-row-content {
+  font-size: 13px;
+  margin-left: 0.3rem;
+}
+.general-row-link {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--purple);
+}
+
+@media only screen and (max-width: 600px) {
+} ;
