@@ -39,15 +39,15 @@ const Project = () => {
     picture: require('../../../assets/picture/project/swtggs/ic_launcher.png'),
   }
 
-  const playandGrowAnimal = {
-    appName: 'Play and Grow Animal',
-    des: 'Play and Grow Animal is.........................................',
-    details: [
-      "React native", "Firebase",
-    ],
-    link: "https://play.google.com/store/apps/details?id=com.playandgrowanimal",
-    picture: require('../../../assets/picture/project/paga/ic_launcher.png'),
-  };
+  // const playandGrowAnimal = {
+  //   appName: 'Play and Grow Animal',
+  //   des: 'Play and Grow Animal is.........................................',
+  //   details: [
+  //     "React native", "Firebase",
+  //   ],
+  //   link: "https://play.google.com/store/apps/details?id=com.playandgrowanimal",
+  //   picture: require('../../../assets/picture/project/paga/ic_launcher.png'),
+  // };
 
   return (
     <div className="cv-projects" >
@@ -83,8 +83,8 @@ const Project = () => {
         </ParallaxLayer>
 
         <ParallaxLayer offset={0.2} speed={0.5} style={{ pointerEvents: 'none' }}>
-          <img src={require('../../../assets/picture/parallax/smartphone.png')} style={{ width: '15%', marginLeft: '10%' }} className="pro-img-smartphone" />
-          <img src={require('../../../assets/picture/parallax/app-development.png')} style={{ width: '10%', marginLeft: '80%' }} className="pro-img-prodevelopment" />
+          <img src={require('../../../assets/picture/parallax/smartphone.png')} style={{ width: '15%', marginLeft: '10%' }} className="pro-img-smartphone" alt=""/>
+          <img src={require('../../../assets/picture/parallax/app-development.png')} style={{ width: '10%', marginLeft: '80%' }} className="pro-img-prodevelopment" alt=""/>
         </ParallaxLayer>
 
         {/* Hoc Excel part */}
@@ -130,8 +130,8 @@ const Project = () => {
           <p className="project-type-title">Web Applications</p>
         </ParallaxLayer>
         <ParallaxLayer offset={5.2} speed={0.5} style={{ pointerEvents: 'none' }}>
-          <img src={require('../../../assets/picture/parallax/ux.png')} style={{ width: '15%', marginLeft: '10%' }} className="pro-img-smartphone" />
-          <img src={require('../../../assets/picture/parallax/code.png')} style={{ width: '10%', marginLeft: '80%' }} className="pro-img-prodevelopment" />
+          <img src={require('../../../assets/picture/parallax/ux.png')} style={{ width: '15%', marginLeft: '10%' }} className="pro-img-smartphone" alt="" />
+          <img src={require('../../../assets/picture/parallax/code.png')} style={{ width: '10%', marginLeft: '80%' }} className="pro-img-prodevelopment" alt="" />
         </ParallaxLayer>
 
         {/*Layout part */}

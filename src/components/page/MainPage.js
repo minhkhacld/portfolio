@@ -1,23 +1,26 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import MouseParticles from "react-mouse-particles";
+import { Navigate, Route, Routes } from 'react-router-dom';
+import ScrollToTop from '../kits/animated/ScrollToTop';
+import useScreenSize from '../kits/media/Device.Measuring';
 import Sound from '../kits/media/Sound';
 import { ColCenter } from '../kits/stucture/component.stucture';
 import Contact from './contact/Contact';
 import Home from './home/Home';
+import Main from './main/Main';
 import './MainPage.css';
 import NavBar from './navBar/NavBar';
-import Project from './project/Project';
 import Projects from './projects/Projects';
 import Skill from './skill/Skill';
-import { Navigate } from 'react-router-dom';
-import ScrollToTop from '../kits/animated/ScrollToTop';
-import useScreenSize from '../kits/media/Device.Measuring';
-import MouseParticles from "react-mouse-particles";
-import Main from './main/Main';
 
 
 const MainPage = () => {
     const screenSize = useScreenSize();
+
+    window.addEventListener('load', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    })
+
     return (
         <ColCenter className="cv-container">
             <NavBar />

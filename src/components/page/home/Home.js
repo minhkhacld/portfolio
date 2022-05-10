@@ -7,7 +7,8 @@ import HomeCanvas from './canvas/Home.Canvas';
 const Home = () => {
 
   return (
-    <div className="cv-home">      
+    <div className="cv-home">
+      {/* <div className="part-skill">About</div> */}
       <HomeQuote />
       <HomeCanvas />
     </div>

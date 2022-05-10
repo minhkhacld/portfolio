@@ -62,8 +62,24 @@
   color: var(--lightBlue);
   opacity: 1;
 }
+
 .content-chevon-icon {
   font-size: 1.5rem;
   color: var(--darkBlue);
   opacity: 0.5;
+}
+
+@media only screen and (max-width: 600px) {
+  .content-picture-frame {
+    width: 80% !important;
+  }
+  .content-picture {
+    max-width: 380px;
+    object-fit: scale-down;
+  }
+  .content-picture-small {
+    object-fit: scale-down;
+    max-width: 300px;
+    max-height: 300px;
+  }
 }

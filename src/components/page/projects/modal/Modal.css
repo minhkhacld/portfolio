@@ -1,20 +1,14 @@
 .modal-background {
   width: 100%;
   height: 100%;
-  display: block;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   background-color: rgba(53, 53, 53, 0.625);
   position: fixed;
-  margin-top: 0px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
   z-index: 100000;
+  top: 0 !important;
 }
 
 .modal-project-mobile {
-  position: absolute;
+  position: fixed;
   width: 90%;
   height: 90%;
   background-color: white;
@@ -69,6 +63,10 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+  overflow-y: scroll;
+  margin-bottom: 1%;
+  padding-bottom: .5rem;
+  overflow-x: hidden;
 }
 
 .modal-content-general {

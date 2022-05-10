@@ -1,10 +1,10 @@
-import React from 'react'
-import './Detail.css';
-import { useSelector, useDispatch } from 'react-redux';
+import React from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { useSelector } from 'react-redux';
+import './Detail.css';
 
 const Details = () => {
-    const dispatch = useDispatch();
+ 
     const store = useSelector(store => store.Reducer);
     const [picIndex, setPicIndex] = React.useState(0);
 
@@ -38,10 +38,10 @@ const Details = () => {
                 </div>
                 <div className="content-picture-frame">
                     {picIndex === 0 ?
-                        <img src={store.app.picture[picIndex]} alt="product-picture" className="content-picture"
+                        <img src={store.app.picture[picIndex]} alt="product" className="content-picture"
                         />
                         :
-                        <img src={store.app.picture[picIndex]} alt="product-picture" className="content-picture-small" />}
+                        <img src={store.app.picture[picIndex]} alt="product" className="content-picture-small" />}
                 </div>
                 <div className="content-chevon-right" onClick={() => onShowNextPic()}>
                     <div className="content-chevon-frame">

@@ -30,7 +30,7 @@ const ScrollToTop = () => {
     }
 
     return (
-        <div style={styles.frame} onClick={onGoToTop}>
+        <div style={styles.frame} onClick={onGoToTop} id="scroll-to-top">
             <FaArrowAltCircleUp style={styles.icon} />
         </div>
     )

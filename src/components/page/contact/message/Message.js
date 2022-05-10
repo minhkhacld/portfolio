@@ -1,19 +1,19 @@
-import React from 'react'
+import React from 'react';
+import { animated, config, useSpring } from 'react-spring';
+import avatar from '../../../../assets/picture/contact/cog.png';
 import { ColCenter, RowCenter } from '../../../kits/stucture/component.stucture';
-import avatar from '../../../../assets/picture/contact/cog.png'
 import './Message.css';
-import { useSpring, animated, config, useTransition } from 'react-spring';
 
 const Message = () => {
 
     const opacity = useSpring({
         from: { opacity: 0, color: 'white', },
-        to: { opacity: 1, color: 'black', fontWeight: 'bold', },
+        to: { opacity: 1, color: 'black', },
         delay: 500,
         config: config.molasses,
     });
 
-    const string = "What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+    const string = "I'm interested in full time job opportunities, especially large projects. However if you have other request or question. Don't hesitate to contact me!"
 
 
     return (

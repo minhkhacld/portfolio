@@ -9,11 +9,13 @@ import useScreenSize from '../../../kits/media/Device.Measuring';
 
 function Word({ children, ...props }) {
     const color = new THREE.Color()
-    const fontProps = { font: '/Inter-Bold.woff', fontSize: 2.5, letterSpacing: -0.05, lineHeight: 1, 'material-toneMapped': true }
+    const fontProps = { fontSize: 2.5, letterSpacing: -0.05, lineHeight: 1, 'material-toneMapped': true }
     const ref = useRef();
 
     const [hovered, setHovered] = useState(false);
-    const over = (e) => (e.stopPropagation(), setHovered(true));
+    const over = (e) => (
+        // e.stopPropagation(), 
+        setHovered(true));
     const out = () => setHovered(false);
     // Change the mouse cursor on hover
     useEffect(() => {
@@ -21,7 +23,7 @@ function Word({ children, ...props }) {
             document.body.style.cursor = 'pointer'
         }
         return () => (document.body.style.cursor = 'auto')
-    }, [])
+    }, [hovered])
     // Tie component to the render-loop
     useFrame(({ camera, clock }) => {
         // Make text face the camera
@@ -32,8 +34,6 @@ function Word({ children, ...props }) {
 
     return (
         <Text ref={ref} onPointerOver={over} onPointerOut={out} {...props} {...fontProps} children={children}
-            // color={'#EC2D2D'}
-            // color={"#03f3cf"}
             lineHeight={1}
             letterSpacing={0.02}
             textAlign={'left'}
@@ -57,7 +57,7 @@ function Cloud({ count, radius }) {
 
     return words.map(([pos, word], index) => {
         return (
-            <Word position={pos} children={word} />
+            <Word position={pos} children={word} key={index} />
         )
     })
 }

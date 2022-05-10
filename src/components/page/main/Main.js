@@ -1,17 +1,19 @@
-import React from 'react'
-import Home from '../home/Home';
-import Skill from '../skill/Skill';
-import Projects from '../projects/Projects';
-import Contact from '../contact/Contact';
-import './Main.css'
-import Modal from 'react-modal';
-import ProjectMobileModal from '../projects/modal/ProjectMobile.Modal';
+import React from 'react';
 import { useSelector } from 'react-redux';
+import Contact from '../contact/Contact';
+import Home from '../home/Home';
+import ProjectMobileModal from '../projects/modal/ProjectMobile.Modal';
+import Projects from '../projects/Projects';
+import Skill from '../skill/Skill';
+import './Main.css';
+import { useLocation } from 'react-router-dom';
 
-Modal.setAppElement(document.getElementById('root'));
 const Main = () => {
     const store = useSelector(store => store.Reducer);
-    window.addEventListener("scroll", function () {
+    const location = useLocation();
+    const path = location.pathname.split('/')[1];
+
+    window.addEventListener("scroll", () => {
         const home = document.getElementById("home-section");
         const skill = document.getElementById("skill-section");
         const project = document.getElementById("project-section");
@@ -20,54 +22,58 @@ const Main = () => {
         const navSkill = document.getElementById("nav-skill");
         const navProjects = document.getElementById("nav-projects");
         const navContact = document.getElementById("nav-contact");
+        let scrollY = window.scrollY;
+        let homeCal = home.offsetTop + home.offsetHeight - 100;
+        let skillCal = skill.offsetTop + skill.offsetHeight - 100;
+        let projectsCal = project.offsetTop + project.offsetHeight - 100;
+        let contactCal = contact.offsetTop + contact.offsetHeight - 100;
 
-
-        if (window.scrollY > (home.offsetTop + home.offsetHeight)) {
-            navHome.classList.add('navbar-link-text');
-            navHome.classList.remove('navbar-active-link-text');
-        } else if (window.scrollY <= (skill.offsetTop + skill.offsetHeight)) {
-            navHome.classList.add('navbar-active-link-text');
-            navHome.classList.remove('navbar-link-text');
+        if (scrollY <= homeCal) {
+            navHome.style.color = 'var(--lightBlue)';
+            navSkill.style.color = 'white';
+            navProjects.style.color = 'white';
+            navContact.style.color = 'white';
+        } else if (scrollY <= skillCal && scrollY > homeCal) {
+            navHome.style.color = 'white';
+            navSkill.style.color = 'var(--lightBlue)';
+            navProjects.style.color = 'white';
+            navContact.style.color = 'white';
         }
-        if (window.scrollY > (skill.offsetTop + skill.offsetHeight)) {
-            navSkill.classList.add('navbar-link-text');
-            navSkill.classList.remove('navbar-active-link-text');
-        } else if (window.scrollY <= (project.offsetTop + project.offsetHeight)) {
-            navSkill.classList.add('navbar-active-link-text');
-            navSkill.classList.remove('navbar-link-text');
+        else if (scrollY <= projectsCal && scrollY > skillCal) {
+            navHome.style.color = 'white';
+            navSkill.style.color = 'white';
+            navProjects.style.color = 'var(--lightBlue)';
+            navContact.style.color = 'white';
         }
-        if (window.scrollY > (contact.offsetTop + contact.offsetHeight)) {
-            navProjects.classList.add('navbar-link-text');
-            navProjects.classList.remove('navbar-active-link-text');
-        } else {
-            navProjects.classList.add('navbar-active-link-text');
-            navProjects.classList.remove('navbar-link-text');
-        }
-        if (window.scrollY > (contact.offsetTop + contact.offsetHeight)) {
-            navContact.classList.add('navbar-link-text');
-            navContact.classList.remove('navbar-active-link-text');
-        } else {
-            navContact.classList.add('navbar-active-link-text');
-            navContact.classList.remove('navbar-link-text');
+        else if (scrollY <= contactCal && scrollY > projectsCal) {
+            navHome.style.color = 'white';
+            navSkill.style.color = 'white';
+            navProjects.style.color = 'white';
+            navContact.style.color = 'var(--lightBlue)';
         }
     });
+
 
     return (
         <div className="cv-main">
             <div className="main-part" id="home-section">
+                {/* <div className="part-skill">About</div> */}
                 <Home />
             </div>
             <div className="main-part" id="skill-section">
+                {/* <div className="part-skill">Skill</div> */}
                 <Skill />
             </div>
             <div className="main-part" id="project-section">
+                {/* <div className="part-skill">Projects</div> */}
                 <Projects />
             </div>
             <div className="main-part" id="contact-section">
+                {/* <div className="part-skill">Contact</div> */}
                 <Contact />
             </div>
 
-            {store.isModalOpen &&
+            {store.isModalOpen && path === "" &&
                 <ProjectMobileModal />
             }
         </div>

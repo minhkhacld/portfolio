@@ -1,8 +1,8 @@
-import React from 'react'
-import { RowLeft, RowCenter, RowEvenly, ColCenter, ColLeft, Col } from '../../../kits/stucture/component.stucture';
+import React from 'react';
+import { FaEnvelope, FaMapMarked, FaMobileAlt } from 'react-icons/fa';
+import { Col, ColCenter, RowCenter, RowLeft } from '../../../kits/stucture/component.stucture';
 import SocialNetwork from '../network/SocialNetwork';
 import './Footer.css';
-import { FaMobileAlt, FaEnvelope, FaMapMarked } from 'react-icons/fa'
 
 const Footer = () => {
     return (

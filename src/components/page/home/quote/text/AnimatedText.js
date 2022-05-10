@@ -18,13 +18,14 @@ const AnimatedText = ({ text, delay }) => {
         opacity: 0;
         display: inline-block;
         animation-name: ${animation};
-        animation-duration: 3s;
-        animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+        animation-duration: 2s;
+        animation-timing-function: ease-in-out;
         animation-fill-mode: forwards;
         animation-iteration-count: 1;
         color:var(--lightBlue);
-        font-size:${screenSize.isXSmall || screenSize.isSmall ? 50 : 80}px;
+        font-size:${screenSize.isXSmall || screenSize.isSmall ? 50 : screenSize.isMedium ? 60 : 80}px;
         font-weight:bold;
+        z-index:1;
     }    
     `
     const rendertext = text.split("");
@@ -43,7 +44,8 @@ const AnimatedText = ({ text, delay }) => {
         <Wraper style={{ marginBottom: '30px' }}>
             {rendertext.map((item, index) => {
                 return (
-                    <span key={index} className="home-quote-animated-text"
+                    <span key={index}
+                        className={`animted-text-${index}`}
                         onMouseOver={() => _onHoverTextAnimated(index)} onMouseLeave={() => _onLeaveText(index)}
                         style={{
                             marginLeft: rendertext[index] === " " ? 12 : 0

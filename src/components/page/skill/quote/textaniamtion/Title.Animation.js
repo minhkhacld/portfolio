@@ -1,10 +1,7 @@
-import React from 'react'
+import React from 'react';
 import styled, { keyframes } from "styled-components";
-import { useLocation } from 'react-router-dom';
 
 const TitleAnimation = () => {
-
-
     const string = "Me & Myselft"
     const title = string.trim().split("");
 

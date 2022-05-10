@@ -1,17 +1,21 @@
 import React from 'react';
-import TitleAnimation from '../../skill/quote/textaniamtion/Title.Animation';
-import TextAnimation from '../../skill/quote/textaniamtion/Text.Animation';
-import { useNavigate } from 'react-router-dom';
-import RoundFrame from './frame/Round.Frame';
-import AnimatedText from './text/AnimatedText';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Col, ColCenter } from '../../../kits/stucture/component.stucture';
 import RotateFrame from '../../skill/quote/textaniamtion/Rotate.Frame';
+import AnimatedText from './text/AnimatedText';
 
 const HomeQuote = () => {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const location = useLocation();
+    const path = location.pathname.split('/')[1];
     const _onGoToContact = () => {
-        navigate("/contact");
+        if (path === "") {
+            document.getElementById("contact-section").scrollIntoView({ block: 'start', behavior: 'smooth' });
+        } else {
+            navigate("/contact");
+        }
     }
+
 
     const text1Str = "Hi,";
     const text2Str = "I'm Kha,";

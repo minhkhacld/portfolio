@@ -5,10 +5,9 @@ import { ColCenter, ColLeft, RowCenter } from '../../kits/stucture/component.stu
 import './Contact.css';
 import Footer from './footer/Footer';
 import Message from './message/Message';
-
+import { useLocation } from 'react-router-dom';
 
 const Contact = () => {
-
   const [user, setUser] = React.useState({
     name: "",
     errorName: false,
@@ -20,8 +19,8 @@ const Contact = () => {
 
   const [errorMsg, setErrorMsg] = React.useState(false);
   const [sending, setSending] = React.useState(0);
-
-
+  const location = useLocation();
+  const path = location.pathname.split('/')[1];
 
   //Function
   const _onChangeUserName = (e) => {
@@ -32,6 +31,8 @@ const Contact = () => {
   };
 
   const _onBlurUserName = (e) => {
+    const scrollbtn = document.getElementById("scroll-to-top");
+    scrollbtn.style.display = "flex";
     if (e.target.value !== "") {
       setUser({ ...user, errorName: false })
     } else {
@@ -47,6 +48,8 @@ const Contact = () => {
     })
   }
   const _onBlurEmail = (e) => {
+    const scrollbtn = document.getElementById("scroll-to-top");
+    scrollbtn.style.display = "flex";
     if (e.target.value !== "") {
       setUser({ ...user, errorEmail: false })
     } else {
@@ -61,6 +64,8 @@ const Contact = () => {
     })
   }
   const _onBlurText = (e) => {
+    const scrollbtn = document.getElementById("scroll-to-top");
+    scrollbtn.style.display = "flex";
     if (e.target.value !== "") {
       setUser({ ...user, errorText: false })
     } else {
@@ -103,13 +108,12 @@ const Contact = () => {
         headers: {
           'Content-Type': 'text/plain;charset=utf-8',
         }
-      }).
-        then(async (response) => {
-          // console.log(response);       
-          if (response.data.code === 1) {
-            setSending(2);
-          }
-        })
+      }).then(async (response) => {
+        // console.log(response);       
+        if (response.data.code === 1) {
+          setSending(2);
+        }
+      })
         .catch(err => {
           console.log(err);
         });
@@ -119,11 +123,23 @@ const Contact = () => {
     }
   }
 
+
+  const onFocusInput = () => {
+    const scrollbtn = document.getElementById("scroll-to-top");
+    scrollbtn.style.display = "none";
+  }
+
   // console.log('contact-user', user, errorMsg)
 
   return (
-    <ColLeft className="cv-contact" id="cv-contact">
+    <ColLeft className="cv-contact" style={{
+      paddingTop: path === "" ? 60 : 0
+    }}>
+      {path === "" &&
+        <div div className="part-skill">Contact</div>
+      }
       <RowCenter className="contact-body">
+
         <ColCenter className="contact-form-group">
           {/* Form */}
           <form className="contact-form">
@@ -135,20 +151,23 @@ const Contact = () => {
               <input className="contact-form-inputGroup-input"
                 placeholder="Type your Name here"
                 value={user.name}
-                style={{ border: user.errorName ? "0.25px solid #EE5007" : 'none' }}
+                // style={{ borderBottom: user.errorName ? "0.25px solid #EE5007" : 'none' }}
+                onFocus={() => onFocusInput()}
                 onBlur={(e) => _onBlurUserName(e)}
                 onChange={(e) => _onChangeUserName(e)} />
               <label className="contact-form-inputGroup-label">Your email</label>
               <input className="contact-form-inputGroup-input"
                 placeholder="Type your email here"
                 value={user.email}
-                style={{ border: user.errorEmail ? "0.25px solid #EE5007" : 'none' }}
+                // style={{ borderBottom: user.errorEmail ? "0.25px solid #EE5007" : 'none' }}
+                onFocus={() => onFocusInput()}
                 onBlur={(e) => _onBlurEmail(e)}
                 onChange={(e) => _onChangeEmail(e)} />
               <label className="contact-form-inputGroup-label">Message</label>
               <textarea className="contact-form-inputGroup-textArea" rows={10} cols={5}
                 value={user.text}
-                style={{ border: user.errorText ? "0.25px solid #EE5007" : 'none' }}
+                // style={{ borderBottom: user.errorText ? "0.25px solid #EE5007" : 'none' }}
+                onFocus={() => onFocusInput()}
                 onBlur={(e) => _onBlurText(e)}
                 onChange={(e) => _onChangeText(e)}
                 minLength={10}

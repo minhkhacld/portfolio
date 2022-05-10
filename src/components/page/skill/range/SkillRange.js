@@ -5,7 +5,6 @@ import './SkillRange.css';
 
 
 const SkillRange = () => {
-
     const animation_Fe = keyframes`
     from{width:0%}
     to{width:70%}
@@ -52,19 +51,22 @@ const SkillRange = () => {
                 </ColLeft>
             </ColCenter>
             <div className="skill-experience">
-                <ColLeft className="exp-job">
+                <Col className="exp-job">
                     <RowLeft className="exp-title">Software Developer</RowLeft>
-                    <RowLeft className="exp-company">ABC EF</RowLeft>
-                    <RowLeft className="exp-time">2021-2022</RowLeft>
-                    <p className="exp-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</p>
-                </ColLeft>
-                <ColLeft className="exp-job">
-                    <RowLeft className="exp-title">Software Developer</RowLeft>
-                    <RowLeft className="exp-company">ABC EF</RowLeft>
-                    <RowLeft className="exp-time">2021-2022</RowLeft>
-                    <p className="exp-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</p>
-                </ColLeft>
-
+                    <RowLeft className="exp-company">Bodynits Tien Giang</RowLeft>
+                    <RowLeft className="exp-time">2021-Now</RowLeft>
+                    <p className="exp-description">Working as a Front End developer, built and deploy the dynamic web applications for supporting production. Maintain and continous improve the apps base on production need.</p>
+                </Col>
+                <Col className="exp-job">
+                    <RowLeft className="exp-title">Industrial Engineer</RowLeft>
+                    <RowLeft className="exp-company">Hansae TG - Premier Global VN - Techtronic Industry</RowLeft>
+                    <RowLeft className="exp-time">2015-2021</RowLeft>
+                    <p className="exp-description">Run engineering build & pilot production to build new samples. Define manpower, output and ST BOM of new products.
+                        ,Create Work instruction, Layout, Equipment arrangement, Work flow for Mass production, train production team how to build product, control WIP.
+                        ,Execute time study & improve LOB for production line, continuously do improvement projects to increase efficiency & save the cost (reduce material, optimize production flow, so on).
+                        .Find root causes out to solve daily production problems with Quality team/Production Supervisors, work with Mechanical team to define and improve the robust jigs & fixture complying with Poka-Yoke method.
+                        With ambitious to improve production processes. I have learned programming and started to build small projects during this period time to support production such as: Scan machine QR code, Production output tracking, Change over tracking app...</p>
+                </Col>
             </div>
         </Col>
     )

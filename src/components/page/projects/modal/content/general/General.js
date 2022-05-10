@@ -32,9 +32,12 @@ const General = () => {
                 <strong className="general-row-cap">Project type:</strong>
                 <span className="general-row-content">{store.app.projectType}</span>
             </div>
-            <div className="general-row">
-                <a href={store.app.link} className="general-row-link">View on Play Store</a>
-            </div>
+            {
+                store.app.link !== "" &&
+                <div className="general-row">
+                    <a href={store.app.link} className="general-row-link">View on Play Store</a>
+                </div>
+            }
         </div>
     )
 }
