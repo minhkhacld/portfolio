@@ -15,6 +15,8 @@ const ProjectMobileModal = () => {
 
     const closeModal = () => {
         dispatch(setModal({ isModalOpen: false, app: {} }));
+        const scrollbtn = document.getElementById("scroll-to-top");
+        scrollbtn.style.display = "flex";
     }
 
     return (

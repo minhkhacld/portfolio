@@ -6,7 +6,6 @@ import RotateInstruction from '../../../kits/animated/focus';
 import useScreenSize from '../../../kits/media/Device.Measuring';
 
 
-
 function Word({ children, ...props }) {
     const color = new THREE.Color()
     const fontProps = { fontSize: 2.5, letterSpacing: -0.05, lineHeight: 1, 'material-toneMapped': true }
@@ -48,7 +47,7 @@ function Cloud({ count, radius }) {
         const spherical = new THREE.Spherical()
         const phiSpan = Math.PI / (count + 10)
         const thetaSpan = (Math.PI * 2) / count
-        const data = ["HTML", "CSS", "Javascript", "ReactJS", "React Native", "MYSQL", "MSSQL", "NodeJS", "Figma", "JSON", "npm", "Git", "GitHub", "ES5/ES6", "Firebase"];
+        const data = ["HTML", "CSS", "Javascript", "ReactJS", "React Native", "MYSQL", "MSSQL", "NodeJS", "REST API", "Figma", "JSON", "npm", "Git", "GitHub", "ES5/ES6", "Firebase"];
         data.forEach((v, index) => {
             temp.push([new THREE.Vector3().setFromSpherical(spherical.set(radius, phiSpan * index, thetaSpan * index)), v])
         })

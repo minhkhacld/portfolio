@@ -9,6 +9,8 @@ const Child = ({ app }) => {
 
     const _onOpenModal = (app) => {
         dispatch(setModal({ isModalOpen: true, app: app }));
+        const scrollbtn = document.getElementById("scroll-to-top");
+        scrollbtn.style.display = "none";
     }
 
     return (

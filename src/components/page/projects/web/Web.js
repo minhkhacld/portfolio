@@ -8,8 +8,8 @@ const Web = () => {
     const data = [
         {
             appName: 'Sewing Line Layout',
-            des: `The wep application that allow user create dynamic Sewing Line Layout for mass prodution. The app aim to help user make layout more faster, easier and accuracy and then use it as a key tool for line balancing improvement. The app is also help manager to manage the work by providing data visualization and so all...`,
-            details: `ReactJs, DevExtreme,Redux`,
+            des: `The web application that allow user create dynamic Sewing Line Layout for mass prodution. The app aim to help user make layout more faster, easier and accuracy and then use it as a key tool for line balancing improvement. The app is also help manager to manage the work by providing data visualization and so all...`,
+            details: `ReactJs, DevExtreme, Redux`,
             link: "",
             picture: [
                 require('../../../../assets/picture/project/webapp/layout/dashboard.PNG'),

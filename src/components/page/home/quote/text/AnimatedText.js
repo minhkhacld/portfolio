@@ -2,12 +2,13 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import useScreenSize from '../../../../kits/media/Device.Measuring';
 
-const AnimatedText = ({ text, delay }) => {
+const AnimatedText = ({ text }) => {
 
     const screenSize = useScreenSize();
+    const rendertext = text.split("");
 
     const animation = keyframes`
-   from { opacity: 0; transform: translateY(-200px) translateX(-200px)  translateX(-200px) skewX(10deg) skewY(10deg) rotateZ(100deg); filter: blur(10px); }
+   from { opacity: 0; transform: translateY(-200px)  skewX(10deg) skewY(10deg) rotateZ(100deg); filter: blur(10px); }
    to { opacity: 1; transform: translateY(0px) skewX(0deg) skewY(0deg) rotateZ(0deg); filter: blur(0px); }
     `;
     const Wraper = styled.span`
@@ -28,32 +29,35 @@ const AnimatedText = ({ text, delay }) => {
         z-index:1;
     }    
     `
-    const rendertext = text.split("");
 
-    const _onHoverTextAnimated = (index) => {
-        const text = document.getElementsByClassName(`animted-text-${index}`)[0];
+    const _onHoverTextAnimated = (index, item) => {
+        const text = document.getElementById(`animted-text-${index}-${item}`);
         text.style.color = 'red';
     }
 
-    const _onLeaveText = (index) => {
-        const text = document.getElementsByClassName(`animted-text-${index}`)[0];
+    const _onLeaveText = (index, item) => {
+        const text = document.getElementById(`animted-text-${index}-${item}`);
         text.style.color = 'var(--lightBlue)';
     }
+
 
     return (
         <Wraper style={{ marginBottom: '30px' }}>
             {rendertext.map((item, index) => {
                 return (
                     <span key={index}
-                        className={`animted-text-${index}`}
-                        onMouseOver={() => _onHoverTextAnimated(index)} onMouseLeave={() => _onLeaveText(index)}
+                        id={`animted-text-${index}-${item}`}
+                        className="animated-text-span"
+                        onMouseOver={() => _onHoverTextAnimated(index, item)} onMouseLeave={() => _onLeaveText(index, item)}
                         style={{
-                            marginLeft: rendertext[index] === " " ? 12 : 0
+                            marginLeft: rendertext[index] === " " ? 12 : 0,
                         }}>{
                             item !== "K" ? item :
-                                <img src={require('../../../../../assets/picture/smallLogo.png')} alt="logo" style={{
-                                    height: screenSize.isXSmall || screenSize.isSmall ? 43 : 60
-                                }} />
+                                <img
+                                    className="animated-text-logo"
+                                    src={require('../../../../../assets/picture/smallLogo.png')} alt="logo" style={{
+                                        height: screenSize.isXSmall || screenSize.isSmall ? 43 : 60,
+                                    }} />
                         }</span>
                 )
             })}

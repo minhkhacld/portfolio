@@ -25,9 +25,9 @@ const HomeQuote = () => {
             <RotateFrame from={0} to={360} />
             <RotateFrame from={5} to={365} />
             <RotateFrame from={10} to={370} />
-            <AnimatedText text={text1Str} delay={0} />
-            <AnimatedText text={text2Str} delay={0.2 * text2Str.trim().split("").length} />
-            <AnimatedText text={text3Str} delay={0.2 * text3Str.trim().split("").length} />
+            <AnimatedText text={text1Str} />
+            <AnimatedText text={text2Str} />
+            <AnimatedText text={text3Str} />
             <ColCenter onClick={() => _onGoToContact()} className="home-quote-link">Contact me</ColCenter>
         </Col>
     )

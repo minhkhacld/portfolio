@@ -8,9 +8,9 @@ const Mobile = () => {
     const data = [
         {
             appName: 'Học Excel',
-            des: `Học Excel is mobile application that provide for Vietnamese people the easy way to learn Excel. The app includes various lession such as: functions, chart, formating, data import and export, useful shortcuts,VBA...
-            The app has also incldues youtube video learning courses that has made and published by me.`,
-            details: `React native, Firebase, Youtube API`,
+            des: `Học Excel is mobile application that provide for Vietnamese people the easy way to learn Excel. The app includes various lession such as: functions, charts, formating, data import and export, useful shortcuts, VBA...
+            The app has also incldues youtube video learning courses which has created and published by me.`,
+            details: `React native, Redux, Firebase, Youtube API`,
             link: "https://play.google.com/store/apps/details?id=com.hocexcel",
             picture: [
                 require('../../../../assets/picture/project/hocexcel/feature.png'),
@@ -26,10 +26,10 @@ const Mobile = () => {
         },
         {
             appName: 'Scan To Google Sheets',
-            des: `Scan To Google Sheets was made to provide people who aim to use Google Sheets as tool for Inventory Management or Attendance tracking. The app allow user to generate, scan and send QR, Barcode with additional information to their own google sheets directly.
+            des: `Scan To Google Sheets was made to provide people who aim to use Google Sheets as tool for Inventory Management and Attendance tracking. The app allow user to generate, scan and send QR, Barcode with additional information to their own google sheets directly.
             The app has provide two difference versions. User can decide either to use Standard version or Premium version base on the need.
             `,
-            details: `React native, Firebase, Google Sheets, Google App script`,
+            details: `React native, Redux, Firebase, Google Sheets, Google App script`,
             link: "https://play.google.com/store/apps/details?id=com.scantogooglesheets",
             picture: [
                 require('../../../../assets/picture/project/stggs/feature.png'),
@@ -45,7 +45,7 @@ const Mobile = () => {
         {
             appName: 'Play and Grow Animal',
             des: `Play and Grow Animal is the funny app and it was made for kids only. The app help kids learn the basic about sixty common animals by providing the knowleadge and funny game with attractive animations and sounds.`,
-            details: `React native, Firebase`,
+            details: `React native, Redux, Firebase`,
             link: "https://play.google.com/store/apps/details?id=com.playandgrowanimal",
             picture: [
                 require('../../../../assets/picture/project/paga/feature.png'),
@@ -60,8 +60,8 @@ const Mobile = () => {
         },
         {
             appName: 'Stopwatch To Google Sheets',
-            des: 'The app has made to provide user the orther way to measure and store timming data. If you want something that can help you to keep track your timming data but not only in the app local storage. Stopwatch To Google Sheet is a great app for you.',
-            details: `React native, Firebase, Google Sheets, Google App script`,
+            des: 'Stopwatch To Google Sheet is a great app for people who want to store timming data not only on the phone but also to cloud storage, especially in Google sheets. The app has made to provide users the simple way to measure and store timming data with just a few step to set up.',
+            details: `React native, Redux, Firebase, Google Sheets, Google App script`,
             link: "https://play.google.com/store/apps/details?id=com.stopwatchtogooglesheets",
             picture:
                 [

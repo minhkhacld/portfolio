@@ -55,7 +55,7 @@ const SkillRange = () => {
                     <RowLeft className="exp-title">Software Developer</RowLeft>
                     <RowLeft className="exp-company">Bodynits Tien Giang</RowLeft>
                     <RowLeft className="exp-time">2021-Now</RowLeft>
-                    <p className="exp-description">Working as a Front End developer, built and deploy the dynamic web applications for supporting production. Maintain and continous improve the apps base on production need.</p>
+                    <p className="exp-description">Working as a Front End developer, built and deploy the dynamic web applications to control and improve manufacturing processes. Maintain and continous improve the applications base on the need.</p>
                 </Col>
                 <Col className="exp-job">
                     <RowLeft className="exp-title">Industrial Engineer</RowLeft>
@@ -63,9 +63,8 @@ const SkillRange = () => {
                     <RowLeft className="exp-time">2015-2021</RowLeft>
                     <p className="exp-description">Run engineering build & pilot production to build new samples. Define manpower, output and ST BOM of new products.
                         ,Create Work instruction, Layout, Equipment arrangement, Work flow for Mass production, train production team how to build product, control WIP.
-                        ,Execute time study & improve LOB for production line, continuously do improvement projects to increase efficiency & save the cost (reduce material, optimize production flow, so on).
-                        .Find root causes out to solve daily production problems with Quality team/Production Supervisors, work with Mechanical team to define and improve the robust jigs & fixture complying with Poka-Yoke method.
-                        With ambitious to improve production processes. I have learned programming and started to build small projects during this period time to support production such as: Scan machine QR code, Production output tracking, Change over tracking app...</p>
+                        ,Execute time study & improve LOB for production line, continuously do improvement projects to increase efficiency & save the cost.
+                        With  <strong style={{ color: 'var(--lightBlue)' }}>ambitious</strong> to improve manufacturing processes. I have <strong style={{ color: 'var(--lightBlue)' }}>learned programming</strong> and <strong style={{ color: 'var(--lightBlue)' }}>started to build</strong> small projects during this period time to support production such as: Scan machine QR code, Production output tracking, Change over tracking app...</p>
                 </Col>
             </div>
         </Col>

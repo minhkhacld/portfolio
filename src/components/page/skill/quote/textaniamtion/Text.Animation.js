@@ -8,7 +8,7 @@ export default function TextAnimation() {
 50% { opacity: 1; transform: translateY(0px) skewX(0deg) skewY(0deg) rotateZ(0deg); filter: blur(0px); }
 100% { opacity: 1; transform: translateY(0px) skewX(0deg) skewY(0deg) rotateZ(0deg); filter: blur(0px); }
 `;
-    const quote = `In my career path. I have been working in both manuafacturing processes and software development. I am interested in projects that related to improve manufacturing processes.
+    const quote = `In my career path. I have been working in both manuafacturing process and software development. I have a strong interesting in web development which related to improve manufacturing processes.
      `
     const reactArray = quote.split(" ");
     const Wrapper = styled.span`
