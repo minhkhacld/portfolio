@@ -4,7 +4,11 @@
   background-color: rgba(53, 53, 53, 0.625);
   position: fixed;
   z-index: 100000;
-  top: 0 !important;
+  top: 0px !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .modal-project-mobile {
@@ -15,6 +19,7 @@
   border-radius: 0.5rem;
   min-height: 500px;
   min-width: 400px;
+  max-height: 800px;
   margin-left: 5%;
   margin-right: 5%;
 }
@@ -65,7 +70,7 @@
   align-items: center;
   overflow-y: scroll;
   margin-bottom: 1%;
-  padding-bottom: .5rem;
+  padding-bottom: 0.5rem;
   overflow-x: hidden;
 }
 
@@ -83,7 +88,11 @@
   align-items: center;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1000px) {
+  .modal-project-mobile {
+    position: fixed;
+  }
+
   .modal-content {
     display: flex;
     flex-direction: column;

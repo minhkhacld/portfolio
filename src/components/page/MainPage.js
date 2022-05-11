@@ -10,12 +10,14 @@ import Home from './home/Home';
 import Main from './main/Main';
 import './MainPage.css';
 import NavBar from './navBar/NavBar';
+import ProjectMobileModal from './projects/modal/ProjectMobile.Modal';
 import Projects from './projects/Projects';
 import Skill from './skill/Skill';
-
+import { useSelector } from 'react-redux';
 
 const MainPage = () => {
     const screenSize = useScreenSize();
+    const store = useSelector(store => store.Reducer);
 
     window.addEventListener('load', function () {
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -35,6 +37,9 @@ const MainPage = () => {
                 alpha={0.5}
                 level={6}
             />
+            {store.isModalOpen &&
+                <ProjectMobileModal />
+            }
             {
                 screenSize.isXSmall &&
                 <ScrollToTop />

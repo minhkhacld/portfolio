@@ -1,17 +1,12 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 import Contact from '../contact/Contact';
 import Home from '../home/Home';
-import ProjectMobileModal from '../projects/modal/ProjectMobile.Modal';
 import Projects from '../projects/Projects';
 import Skill from '../skill/Skill';
 import './Main.css';
-import { useLocation } from 'react-router-dom';
 
 const Main = () => {
-    const store = useSelector(store => store.Reducer);
-    const location = useLocation();
-    const path = location.pathname.split('/');
 
     window.addEventListener("scroll", () => {
         const home = document.getElementById("home-section");
@@ -72,10 +67,6 @@ const Main = () => {
                 {/* <div className="part-skill">Contact</div> */}
                 <Contact />
             </div>
-
-            {store.isModalOpen && path[path.length - 1] === "profilo" &&
-                <ProjectMobileModal />
-            }
         </div>
 
 

@@ -1,16 +1,12 @@
-import React from 'react'
-import './Projects.css';
-import Mobile from './mobile/Mobile';
-import Web from './web/Web';
-import ProjectMobileModal from './modal/ProjectMobile.Modal';
-import { useSelector } from 'react-redux';
+import React from 'react';
 import { useLocation } from 'react-router-dom';
+import Mobile from './mobile/Mobile';
+import './Projects.css';
+import Web from './web/Web';
 
 const Projects = () => {
     const location = useLocation();
     const path = location.pathname.split('/');
-    const store = useSelector(store => store.Reducer);
-
     return (
         <div className="cv-projects" style={{
             paddingTop: path[path.length - 1] === "profilo" ? 60 : 0
@@ -19,10 +15,7 @@ const Projects = () => {
                 <div div className="part-skill">Projects</div>
             }
             <Mobile />
-            <Web />
-            {store.isModalOpen && path[path.length - 1] === "projects" &&
-                <ProjectMobileModal />
-            }
+            <Web />     
 
         </div>
     )
