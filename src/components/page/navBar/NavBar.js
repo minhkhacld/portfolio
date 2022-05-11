@@ -35,7 +35,7 @@ const NavBar = () => {
     const splitLocation = pathname.split("/");
 
     const _onSwitchRoute = (item) => {
-        if (screenSize.isXSmall || screenSize.isSmall) {
+        if (screenSize.isXSmall) {
             setMenuOpen(false)
         }
         navBarArr.forEach(d => {
