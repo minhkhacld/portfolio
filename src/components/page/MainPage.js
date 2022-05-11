@@ -14,6 +14,9 @@ import ProjectMobileModal from './projects/modal/ProjectMobile.Modal';
 import Projects from './projects/Projects';
 import Skill from './skill/Skill';
 import { useSelector } from 'react-redux';
+import Modal from 'react-modal';
+
+Modal.setAppElement('#root');
 
 const MainPage = () => {
     const screenSize = useScreenSize();
