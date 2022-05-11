@@ -74,8 +74,7 @@ export const Col = (props) => {
         display: "flex",
         flexDirection: "column",
         alignItems: "flex-start",
-        justifyContent: "flex-start",
-        fontSize: "12px",
+        justifyContent: "flex-start", 
 
     }
     return (
@@ -89,8 +88,7 @@ export const ColLeft = (props) => {
         display: "flex",
         flexDirection: "column",
         alignItems: "flex-start",
-        justifyContent: "center",
-        fontSize: "12px",
+        justifyContent: "center",    
     }
     return (
         <div key={props.KEY} id={props.id} style={{ ...style, ...props.style ? props.style : {} }} onClick={props.onClick} onDoubleClick={props.onDoubleClick} className={props.className} onInput={props.onInput} contentEditable={props.contentEditable}>
@@ -103,8 +101,7 @@ export const ColRight = (props) => {
         display: "flex",
         flexDirection: "column",
         alignItems: "flex-end",
-        justifyContent: "center",
-        fontSize: "12px",
+        justifyContent: "center", 
     }
     return (
         <div key={props.KEY} id={props.id} style={{ ...style, ...props.style ? props.style : {} }} onClick={props.onClick} onDoubleClick={props.onDoubleClick} className={props.className}>
@@ -117,8 +114,7 @@ export const ColCenter = (props) => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        justifyContent: "center",
-        fontSize: "12px",
+        justifyContent: "center",     
     }
     return (
         <div key={props.KEY} id={props.id} style={{ ...style, ...props.style ? props.style : {} }} onClick={props.onClick} onMouseEnter={props.onMouseEnter} onMouseOver={props.onMouseOver} onMouseLeave={props.onMouseLeave} onDoubleClick={props.onDoubleClick} className={props.className}>
@@ -131,8 +127,7 @@ export const ColEvenly = (props) => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        justifyContent: "space-evenly",
-        fontSize: "12px",
+        justifyContent: "space-evenly",      
     }
     return (
         <div key={props.KEY} id={props.id} style={{ ...style, ...props.style ? props.style : {} }} onClick={props.onClick} onDoubleClick={props.onDoubleClick} className={props.className}>

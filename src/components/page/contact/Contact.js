@@ -4,7 +4,6 @@ import Sending from '../../kits/animated/sending';
 import { ColCenter, ColLeft, RowCenter } from '../../kits/stucture/component.stucture';
 import './Contact.css';
 import Footer from './footer/Footer';
-import Message from './message/Message';
 import { useLocation } from 'react-router-dom';
 
 const Contact = () => {
@@ -130,6 +129,8 @@ const Contact = () => {
   }
 
   // console.log('contact-user', user, errorMsg)
+  const string = "I'm interested in full time job opportunities, especially large projects. However if you have other request or question. Don't hesitate to contact me!"
+
 
   return (
     <ColLeft className="cv-contact" style={{
@@ -146,6 +147,7 @@ const Contact = () => {
             <ColCenter className="contact-form-title">
               <h4 className="contact-form-title-text">Leave message to me</h4>
             </ColCenter>
+            <ColLeft className="contact-string-msg">{string}</ColLeft>
             <ColCenter>
               <label className="contact-form-inputGroup-label">Your name</label>
               <input className="contact-form-inputGroup-input"
@@ -197,7 +199,7 @@ const Contact = () => {
         </ColCenter>
         {/* Right side */}
         <ColCenter className="contact-message">
-          <Message />
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15696.831225477945!2d106.10991672658137!3d10.405063581185795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310a9798fbd7cd25%3A0xb53c01a8018614b9!2sCai%20L%E1%BA%ADy%2C%20Tien%20Giang%2C%20Vietnam!5e0!3m2!1sen!2s!4v1652232080608!5m2!1sen!2s" className="cv-map" allowFullScreen="" loading="lazy"></iframe>
         </ColCenter>
       </RowCenter>
       <Footer />

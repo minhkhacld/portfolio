@@ -7,7 +7,12 @@ import './NavBar.css';
 // import styled, { keyframes } from 'styled-components';
 
 const NavBar = () => {
-
+    const navBarArr = [
+        { path: '/', pathname: "", text: "About", id: "nav-home", },
+        { path: '/skill', pathname: "skill", text: "My skill", id: "nav-skill", },
+        { path: '/projects', pathname: "projects", text: "Projects", id: "nav-projects", },
+        { path: '/contact', pathname: "contact", text: "Contact", id: "nav-contact", },
+    ]
     const screenSize = useScreenSize();
     const [menuOpen, setMenuOpen] = React.useState(screenSize.isXSmall ? false : true);
 
@@ -26,10 +31,18 @@ const NavBar = () => {
     //Javascript split method to get the name of the path in array
     const splitLocation = pathname.split("/");
 
-    const _onSwitchRoute = () => {
+    const _onSwitchRoute = (item) => {
         if (screenSize.isXSmall || screenSize.isSmall) {
             setMenuOpen(false)
         }
+        navBarArr.forEach(d => {
+            const navChild = document.getElementById(d.id);
+            if (d.id === item.id) {
+                navChild.style.color = 'var(--lightBlue)';
+            } else {
+                navChild.style.color = 'white';
+            }
+        })
     };
 
     const _onGoToFirstPage = () => {
@@ -37,20 +50,6 @@ const NavBar = () => {
         setMenuOpen(false)
     }
 
-    // const animationLogo = keyframes`    
-    // from {opacity:0.5;height:50%}
-    // to{opacity:1;height:90%}
-    // `
-    // const WrapperLogo = styled.div`
-    // width:100%;
-    // animation-name:${animationLogo};
-    // animation-duration:3s;
-    // animation-delay:0s;
-    // animation-timing-function:linear;
-    // animation-fill-mode: forwards;
-    // animation-iteration-count:infinite;
-    // animation-direction:alternate;
-    // `
     return (
         <div className="cv-nav-container">
 
@@ -58,16 +57,29 @@ const NavBar = () => {
                 <div className="cv-nav-left-menu">
                     <FaBars className="cv-nav-left-menu-icon" onClick={() => _onOpenMenu()} />
                 </div>
-                <div className="cv-nav-left-logo">               
-                        <img className="cv-nav-left-logo-picture" src={require('../../../assets/picture/logo.png')} alt={'Logo'}
-                            onClick={() => _onGoToFirstPage()}
-                        />               
+                <div className="cv-nav-left-logo">
+                    <img className="cv-nav-left-logo-picture" src={require('../../../assets/picture/logo.png')} alt={'Logo'}
+                        onClick={() => _onGoToFirstPage()}
+                    />
                 </div>
             </div>
 
             {menuOpen &&
                 <div className="cv-nav-right">
-                    <Link to='/' className={splitLocation[1] === "" ? "navbar-active-link" : "navbar-link"}
+                    {navBarArr.map((item, index) => {
+                        return (
+                            <Link to={item.path} className={splitLocation[1] === item.pathname ? "navbar-active-link" : "navbar-link"}
+                                onClick={() => _onSwitchRoute(item)}
+                                style={{ textDecoration: 'none' }}>
+                                <div className="nav-child-middle">
+                                    <ColLeft className={splitLocation[1] === item.pathname ? "navbar-active-link-text" : "navbar-link-text"} id={item.id}>
+                                        {item.text}
+                                    </ColLeft>
+                                </div>
+                            </Link>
+                        )
+                    })}
+                    {/* <Link to='/' className={splitLocation[1] === "" ? "navbar-active-link" : "navbar-link"}
                         onClick={() => _onSwitchRoute()}
                         style={{ textDecoration: 'none' }}>
                         <div className="nav-child-middle">
@@ -102,7 +114,7 @@ const NavBar = () => {
                                 Contact
                             </ColLeft>
                         </div>
-                    </Link>
+                    </Link> */}
                 </div>
             }
 
