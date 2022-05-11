@@ -1,10 +1,10 @@
 import axios from 'axios';
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import Sending from '../../kits/animated/sending';
 import { ColCenter, ColLeft, RowCenter } from '../../kits/stucture/component.stucture';
 import './Contact.css';
 import Footer from './footer/Footer';
-import { useLocation } from 'react-router-dom';
 
 const Contact = () => {
 
@@ -40,7 +40,6 @@ const Contact = () => {
       setUser({ ...user, errorName: true })
     }
   };
-
 
   const _onChangeEmail = (e) => {
     setUser({
@@ -87,10 +86,10 @@ const Contact = () => {
         sheetName: "Message from users",
         sheetUrl: process.env.REACT_APP_API_SHEETS,
         columns: [
-          {
-            title: "TimeStamp",
-            value: Date.now(),
-          },
+          // {
+          //   title: "TimeStamp",
+          //   value: moment().format("YYYY-MM-DD HH:mm:ss"),
+          // },
           {
             title: "Name",
             value: user.name,
