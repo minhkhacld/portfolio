@@ -7,15 +7,14 @@ import AnimatedText from './text/AnimatedText';
 const HomeQuote = () => {
     const navigate = useNavigate();
     const location = useLocation();
-    const path = location.pathname.split('/')[1];
+    const path = location.pathname.split('/');
     const _onGoToContact = () => {
-        if (path === "") {
+        if (path[path.length - 1] === "profilo") {
             document.getElementById("contact-section").scrollIntoView({ block: 'start', behavior: 'smooth' });
         } else {
             navigate("/contact");
         }
     }
-
 
     const text1Str = "Hi,";
     const text2Str = "I'm Kha,";

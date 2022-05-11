@@ -6,13 +6,12 @@ import { useLocation } from 'react-router-dom';
 
 export default function Skill() {
   const location = useLocation();
-  const path = location.pathname.split('/')[1];
+  const path = location.pathname.split('/');
 
   return (
     <div className="skill-container" >
-      
-       {path === "" &&
-      <div div className="part-skill">Skill</div>
+      {path[path.length - 1] === "profilo" &&
+        <div div className="part-skill">Skill</div>
       }
       <Quote />
       <SkillRange />

@@ -12,10 +12,10 @@ const Quote = () => {
 
     const navigate = useNavigate()
     const location = useLocation();
-    const path = location.pathname.split('/')[1];
+    const path = location.pathname.split('/');
 
     const _onGoToContact = () => {
-        if (path === "") {
+        if (path[path.length - 1] === "profilo") {
             document.getElementById("project-section").scrollIntoView({ block: 'start', behavior: 'smooth' });
         } else {
             navigate("/projects");

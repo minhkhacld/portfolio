@@ -5,9 +5,9 @@ import { FaSync } from 'react-icons/fa'
 const RotateInstruction = ({ screenSize }) => {
 
     const animation = keyframes`
-0% {width:150px}
-50% {width:180px}
-100% {width:150px}
+0% {width:180px}
+50% {width:200px}
+100% {width:180px}
 `
     const Wrapper = styled.div`
 height:30px;

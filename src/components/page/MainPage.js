@@ -40,13 +40,21 @@ const MainPage = () => {
                 <ScrollToTop />
             }
             <ColCenter className="cv-content-container">
-                <Routes>
+                {/* <Routes>
                     <Route path="/" element={<Main />} />
                     <Route path="/about" element={<Home />} />
                     <Route path="skill" element={<Skill />} />
                     <Route path="projects" element={<Projects />} />
                     <Route path="contact" element={<Contact />} />
                     <Route path="*" element={<Navigate to="/" />} />
+                </Routes> */}
+                <Routes>
+                    <Route path="/profilo" element={<Main />} />
+                    <Route path="/profilo/about" element={<Home />} />
+                    <Route path="/profilo/skill" element={<Skill />} />
+                    <Route path="/profilo/projects" element={<Projects />} />
+                    <Route path="/profilo/contact" element={<Contact />} />
+                    <Route path="*" element={<Navigate to="/profilo" />} />
                 </Routes>
             </ColCenter>
         </ColCenter>

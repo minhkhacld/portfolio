@@ -8,19 +8,19 @@ import { useLocation } from 'react-router-dom';
 
 const Projects = () => {
     const location = useLocation();
-    const path = location.pathname.split('/')[1];
-
+    const path = location.pathname.split('/');
     const store = useSelector(store => store.Reducer);
+
     return (
         <div className="cv-projects" style={{
-            paddingTop: path === "" ? 60 : 0
+            paddingTop: path[path.length - 1] === "profilo" ? 60 : 0
         }}>
-            {path === "" &&
+            {path[path.length - 1] === "profilo" &&
                 <div div className="part-skill">Projects</div>
             }
             <Mobile />
             <Web />
-            {store.isModalOpen && path === "projects" &&
+            {store.isModalOpen && path[path.length - 1] === "projects" &&
                 <ProjectMobileModal />
             }
 

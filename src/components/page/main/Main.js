@@ -11,7 +11,7 @@ import { useLocation } from 'react-router-dom';
 const Main = () => {
     const store = useSelector(store => store.Reducer);
     const location = useLocation();
-    const path = location.pathname.split('/')[1];
+    const path = location.pathname.split('/');
 
     window.addEventListener("scroll", () => {
         const home = document.getElementById("home-section");
@@ -73,7 +73,7 @@ const Main = () => {
                 <Contact />
             </div>
 
-            {store.isModalOpen && path === "" &&
+            {store.isModalOpen && path[path.length - 1] === "profilo" &&
                 <ProjectMobileModal />
             }
         </div>

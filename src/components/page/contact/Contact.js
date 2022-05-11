@@ -7,6 +7,8 @@ import Footer from './footer/Footer';
 import { useLocation } from 'react-router-dom';
 
 const Contact = () => {
+
+
   const [user, setUser] = React.useState({
     name: "",
     errorName: false,
@@ -19,7 +21,7 @@ const Contact = () => {
   const [errorMsg, setErrorMsg] = React.useState(false);
   const [sending, setSending] = React.useState(0);
   const location = useLocation();
-  const path = location.pathname.split('/')[1];
+  const path = location.pathname.split('/');
 
   //Function
   const _onChangeUserName = (e) => {
@@ -134,9 +136,9 @@ const Contact = () => {
 
   return (
     <ColLeft className="cv-contact" style={{
-      paddingTop: path === "" ? 60 : 0
+      paddingTop: path[path.length - 1] === "profilo" ? 60 : 0
     }}>
-      {path === "" &&
+      {path[path.length - 1] === "profilo" &&
         <div div className="part-skill">Contact</div>
       }
       <RowCenter className="contact-body">
