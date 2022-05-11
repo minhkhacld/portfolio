@@ -9,7 +9,11 @@ export default function Skill() {
   const path = location.pathname.split('/');
 
   return (
-    <div className="skill-container" >
+    <div className="skill-container"
+      style={{
+        paddingTop: path[path.length - 1] === "profilo" ? 60 : 0
+      }}
+    >
       {path[path.length - 1] === "profilo" &&
         <div div className="part-skill">Skill</div>
       }

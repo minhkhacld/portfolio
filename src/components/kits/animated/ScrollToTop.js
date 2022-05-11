@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaArrowAltCircleUp } from 'react-icons/fa'
+import { FaArrowAltCircleUp } from 'react-icons/fa';
 
 const ScrollToTop = () => {
     const styles = {
@@ -17,7 +17,6 @@ const ScrollToTop = () => {
             justifyContent: 'center',
             alignItems: 'center',
             cursor: 'pointer',
-
         },
         icon: {
             color: 'var(--lightBlue)',

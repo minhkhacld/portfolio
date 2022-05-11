@@ -1,5 +1,4 @@
 import React from 'react';
-import './Web.css';
 import Child from '../mobile/child/Child';
 import { FaDesktop } from 'react-icons/fa';
 
@@ -24,7 +23,7 @@ const Web = () => {
         },
         {
             appName: 'Support Center',
-            des: `In mass production, we always need every thing go fast and continuously. Support Center was built to provide a simple way to send and respone the request among each the partment in the company. At Support Center, every can be measured, from the time the requester send a request asking for helping to the time the solver react and solve that request. All will be collected and presentated`,
+            des: `In mass production, we always need every thing go fast and continuously. Support Center was built to provide a simple way to send and respone the request among each department in the company. At Support Center, every can be measured, from the time the requester send a request asking for help to the time the solver react and solve that request. All of those activities will be collected and presentated`,
             details: `ReactJs, DevExtreme, Redux, Socket.IO`,
             link: "",
             picture: [

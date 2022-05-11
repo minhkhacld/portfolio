@@ -15,19 +15,28 @@ import Projects from './projects/Projects';
 import Skill from './skill/Skill';
 import { useSelector } from 'react-redux';
 import Modal from 'react-modal';
+import ScrollToTopBig from '../kits/animated/ScrollToTopBig';
 
 Modal.setAppElement('#root');
 
 const MainPage = () => {
     const screenSize = useScreenSize();
     const store = useSelector(store => store.Reducer);
-
+    window.onscroll = function () {
+        if ((window.innerHeight + window.scrollY + 1000) >= document.body.scrollHeight) {
+            // you're at the bottom of the page
+            document.getElementById("scroll-to-top-big-frame").style.display = "flex";
+        } else {
+            document.getElementById("scroll-to-top-big-frame").style.display = "none";
+        }
+    };
     window.addEventListener('load', function () {
         window.scrollTo({ top: 0, behavior: 'smooth' });
-    })
+    });
+
 
     return (
-        <ColCenter className="cv-container">
+        <ColCenter className="cv-container" id="cv-container">
             <NavBar />
             <Sound />
             <MouseParticles
@@ -46,6 +55,11 @@ const MainPage = () => {
             {
                 screenSize.isXSmall &&
                 <ScrollToTop />
+            }
+            {
+                !screenSize.isXSmall &&
+                <ScrollToTopBig />
+
             }
             <ColCenter className="cv-content-container">
                 {/* <Routes>

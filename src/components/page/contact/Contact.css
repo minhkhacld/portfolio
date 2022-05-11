@@ -122,10 +122,9 @@
   color: var(--lightBlue);
 }
 
-.contact-form-inputGroup-textArea:hover {
+.contact-form-inputGroup-textArea:focus {
   border-bottom: 1px solid var(--lightBlue);
 }
-
 .contact-form-inputGroup {
   width: 100%;
   height: auto;

@@ -26,6 +26,15 @@
   justify-content: center;
   align-items: center;
 }
+.mobile-child:hover {
+  overflow: hidden;
+}
+
+.mobile-child:hover .mobile-child-image {
+  transform: scale(1.2);
+  transition: all 0.5s;
+}
+
 .mobile-child-circle:hover {
   background-color: var(--lightYellow);
 }
@@ -43,7 +52,6 @@
   min-height: 150px;
   object-fit: cover;
 }
-
 
 @media only screen and (max-width: 600px) {
   .mobile-child {

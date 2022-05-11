@@ -4,6 +4,10 @@
   padding-left: 8px;
 }
 
+.skill-round-cloud {
+  background-image: linear-gradient(to left, #743ad5, #d53a9d);
+}
+
 @media only screen and (max-width: 600px) {
   #quote-title {
     font-size: 50px;
