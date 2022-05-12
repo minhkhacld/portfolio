@@ -23,11 +23,11 @@ const Quote = () => {
     };
 
     const animationCloud = keyframes`
-   0% {border-radius:64% 36% 21% 79% / 70% 42% 58% 30% ;opacity:0.3 ;background-image: linear-gradient(to left, #743ad5, #d53a9d);}
-    25% {border-radius:34% 66% 21% 79% / 32% 42% 58% 68%  ;opacity:0.6;background-image:linear-gradient(160deg, #0093E9 0%, #80D0C7 100%); }
-    50% {border-radius:26% 74% 73% 27% / 79% 42% 58% 21%  ;opacity:1;background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%); }
-    75% {border-radius:66% 34% 23% 77% / 54% 70% 30% 46%   ;opacity:0.9;background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);  }
-    100% {border-radius:48% 52% 38% 62% / 36% 22% 78% 64%  ;opacity:0.7;background-image:linear-gradient(to left, #B4FF9F, #FFEF82) }    
+   0% {border-radius:64% 36% 21% 79% / 70% 42% 58% 30% ;opacity:0.3 ;background-image: linear-gradient(to left, #743ad5, #d53a9d);transform:rotate(360deg) skewX(15deg) skewY(15deg)}
+    25% {border-radius:34% 66% 21% 79% / 32% 42% 58% 68%  ;opacity:0.6;background-image:linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);transform:rotate(270deg) skewX(15deg) skewY(15deg) }
+    50% {border-radius:26% 74% 73% 27% / 79% 42% 58% 21%  ;opacity:1;background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%); ;transform:rotate(180deg) skewX(10deg) skewY(10deg)}
+    75% {border-radius:66% 34% 23% 77% / 54% 70% 30% 46%   ;opacity:0.9;background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%); ;transform:rotate(90deg) skewX(5deg) skewY(5deg) }
+    100% {border-radius:48% 52% 38% 62% / 36% 22% 78% 64%  ;opacity:0.7;background-image:linear-gradient(to left, #B4FF9F, #FFEF82);transform:rotate(0deg) skewX(0deg) skewY(0deg) }    
     `
     const CloudWrapper = styled.div`
 left:20%;
@@ -35,14 +35,13 @@ top:20%;
 width:60%;
 z-index:-1;
 position:absolute;
-height:60%;
+height:300px;
 animation-name:${animationCloud};
-animation-duration:10s;
+animation-duration:30s;
 animation-delay:0s;
 animation-timing-function:linear;
 animation-fill-mode: forwards;
 animation-iteration-count:infinite;
-animation-direction:alternate;
 box-shadow: box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;;
 .quote-textBlock{
     opacity:1;

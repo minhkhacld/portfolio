@@ -20,6 +20,7 @@ display:flex;
 flex-direction:row;
 justify-content:center;
 align-items:center;
+font-size:12px;
 div{
     color:var(--lightBlue);
     margin-left:5px;
