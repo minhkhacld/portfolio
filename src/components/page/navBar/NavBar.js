@@ -74,6 +74,7 @@ const NavBar = () => {
                     {navBarArr.map((item, index) => {
                         return (
                             <Link key={index} to={item.path} className={splitLocation[splitLocation.length - 1] === item.pathname ? "navbar-active-link" : "navbar-link"}
+                                id={`${item.id}-${index}`}
                                 onClick={() => _onSwitchRoute(item)}
                                 style={{ textDecoration: 'none' }}>
                                 <div className="nav-child-middle">

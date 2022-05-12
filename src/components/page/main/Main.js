@@ -15,6 +15,10 @@ const Main = () => {
         const skill = document.getElementById("skill-section");
         const project = document.getElementById("project-section");
         const contact = document.getElementById("contact-section");
+        const fHome = document.getElementById("nav-home-0");
+        const fSkill = document.getElementById("nav-skill-1");
+        const fProjects = document.getElementById("nav-projects-2");
+        const fContact = document.getElementById("nav-contact-3");
         const navHome = document.getElementById("nav-home");
         const navSkill = document.getElementById("nav-skill");
         const navProjects = document.getElementById("nav-projects");
@@ -26,23 +30,55 @@ const Main = () => {
         let contactCal = contact.offsetTop + contact.offsetHeight - 100;
 
         if (scrollY <= homeCal) {
+            fHome.classList.add("navbar-active-link");
+            fHome.classList.remove("navbar-link");
+            fSkill.classList.add("navbar-link");
+            fSkill.classList.remove("navbar-active-link");
+            fProjects.classList.add("navbar-link");
+            fProjects.classList.remove("navbar-active-link");
+            fContact.classList.add("navbar-link");
+            fContact.classList.remove("navbar-active-link");
             navHome.style.color = 'var(--lightBlue)';
             navSkill.style.color = 'white';
             navProjects.style.color = 'white';
             navContact.style.color = 'white';
         } else if (scrollY <= skillCal && scrollY > homeCal) {
+            fHome.classList.add("navbar-link");
+            fHome.classList.remove("navbar-active-link");
+            fSkill.classList.add("navbar-active-link");
+            fSkill.classList.remove("navbar-link");
+            fProjects.classList.add("navbar-link");
+            fProjects.classList.remove("navbar-active-link");
+            fContact.classList.add("navbar-link");
+            fContact.classList.remove("navbar-active-link");
             navHome.style.color = 'white';
             navSkill.style.color = 'var(--lightBlue)';
             navProjects.style.color = 'white';
             navContact.style.color = 'white';
         }
         else if (scrollY <= projectsCal && scrollY > skillCal) {
+            fHome.classList.add("navbar-link");
+            fHome.classList.remove("navbar-active-link");
+            fSkill.classList.add("navbar-link");
+            fSkill.classList.remove("navbar-active-link");
+            fProjects.classList.add("navbar-active-link");
+            fProjects.classList.remove("navbar-link");
+            fContact.classList.add("navbar-link");
+            fContact.classList.remove("navbar-active-link");
             navHome.style.color = 'white';
             navSkill.style.color = 'white';
             navProjects.style.color = 'var(--lightBlue)';
             navContact.style.color = 'white';
         }
         else if (scrollY <= contactCal && scrollY > projectsCal) {
+            fHome.classList.add("navbar-link");
+            fHome.classList.remove("navbar-active-link");
+            fSkill.classList.add("navbar-link");
+            fSkill.classList.remove("navbar-active-link");
+            fProjects.classList.add("navbar-link");
+            fProjects.classList.remove("navbar-active-link");
+            fContact.classList.add("navbar-active-link");
+            fContact.classList.remove("navbar-link");
             navHome.style.color = 'white';
             navSkill.style.color = 'white';
             navProjects.style.color = 'white';
