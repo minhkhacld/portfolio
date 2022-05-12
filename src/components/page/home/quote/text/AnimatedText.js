@@ -26,7 +26,7 @@ const AnimatedText = ({ text }) => {
         color:var(--lightBlue);
         font-size:${screenSize.isXSmall || screenSize.isSmall ? 50 : screenSize.isMedium ? 60 : 80}px;
         font-weight:bold;
-        z-index:1;
+        z-index:1;   
     }    
     `
 

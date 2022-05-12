@@ -60,6 +60,38 @@
   }
 }
 
+.helper {
+  position: absolute;
+  z-index: 100000;
+  left: 0;
+  bottom: 5%;
+  width: auto;
+  height: 40px;
+  color: var(--lightBlue);
+  animation-name: animationHelper;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+}
+
+@keyframes animationHelper {
+  from {
+    transform: translateY(-15px) rotate(-90deg);
+    transition: all 1s;
+  }
+  to {
+    transform: translateY(0px) rotate(-90deg);
+    transition: all 1s;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .cv-sound-popup {
     width: 50%;

@@ -4,8 +4,11 @@ import Home from '../home/Home';
 import Projects from '../projects/Projects';
 import Skill from '../skill/Skill';
 import './Main.css';
+import Helper from '../../kits/animated/Helper';
+import useScreenSize from '../../kits/media/Device.Measuring';
 
 const Main = () => {
+    const screenSize = useScreenSize();
 
     window.addEventListener("scroll", () => {
         const home = document.getElementById("home-section");
@@ -51,19 +54,19 @@ const Main = () => {
     return (
         <div className="cv-main">
             <div className="main-part" id="home-section">
-                {/* <div className="part-skill">About</div> */}
                 <Home />
+                {
+                    (screenSize.isMedium || screenSize.isLarge) &&
+                    <Helper />
+                }
             </div>
             <div className="main-part" id="skill-section">
-                {/* <div className="part-skill">Skill</div> */}
                 <Skill />
             </div>
             <div className="main-part" id="project-section">
-                {/* <div className="part-skill">Projects</div> */}
                 <Projects />
             </div>
             <div className="main-part" id="contact-section">
-                {/* <div className="part-skill">Contact</div> */}
                 <Contact />
             </div>
         </div>
