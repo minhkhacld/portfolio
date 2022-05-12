@@ -50,7 +50,9 @@ const NavBar = () => {
 
     const _onGoToFirstPage = () => {
         navigate('/');
-        setMenuOpen(false)
+        if (screenSize.isXSmall) {
+            setMenuOpen(false)
+        }
     }
 
     return (
