@@ -5,9 +5,9 @@ import { FaSync } from 'react-icons/fa'
 const RotateInstruction = ({ screenSize }) => {
 
     const animation = keyframes`
-0% {width:180px}
-50% {width:200px}
-100% {width:180px}
+0% {width:200px}
+50% {width:230px}
+100% {width:200px}
 `
     const Wrapper = styled.div`
 height:30px;
@@ -29,7 +29,7 @@ div{
     return (
         <Wrapper>
             <FaSync color="var(--lightBlue)" size={14} />
-            <div><span>Use</span><span> {screenSize.isXSmall || screenSize.isSmall ? "finger" : "mouse"}</span> <span>to rote me</span></div>
+            <div><span>Use</span><span> {screenSize.isXSmall || screenSize.isSmall ? "fingers" : "mouse"}</span> <span>to rote/zoom me</span></div>
         </Wrapper>
     )
 }
