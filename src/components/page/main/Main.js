@@ -38,10 +38,10 @@ const Main = () => {
             fProjects.classList.remove("navbar-active-link");
             fContact.classList.add("navbar-link");
             fContact.classList.remove("navbar-active-link");
-            navHome.style.color = 'var(--lightBlue)';
-            navSkill.style.color = 'white';
-            navProjects.style.color = 'white';
-            navContact.style.color = 'white';
+            navHome.style.fill = 'var(--lightBlue)';
+            navSkill.style.fill = 'white';
+            navProjects.style.fill = 'white';
+            navContact.style.fill = 'white';
         } else if (scrollY <= skillCal && scrollY > homeCal) {
             fHome.classList.add("navbar-link");
             fHome.classList.remove("navbar-active-link");
@@ -51,10 +51,10 @@ const Main = () => {
             fProjects.classList.remove("navbar-active-link");
             fContact.classList.add("navbar-link");
             fContact.classList.remove("navbar-active-link");
-            navHome.style.color = 'white';
-            navSkill.style.color = 'var(--lightBlue)';
-            navProjects.style.color = 'white';
-            navContact.style.color = 'white';
+            navHome.style.fill = 'white';
+            navSkill.style.fill = 'var(--lightBlue)';
+            navProjects.style.fill = 'white';
+            navContact.style.fill = 'white';
         }
         else if (scrollY <= projectsCal && scrollY > skillCal) {
             fHome.classList.add("navbar-link");
@@ -65,10 +65,10 @@ const Main = () => {
             fProjects.classList.remove("navbar-link");
             fContact.classList.add("navbar-link");
             fContact.classList.remove("navbar-active-link");
-            navHome.style.color = 'white';
-            navSkill.style.color = 'white';
-            navProjects.style.color = 'var(--lightBlue)';
-            navContact.style.color = 'white';
+            navHome.style.fill = 'white';
+            navSkill.style.fill = 'white';
+            navProjects.style.fill = 'var(--lightBlue)';
+            navContact.style.fill = 'white';
         }
         else if (scrollY <= contactCal && scrollY > projectsCal) {
             fHome.classList.add("navbar-link");
@@ -79,10 +79,10 @@ const Main = () => {
             fProjects.classList.remove("navbar-active-link");
             fContact.classList.add("navbar-active-link");
             fContact.classList.remove("navbar-link");
-            navHome.style.color = 'white';
-            navSkill.style.color = 'white';
-            navProjects.style.color = 'white';
-            navContact.style.color = 'var(--lightBlue)';
+            navHome.style.fill = 'white';
+            navSkill.style.fill = 'white';
+            navProjects.style.fill = 'white';
+            navContact.style.fill = 'var(--lightBlue)';
         }
     });
 

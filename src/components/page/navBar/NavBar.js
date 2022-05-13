@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useScreenSize from '../../kits/media/Device.Measuring';
 import { ColLeft } from '../../kits/stucture/component.stucture';
 import './NavBar.css';
+import styled from 'styled-components';
 
 const NavBar = () => {
     const navBarArr = [
@@ -53,7 +54,36 @@ const NavBar = () => {
         if (screenSize.isXSmall) {
             setMenuOpen(false)
         }
+    };
+
+
+    let WIDTH = window.screen.width * 0.8 / 2;
+    let HEIGHT = window.screen.height * 0.8 / 2;
+    let TOTAL_LENGTH = WIDTH * 2 + HEIGHT * 2;
+
+    const WrapperSVG = styled.svg`
+    .shape{
+        stroke-dasharray: ${WIDTH / 2} ${TOTAL_LENGTH};
+        stroke-dashoffset: -${WIDTH + HEIGHT / 2};
+        stroke-width: 3px;
+        fill: transparent;
+        stroke: var(--lightBlue);
+        border-bottom: 5px solid black;
+        transition: stroke-width .8s, stroke-dashoffset .8s, stroke-dasharray .8s;     
     }
+    &:hover .shape{
+        stroke-width: 3px;
+        stroke-dashoffset: 0;
+        stroke-dasharray: ${TOTAL_LENGTH};
+    }  
+    .navbar-active-link-text{
+        fill: var(--lightBlue);
+    }
+
+    .navbar-link-text{
+        fill: white;
+    }
+    `
 
     return (
         <div className="cv-nav-container">
@@ -77,11 +107,18 @@ const NavBar = () => {
                                 id={`${item.id}-${index}`}
                                 onClick={() => _onSwitchRoute(item)}
                                 style={{ textDecoration: 'none' }}>
-                                <div className="nav-child-middle">
+                                {/* <div className="nav-child-middle">
                                     <ColLeft className={splitLocation[splitLocation.length - 1] === item.pathname ? "navbar-active-link-text" : "navbar-link-text"} id={item.id}>
                                         {item.text}
                                     </ColLeft>
-                                </div>
+                                </div> */}
+
+                                <WrapperSVG height="100%" width="100%"  id={`${item.id}-${index}`}>
+                                    <rect className="shape" height="100%" width="100%" />
+                                    <text x="50%" y="50%"
+                                        className={splitLocation[splitLocation.length - 1] === item.pathname ? "navbar-active-link-text" : "navbar-link-text"} id={item.id}
+                                        dominantBaseline="middle" textAnchor="middle">{item.text}</text>
+                                </WrapperSVG>
                             </Link>
                         )
                     })}
