@@ -16,10 +16,14 @@ import Skill from './skill/Skill';
 import { useSelector } from 'react-redux';
 import Modal from 'react-modal';
 import ScrollToTopBig from '../kits/animated/ScrollToTopBig';
+import { useLocation } from 'react-router-dom';
 
 Modal.setAppElement('#root');
 
 const MainPage = () => {
+
+    const location = useLocation();
+    const path = location.pathname.split('/');
     const screenSize = useScreenSize();
     const store = useSelector(store => store.Reducer);
     window.onscroll = function () {
@@ -57,27 +61,27 @@ const MainPage = () => {
                 <ScrollToTop />
             }
             {
-                !screenSize.isXSmall &&
+                !screenSize.isXSmall && path[path.length - 1] === "" &&
                 <ScrollToTopBig />
 
             }
             <ColCenter className="cv-content-container">
-                {/* <Routes>
+                <Routes>
                     <Route path="/" element={<Main />} />
                     <Route path="/about" element={<Home />} />
                     <Route path="skill" element={<Skill />} />
                     <Route path="projects" element={<Projects />} />
                     <Route path="contact" element={<Contact />} />
                     <Route path="*" element={<Navigate to="/" />} />
-                </Routes> */}
-                <Routes>
+                </Routes>
+                {/* <Routes>
                     <Route path="/profilo" element={<Main />} />
                     <Route path="/profilo/about" element={<Home />} />
                     <Route path="/profilo/skill" element={<Skill />} />
                     <Route path="/profilo/projects" element={<Projects />} />
                     <Route path="/profilo/contact" element={<Contact />} />
                     <Route path="*" element={<Navigate to="/profilo" />} />
-                </Routes>
+                </Routes> */}
             </ColCenter>
         </ColCenter>
     );

@@ -9,7 +9,7 @@ const HomeQuote = () => {
     const location = useLocation();
     const path = location.pathname.split('/');
     const _onGoToContact = () => {
-        if (path[path.length - 1] === "profilo") {
+        if (path[path.length - 1] === "") {
             document.getElementById("contact-section").scrollIntoView({ block: 'start', behavior: 'smooth' });
         } else {
             navigate("/contact");

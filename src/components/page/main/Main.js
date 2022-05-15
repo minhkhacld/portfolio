@@ -7,6 +7,7 @@ import './Main.css';
 import Helper from '../../kits/animated/Helper';
 import useScreenSize from '../../kits/media/Device.Measuring';
 
+
 const Main = () => {
     const screenSize = useScreenSize();
 
@@ -92,7 +93,7 @@ const Main = () => {
             <div className="main-part" id="home-section">
                 <Home />
                 {
-                    (screenSize.isMedium || screenSize.isLarge) &&
+                    (screenSize.isMedium || screenSize.isLarge) && 
                     <Helper />
                 }
             </div>

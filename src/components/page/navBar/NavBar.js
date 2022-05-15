@@ -8,10 +8,10 @@ import styled from 'styled-components';
 
 const NavBar = () => {
     const navBarArr = [
-        { path: '/profilo', pathname: "profilo", text: "About", id: "nav-home", },
-        { path: '/profilo/skill', pathname: "skill", text: "My skill", id: "nav-skill", },
-        { path: '/profilo/projects', pathname: "projects", text: "Projects", id: "nav-projects", },
-        { path: '/profilo/contact', pathname: "contact", text: "Contact", id: "nav-contact", },
+        { path: '/', pathname: "", text: "About", id: "nav-home", },
+        { path: '/skill', pathname: "skill", text: "My skill", id: "nav-skill", },
+        { path: '/projects', pathname: "projects", text: "Projects", id: "nav-projects", },
+        { path: '/contact', pathname: "contact", text: "Contact", id: "nav-contact", },
     ]
     const screenSize = useScreenSize();
     const [menuOpen, setMenuOpen] = React.useState(false);
@@ -39,12 +39,15 @@ const NavBar = () => {
         if (screenSize.isXSmall) {
             setMenuOpen(false)
         }
-        navBarArr.forEach(d => {
+        navBarArr.forEach((d, index) => {
+            const frame = document.getElementById(`${item.id}-${index}`)
             const navChild = document.getElementById(d.id);
             if (d.id === item.id) {
                 navChild.style.color = 'var(--lightBlue)';
             } else {
                 navChild.style.color = 'white';
+                frame.style.backgroundColor = 'var(--black)';
+                frame.style.borderBottom = 'none';
             }
         })
     };
@@ -113,7 +116,7 @@ const NavBar = () => {
                                     </ColLeft>
                                 </div> */}
 
-                                <WrapperSVG height="100%" width="100%"  id={`${item.id}-${index}`}>
+                                <WrapperSVG height="100%" width="100%" id={`${item.id}-${index}`}>
                                     <rect className="shape" height="100%" width="100%" />
                                     <text x="50%" y="50%"
                                         className={splitLocation[splitLocation.length - 1] === item.pathname ? "navbar-active-link-text" : "navbar-link-text"} id={item.id}

@@ -11,10 +11,10 @@ export default function Skill() {
   return (
     <div className="skill-container"
       style={{
-        paddingTop: path[path.length - 1] === "profilo" ? 60 : 0
+        paddingTop: path[path.length - 1] === "" ? 60 : 0
       }}
     >
-      {path[path.length - 1] === "profilo" &&
+      {path[path.length - 1] === "" &&
         <div div className="part-skill">Skill</div>
       }
       <Quote />
