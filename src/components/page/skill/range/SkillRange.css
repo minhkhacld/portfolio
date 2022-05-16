@@ -40,7 +40,8 @@
   background-color: #2a2a2a;
   padding: 0.5rem;
   color: #fff;
-  height: fit-content;
+  /* height: fit-content; */
+  min-height:350px;
 }
 .exp-title {
   font-size: 20px;
