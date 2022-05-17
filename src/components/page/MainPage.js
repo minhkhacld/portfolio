@@ -17,6 +17,7 @@ import { useSelector } from 'react-redux';
 import Modal from 'react-modal';
 import ScrollToTopBig from '../kits/animated/ScrollToTopBig';
 import { useLocation } from 'react-router-dom';
+import Appads from '../page/appads/App-ads';
 
 Modal.setAppElement('#root');
 
@@ -72,6 +73,7 @@ const MainPage = () => {
                     <Route path="skill" element={<Skill />} />
                     <Route path="projects" element={<Projects />} />
                     <Route path="contact" element={<Contact />} />
+                    <Route path="/app-ads.txt" element={<Appads />} />
                     <Route path="*" element={<Navigate to="/" />} />
                 </Routes>
                 {/* <Routes>
