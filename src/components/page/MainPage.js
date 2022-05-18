@@ -18,10 +18,27 @@ import Modal from 'react-modal';
 import ScrollToTopBig from '../kits/animated/ScrollToTopBig';
 import { useLocation } from 'react-router-dom';
 import Appads from '../page/appads/App-ads';
+import PageTransition from '../kits/animated/PageTransition';
 
 Modal.setAppElement('#root');
 
+let delay = (function () {
+    let timer = 1100;
+    return function (callback, ms) {
+        clearTimeout(timer);
+        timer = setTimeout(callback, ms);
+    };
+})();
+
+
 const MainPage = () => {
+    const [loading, setLoading] = React.useState(false);
+    React.useEffect(() => {
+        setLoading(true);
+        delay(() => {
+            setLoading(false)
+        }, 1100);
+    }, [])
 
     const location = useLocation();
     const path = location.pathname.split('/');
@@ -41,51 +58,57 @@ const MainPage = () => {
 
 
     return (
-        <ColCenter className="cv-container" id="cv-container">
-            <NavBar />
-            <Sound />
-            <MouseParticles
-                g={2.3}
-                num={1}
-                radius={8}
-                life={1}
-                v={1.2}
-                color={['white', 'var(--lightBlue)', 'var(--organ)', 'var(--lightYellow)']}
-                alpha={0.5}
-                level={6}
-            />
-            {store.isModalOpen &&
-                <ProjectMobileModal />
-            }
-            {
-                screenSize.isXSmall &&
-                <ScrollToTop />
-            }
-            {
-                !screenSize.isXSmall && path[path.length - 1] === "" &&
-                <ScrollToTopBig />
+        <div style={{ width: '100%', height: '100%' }}>
+            {loading ?
+                <PageTransition /> :
+                <ColCenter className="cv-container" id="cv-container">
+                    <NavBar />
+                    <Sound />
+                    <MouseParticles
+                        g={2.3}
+                        num={1}
+                        radius={8}
+                        life={1}
+                        v={1.2}
+                        color={['white', 'var(--lightBlue)', 'var(--organ)', 'var(--lightYellow)']}
+                        alpha={0.5}
+                        level={6}
+                    />
+                    {store.isModalOpen &&
+                        <ProjectMobileModal />
+                    }
+                    {
+                        screenSize.isXSmall &&
+                        <ScrollToTop />
+                    }
+                    {
+                        !screenSize.isXSmall && path[path.length - 1] === "" &&
+                        <ScrollToTopBig />
 
+                    }
+                    <ColCenter className="cv-content-container">
+                        <Routes>
+                            <Route path="/" element={<Main />} />
+                            <Route path="/about" element={<Home />} />
+                            <Route path="skill" element={<Skill />} />
+                            <Route path="projects" element={<Projects />} />
+                            <Route path="contact" element={<Contact />} />
+                            <Route path="/app-ads.txt" element={<Appads />} />
+                            <Route path="*" element={<Navigate to="/" />} />
+                        </Routes>
+                        {/* <Routes>
+                        <Route path="/profilo" element={<Main />} />
+                        <Route path="/profilo/about" element={<Home />} />
+                        <Route path="/profilo/skill" element={<Skill />} />
+                        <Route path="/profilo/projects" element={<Projects />} />
+                        <Route path="/profilo/contact" element={<Contact />} />
+                        <Route path="*" element={<Navigate to="/profilo" />} />
+                    </Routes> */}
+                    </ColCenter>
+                </ColCenter>
             }
-            <ColCenter className="cv-content-container">
-                <Routes>
-                    <Route path="/" element={<Main />} />
-                    <Route path="/about" element={<Home />} />
-                    <Route path="skill" element={<Skill />} />
-                    <Route path="projects" element={<Projects />} />
-                    <Route path="contact" element={<Contact />} />
-                    <Route path="/app-ads.txt" element={<Appads />} />
-                    <Route path="*" element={<Navigate to="/" />} />
-                </Routes>
-                {/* <Routes>
-                    <Route path="/profilo" element={<Main />} />
-                    <Route path="/profilo/about" element={<Home />} />
-                    <Route path="/profilo/skill" element={<Skill />} />
-                    <Route path="/profilo/projects" element={<Projects />} />
-                    <Route path="/profilo/contact" element={<Contact />} />
-                    <Route path="*" element={<Navigate to="/profilo" />} />
-                </Routes> */}
-            </ColCenter>
-        </ColCenter>
+        </div>
+
     );
 };
 

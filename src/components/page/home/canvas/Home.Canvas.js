@@ -1,7 +1,7 @@
-import { Center, Stars, Text, TrackballControls } from '@react-three/drei'
-import { Canvas, useFrame } from '@react-three/fiber'
-import React, { useEffect, useMemo, useRef, useState } from 'react'
-import * as THREE from 'three'
+import { Center, ScreenQuad, Stars, Text, TrackballControls } from '@react-three/drei';
+import { Canvas, useFrame } from '@react-three/fiber';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
+import * as THREE from 'three';
 import RotateInstruction from '../../../kits/animated/focus';
 import useScreenSize from '../../../kits/media/Device.Measuring';
 
@@ -28,7 +28,7 @@ function Word({ children, ...props }) {
         // Make text face the camera
         ref.current.quaternion.copy(camera.quaternion)
         // Animate font color
-        ref.current.material.color.lerp(color.set(hovered ? '#08fdd8' : '#03f3cf'), 1)
+        ref.current.material.color.lerp(color.set(hovered ? '#08fdd8' : '#03f3cf'), 1);
     })
 
     return (
@@ -40,36 +40,37 @@ function Word({ children, ...props }) {
     )
 }
 
+
 function Cloud({ count, radius }) {
-    // Create a count x count random words with spherical distribution
     const words = useMemo(() => {
         const temp = []
         const spherical = new THREE.Spherical()
-        const phiSpan = Math.PI / (count + 10)
-        const thetaSpan = (Math.PI * 2) / count
+        const phiSpan = Math.PI / (count + 10);
+        const thetaSpan = (Math.PI * 2) / count;
         const data = ["HTML", "CSS", "Javascript", "ReactJS", "React Native", "MYSQL", "MSSQL", "NodeJS", "REST API", "Figma", "JSON", "npm", "Git", "GitHub", "ES5/ES6", "Firebase"];
         data.forEach((v, index) => {
             temp.push([new THREE.Vector3().setFromSpherical(spherical.set(radius, phiSpan * index, thetaSpan * index)), v])
         })
         return temp
-    }, [count, radius])
+    }, [count, radius]);
 
     return words.map(([pos, word], index) => {
         return (
             <Word position={pos} children={word} key={index} />
         )
     })
-}
+};
 
 
 // const BoxContain = () => {
-//     const ref = useRef()
+//     const ref = useRef();
 //     const [boxHover, setBoxHover] = React.useState(false);
+
 //     useFrame(({ clock, state, delta, camera }) => {
 //         if (!boxHover) {
-//             ref.current.rotation.y += 0.002
+//             ref.current.rotation.y += 0.002;
 //         }
-//     })
+//     });
 
 //     return (
 //         <ScreenQuad ref={ref} args={[5, 5, 5]}
@@ -82,8 +83,7 @@ function Cloud({ count, radius }) {
 //         >
 //             <Cloud count={6} radius={20} />
 //         </ScreenQuad >
-
-//     )
+//     );
 // }
 
 
