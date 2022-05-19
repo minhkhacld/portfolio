@@ -45,6 +45,47 @@
   cursor: pointer;
 }
 
+#container #leftk {
+  animation: animationMain 5s ease-in-out infinite alternate-reverse;
+  animation-delay: 0.1s;
+}
+/* .cv-nav-left-logo-picture path:nth-child(1) {
+  animation: animationMain 2s ease-in-out infinite;
+} */
+
+@keyframes animationMain {
+  0%,
+  100% {
+    transform: translateX(-100px);
+    filter: blur(30px);
+  }
+  25%,
+  50%,
+  75% {
+    transform: translateX(0px);
+    filter: blur(0px);
+  }
+}
+
+#container #rightk {
+  animation: animationSub 5s ease-in-out infinite alternate-reverse;
+  animation-delay: 0.4s;
+}
+
+@keyframes animationSub {
+  0%,
+  100% {
+    transform: translateX(200px);
+    filter: blur(30px);
+  }
+  25%,
+  50%,
+  75% {
+    transform: translateX(0px);
+    filter: blur(0px);
+  }
+}
+
 .navbar-link {
   width: 100px;
   color: #fff;
