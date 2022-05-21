@@ -41,7 +41,7 @@
   padding: 0.5rem;
   color: #fff;
   /* height: fit-content; */
-  min-height:350px;
+  min-height:420px;
 }
 .exp-title {
   font-size: 20px;
@@ -59,6 +59,7 @@
 
 .exp-description {
   font-size: 14px;
+  margin-bottom: 0px;
 }
 
 @media only screen and (max-width: 600px) {
