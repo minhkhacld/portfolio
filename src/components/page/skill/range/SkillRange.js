@@ -7,12 +7,18 @@ import './SkillRange.css';
 const SkillRange = () => {
     const animation_Fe = keyframes`
     from{width:0%}
-    to{width:70%}
+    to{width:75%}
     `
     const animation_Be = keyframes`
     from{width:0%}
-    to{width:50%}
+    to{width:55%}
     `
+
+    const animation_Mb = keyframes`
+    from{width:0%}
+    to{width:65%}
+    `
+
     const WrapperFE = styled.div`
     background-color:var(--organ);
     animation:${animation_Fe};
@@ -25,6 +31,16 @@ const SkillRange = () => {
     const WrapperBE = styled.div`
     background-color:red;
     animation:${animation_Be};
+    animation-duration:2s;
+    animation-delay:0.5s;
+    animation-timing-function:ease-in-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    `
+
+    const WrapperMB = styled.div`
+    background-color:green;
+    animation:${animation_Mb};
     animation-duration:2s;
     animation-delay:1s;
     animation-timing-function:ease-in-out;
@@ -47,6 +63,13 @@ const SkillRange = () => {
                     <RowLeft className="progress-group-bar">
                         <WrapperBE className="progress-bar-inner"
                         ></WrapperBE>
+                    </RowLeft>
+                </ColLeft>
+                <ColLeft className="progress-group">
+                    <RowLeft className="progress-group-text">Mobile</RowLeft>
+                    <RowLeft className="progress-group-bar">
+                        <WrapperMB className="progress-bar-inner"
+                        ></WrapperMB>
                     </RowLeft>
                 </ColLeft>
             </ColCenter>
