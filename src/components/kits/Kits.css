@@ -95,7 +95,8 @@
 
 @media only screen and (max-width: 600px) {
   .cv-sound-popup {
-    width: 50%;
+    width: 60%;
+    word-break: break-word;
   }
 }
 
