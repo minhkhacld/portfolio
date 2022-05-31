@@ -23,7 +23,7 @@
 }
 
 .contact-form-group {
-  width: 50%;
+  width: 40%;
   height: 100%;
   padding: 0.5rem;
   padding-top: 2rem;
@@ -31,7 +31,7 @@
   min-height: 600px;
 }
 .contact-message {
-  width: 50%;
+  width: 60%;
   height: 100%;
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -139,6 +139,11 @@
   align-items: center;
 }
 
+.contact-map {
+  width: 50vw;
+  height: 90vh;
+}
+
 .contact-form-msg-text {
   color: white;
   width: 90%;
@@ -208,8 +213,13 @@
     padding-top: 2rem;
     padding-bottom: 2rem;
   }
+
   .contact-form {
     width: 95%;
+  }
+  .conact-map {
+    width: 100vw;
+    height: 500px;
   }
 }
 

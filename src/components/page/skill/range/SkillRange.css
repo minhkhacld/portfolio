@@ -12,7 +12,7 @@
 }
 
 .progress-group {
-  width: 100%;
+  width: 30%;
   height: 4rem;
 }
 
@@ -36,12 +36,14 @@
 
 /*Exp*/
 .exp-job {
-  width: 47%;
+  /* width: 47%; */
+  width: 45%;
   background-color: #2a2a2a;
   padding: 0.5rem;
   color: #fff;
-  /* height: fit-content; */
-  min-height:420px;
+  height: fit-content;
+  min-height: 320px;
+  margin-bottom: 0.3rem;
 }
 .exp-title {
   font-size: 20px;
@@ -62,12 +64,23 @@
   margin-bottom: 0px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1000px) {
+  .skill-range {
+    display: flex;
+    flex-direction: column !important;
+  }
   .skill-experience {
     flex-direction: column !important;
   }
   .exp-job {
     width: 96%;
     margin-bottom: 2%;
+  }
+  .progress-group {
+    width: 100%;
+    height: 4rem;
+  }
+  .skill-progress {
+    flex-direction: column !important;
   }
 }

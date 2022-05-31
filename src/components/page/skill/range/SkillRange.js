@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
-import { Col, ColCenter, ColLeft, RowLeft } from '../../../kits/stucture/component.stucture';
+import { Col, ColCenter, ColLeft, RowLeft, Row, RowCenter, RowEvenly } from '../../../kits/stucture/component.stucture';
 import './SkillRange.css';
 
 
@@ -50,7 +50,7 @@ const SkillRange = () => {
 
     return (
         <Col className="skill-range">
-            <ColCenter className="skill-progress">
+            <RowEvenly className="skill-progress">
                 <ColLeft className="progress-group">
                     <RowLeft className="progress-group-text">Front End</RowLeft>
                     <RowLeft className="progress-group-bar">
@@ -72,8 +72,8 @@ const SkillRange = () => {
                         ></WrapperMB>
                     </RowLeft>
                 </ColLeft>
-            </ColCenter>
-            <div className="skill-experience">
+            </RowEvenly>
+            <RowEvenly className="skill-experience">
                 <Col className="exp-job">
                     <RowLeft className="exp-title">Software Developer</RowLeft>
                     <RowLeft className="exp-company">Bodynits Tien Giang</RowLeft>
@@ -99,7 +99,7 @@ const SkillRange = () => {
 
 
                 </Col>
-            </div>
+            </RowEvenly>
         </Col>
     )
 }

@@ -93,7 +93,7 @@ const Main = () => {
             <div className="main-part" id="home-section">
                 <Home />
                 {
-                    (screenSize.isMedium || screenSize.isLarge) && 
+                    (screenSize.isMedium || screenSize.isLarge) &&
                     <Helper />
                 }
             </div>

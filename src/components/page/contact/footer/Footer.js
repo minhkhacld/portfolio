@@ -26,7 +26,7 @@ const Footer = () => {
                 </RowLeft>
             </Col>
             <Col className="footer-social">
-                <RowLeft className="footer-contact-title">Follow me:</RowLeft>
+                <RowLeft className="footer-contact-title">Follow me at:</RowLeft>
                 <RowLeft>
                     <SocialNetwork />
                 </RowLeft>

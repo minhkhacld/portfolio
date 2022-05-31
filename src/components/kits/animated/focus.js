@@ -13,9 +13,9 @@ const RotateInstruction = ({ screenSize }) => {
 height:30px;
 border-radius:5px;
 animation:${animation} 2s ease-in-out infinite;
-position:absolute;
-bottom:5%;
-right:5%;
+position:relative;
+// bottom:5%;
+// right:5%;
 display:flex;
 flex-direction:row;
 justify-content:center;

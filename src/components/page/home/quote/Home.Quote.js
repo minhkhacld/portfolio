@@ -22,9 +22,9 @@ const HomeQuote = () => {
 
     return (
         <Col className="home-quote">
-            <RotateFrame from={0} to={360} />
+            {/* <RotateFrame from={0} to={360} />
             <RotateFrame from={5} to={365} />
-            <RotateFrame from={10} to={370} />
+            <RotateFrame from={10} to={370} /> */}
             <AnimatedText text={text1Str} />
             <AnimatedText text={text2Str} />
             <AnimatedText text={text3Str} />
