@@ -84,7 +84,6 @@ const SkillRange = () => {
                     <p className="exp-description">- Participate in designing and building application.</p>
                     <p className="exp-description">- Develop new user-facing features using JavaScript and ReactJS that meet large number of users.</p>
                     <p className="exp-description">- Build reusable components and front-end libraries for future use.</p>
-                    <p className="exp-description">- Follow coding standards, write automated test cases, deployment scripts.</p>
                     <p className="exp-description">- Assist in improving app architectures – Explore existing systems, determines areas of maintainability scalability extensibility.</p>
                 </Col>
                 <Col className="exp-job">
