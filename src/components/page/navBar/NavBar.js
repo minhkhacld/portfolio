@@ -1,10 +1,9 @@
 import React from 'react';
 import { FaBars } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import useScreenSize from '../../kits/media/Device.Measuring';
-import { ColLeft } from '../../kits/stucture/component.stucture';
-import './NavBar.css';
 import styled from 'styled-components';
+import useScreenSize from '../../kits/media/Device.Measuring';
+import './NavBar.css';
 
 const NavBar = () => {
     const navBarArr = [

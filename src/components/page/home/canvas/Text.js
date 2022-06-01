@@ -1,6 +1,6 @@
 import * as THREE from 'three'
 import React, { useMemo, useRef, useLayoutEffect } from 'react'
-import boldUrl from './fonts/bold.blob';
+// import boldUrl from './fonts/bold.blob';
 import newFont from './fonts/MgOpen Canonica_Bold.json'
 import { Text3D } from '@react-three/drei'
 

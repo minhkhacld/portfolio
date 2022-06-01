@@ -1,9 +1,9 @@
+import { useLocation } from 'react-router-dom';
+import { RowCenter } from '../../kits/stucture/component.stucture';
+import SkillCanvas from './canvas/Skill.Canvas';
+import Quote from './quote/Quote';
 import SkillRange from './range/SkillRange';
 import './Skill.css';
-import Quote from './quote/Quote';
-import { useLocation } from 'react-router-dom';
-import SkillCanvas from './canvas/Skill.Canvas';
-import { ColCenter, RowCenter } from '../../kits/stucture/component.stucture';
 
 export default function Skill() {
   const location = useLocation();

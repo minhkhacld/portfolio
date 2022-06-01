@@ -5,11 +5,10 @@ import Sending from '../../kits/animated/sending';
 import { ColCenter, ColLeft, RowCenter } from '../../kits/stucture/component.stucture';
 import './Contact.css';
 import Footer from './footer/Footer';
-import EarthRound from './map/Earth';
-import useScreenSize from '../../kits/media/Device.Measuring';
+// import EarthRound from './map/Earth';
+// import useScreenSize from '../../kits/media/Device.Measuring';
 
 const Contact = () => {
-
 
   const [user, setUser] = React.useState({
     name: "",
@@ -25,7 +24,7 @@ const Contact = () => {
   const location = useLocation();
   const path = location.pathname.split('/');
 
-  const screenSize = useScreenSize();
+  // const screenSize = useScreenSize();
 
   //Function
   const _onChangeUserName = (e) => {

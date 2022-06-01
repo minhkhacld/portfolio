@@ -1,7 +1,7 @@
 import * as THREE from 'three'
 import React, { Suspense, useEffect, useRef, useState } from 'react'
 import { Canvas, useLoader, useFrame, } from '@react-three/fiber'
-import { Sky, Environment, OrbitControls } from '@react-three/drei'
+// import { Sky, Environment, OrbitControls } from '@react-three/drei'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import Text from './Text'
 import './styles.css'

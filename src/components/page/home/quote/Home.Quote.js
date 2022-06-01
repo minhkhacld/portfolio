@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Col, ColCenter } from '../../../kits/stucture/component.stucture';
-import RotateFrame from '../../skill/quote/textaniamtion/Rotate.Frame';
+// import RotateFrame from '../../skill/quote/textaniamtion/Rotate.Frame';
 import AnimatedText from './text/AnimatedText';
 
 const HomeQuote = () => {

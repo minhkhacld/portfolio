@@ -1,4 +1,4 @@
-import { Center, ScreenQuad, Stars, Text, TrackballControls, OrbitControls } from '@react-three/drei';
+import { Center,Stars, Text, TrackballControls, OrbitControls } from '@react-three/drei';
 import { Canvas, useFrame } from '@react-three/fiber';
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import * as THREE from 'three';

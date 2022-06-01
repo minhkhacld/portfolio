@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
-import { Col, ColCenter, ColLeft, RowLeft, Row, RowCenter, RowEvenly } from '../../../kits/stucture/component.stucture';
+import { Col, ColLeft, RowEvenly, RowLeft } from '../../../kits/stucture/component.stucture';
 import './SkillRange.css';
 
 
@@ -13,12 +13,10 @@ const SkillRange = () => {
     from{width:0%}
     to{width:55%}
     `
-
     const animation_Mb = keyframes`
     from{width:0%}
     to{width:65%}
     `
-
     const WrapperFE = styled.div`
     background-color:var(--organ);
     animation:${animation_Fe};
@@ -95,8 +93,6 @@ const SkillRange = () => {
                     <p className="exp-description">- Run engineering build & pilot production to build new samples. Define manpower, output and ST BOM of new products.</p>
                     <p className="exp-description">- Execute time study & improve LOB for production line, continuously do improvement projects to increase efficiency & save the cost.</p>
                     <p className="exp-description">-  With  <strong style={{ color: 'var(--lightBlue)' }}>ambitious</strong> to improve manufacturing processes. I have <strong style={{ color: 'var(--lightBlue)' }}>learned programming</strong> and <strong style={{ color: 'var(--lightBlue)' }}>started to build</strong> small projects during this period time to support production such as: Scan machine QR code, Production output tracking, Change over tracking app...</p>
-
-
                 </Col>
             </RowEvenly>
         </Col>
