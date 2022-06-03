@@ -65,12 +65,12 @@ const NavBar = () => {
 
     const WrapperSVG = styled.svg`
     .shape{
-        stroke-dasharray: ${WIDTH / 2} ${TOTAL_LENGTH};
+        stroke-dasharray: ${!screenSize.isXSmall && !screenSize.isSmall ? WIDTH / 2 : 0} ${TOTAL_LENGTH};
         stroke-dashoffset: -${WIDTH + HEIGHT / 2};
         stroke-width: 3px;
         fill: transparent;
         stroke: var(--lightBlue);
-        border-bottom: 5px solid black;
+        border-bottom: ${screenSize.isXSmall ? "none" : "5px solid black"};
         transition: stroke-width .8s, stroke-dashoffset .8s, stroke-dasharray .8s;     
     }
     &:hover .shape{
