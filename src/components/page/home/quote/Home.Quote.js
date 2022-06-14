@@ -3,6 +3,8 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { Col, ColCenter } from '../../../kits/stucture/component.stucture';
 // import RotateFrame from '../../skill/quote/textaniamtion/Rotate.Frame';
 import AnimatedText from './text/AnimatedText';
+import Button from '@mui/material/Button';
+import myCV from '../../../../assets/pdf/Software_Developer_Pham_Minh_Kha.pdf';
 
 const HomeQuote = () => {
     const navigate = useNavigate();
@@ -28,7 +30,11 @@ const HomeQuote = () => {
             <AnimatedText text={text1Str} />
             <AnimatedText text={text2Str} />
             <AnimatedText text={text3Str} />
-            <ColCenter onClick={() => _onGoToContact()} className="home-quote-link">Contact me</ColCenter>
+            <ColCenter onClick={() => _onGoToContact()} className="home-quote-link" style={{ textTransform: 'capitalize', }}>Contact me</ColCenter>
+
+            <a href={myCV} download="Kha's Resume" style={{ marginTop: '1.5rem', textDecoration: 'none', }}>
+                <Button variant="outlined" color="info" className="btn-download-cv">Download my CV</Button>
+            </a>
         </Col>
     )
 }

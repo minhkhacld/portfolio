@@ -6,23 +6,25 @@ import useScreenSize from '../../kits/media/Device.Measuring';
 import './NavBar.css';
 
 const NavBar = () => {
+
     const navBarArr = [
         { path: '/', pathname: "", text: "About", id: "nav-home", },
         { path: '/skill', pathname: "skill", text: "My skill", id: "nav-skill", },
         { path: '/projects', pathname: "projects", text: "Projects", id: "nav-projects", },
         { path: '/contact', pathname: "contact", text: "Contact", id: "nav-contact", },
-    ]
+    ];
+
     const screenSize = useScreenSize();
     const [menuOpen, setMenuOpen] = React.useState(false);
 
     React.useEffect(() => {
         setMenuOpen(screenSize.isXSmall ? false : true);
-    }, [screenSize.isXSmall])
+    }, [screenSize.isXSmall]);
 
 
     const _onOpenMenu = () => {
         setMenuOpen(!menuOpen);
-    }
+    };
 
     //assigning location variable
     const location = useLocation();
@@ -35,9 +37,11 @@ const NavBar = () => {
     const splitLocation = pathname.split("/");
 
     const _onSwitchRoute = (item) => {
+
         if (screenSize.isXSmall) {
             setMenuOpen(false)
-        }
+        };
+
         navBarArr.forEach((d, index) => {
             const frame = document.getElementById(`${item.id}-${index}`)
             const navChild = document.getElementById(d.id);
@@ -57,7 +61,6 @@ const NavBar = () => {
             setMenuOpen(false)
         }
     };
-
 
     let WIDTH = window.screen.width * 0.8 / 2;
     let HEIGHT = window.screen.height * 0.8 / 2;

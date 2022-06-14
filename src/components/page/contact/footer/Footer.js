@@ -1,12 +1,12 @@
 import React from 'react';
 import { FaEnvelope, FaMapMarked, FaMobileAlt } from 'react-icons/fa';
-import { Col, ColCenter, RowCenter, RowLeft } from '../../../kits/stucture/component.stucture';
+import { Col, ColCenter, RowCenter, RowLeft, Row } from '../../../kits/stucture/component.stucture';
 import SocialNetwork from '../network/SocialNetwork';
 import './Footer.css';
 
 const Footer = () => {
     return (
-        <RowLeft className="contact-footer">
+        <Row className="contact-footer">
             <ColCenter className="footer-logo">
                 <img src={require('../../../../assets/picture/logo.png')} alt="logo" className="footer-logo-picture" />
             </ColCenter>
@@ -32,7 +32,7 @@ const Footer = () => {
                 </RowLeft>
             </Col>
 
-        </RowLeft>
+        </Row>
 
     )
 }

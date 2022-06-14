@@ -18,8 +18,9 @@
 .contact-footer {
   width: 100%;
   height: auto;
-  min-height: 150px;
+  min-height: 300px;
   background-color: var(--black);
+  padding-top: 2rem;
 }
 
 .contact-form-group {

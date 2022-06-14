@@ -1,4 +1,4 @@
-import { Center,Stars, Text, TrackballControls, OrbitControls } from '@react-three/drei';
+import { Center, Stars, Text, TrackballControls, OrbitControls } from '@react-three/drei';
 import { Canvas, useFrame } from '@react-three/fiber';
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import * as THREE from 'three';
@@ -42,14 +42,16 @@ function Word({ children, ...props }) {
 
 
 function Cloud({ count, radius }) {
+
     const words = useMemo(() => {
         const temp = []
         const spherical = new THREE.Spherical()
         const phiSpan = Math.PI / (count + 10);
         const thetaSpan = (Math.PI * 2) / count;
-        const data = ["HTML", "CSS", "Javascript", "ReactJS", "React Native", "MYSQL", "MSSQL", "NodeJS", "REST API", "Figma", "JSON", "npm", "Git", "GitHub", "ES5/ES6", "Firebase"];
+
+        const data = ["HTML", "CSS", "Javascript", "ReactJS", "React Native", "MYSQL", "MSSQL", "NodeJS", "REST API", "Figma", "JSON", "npm", "Git", "GitHub", "ES5/ES6", "Firebase", "Material"];
         data.forEach((v, index) => {
-            temp.push([new THREE.Vector3().setFromSpherical(spherical.set(radius, phiSpan * index, thetaSpan * index)), v])
+            temp.push([new THREE.Vector3().setFromSpherical(spherical.set(radius, phiSpan * index, thetaSpan * index)), v]);
         })
         return temp
     }, [count, radius]);
@@ -97,7 +99,9 @@ export default function SkillCanvas() {
                 <Canvas dpr={[1, 1]} camera={{ position: [0, 0, 50], fov: screenSize.isXSmall || screenSize.isSmall ? 120 : 90 }} className="chart-canvas"
                 >
                     <Center position={[5, 5, 10]}>
-                        <Cloud count={5} radius={22} />
+                        <Cloud
+                            count={6}
+                            radius={22} />
                         {/* <BoxContain /> */}
                     </Center>
                     <fog attach="fog" args={['#202025', 0, 500]} />

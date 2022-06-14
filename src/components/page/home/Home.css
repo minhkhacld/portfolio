@@ -35,6 +35,10 @@
   min-height: 90vh;
 }
 
+.btn-download-cv {
+  text-transform: capitalize !important;
+}
+
 .home-quote-link {
   font-size: 18px;
   width: 25%;
@@ -120,5 +124,6 @@
   .home-quote-link {
     font-size: 14px;
     padding-left: 8px;
+    width: 35%;
   }
 }
