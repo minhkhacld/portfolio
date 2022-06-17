@@ -94,7 +94,7 @@ const MainPage = () => {
                             <Route path="projects" element={<Projects />} />
                             <Route path="contact" element={<Contact />} />
                             <Route path="/app-ads.txt" element={<Appads />} />
-                            <Route path="*" element={<Navigate to="/" />} />
+                            <Route path="*" element={<Navigate to="/" replace />} />
                         </Routes>
                         {/* <Routes>
                         <Route path="/profilo" element={<Main />} />

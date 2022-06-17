@@ -44,17 +44,32 @@ function Word({ children, ...props }) {
 function Cloud({ count, radius }) {
 
     const words = useMemo(() => {
+        const data = ["HTML", "CSS", "Javascript", "ReactJS", "React Native", "MYSQL", "MSSQL", "NodeJS", "REST API", "Figma", "JSON", "npm", "Git", "GitHub", "ES5/ES6", "Firebase", "Material", "Bootstrap", "Tailwind Css"];
+
         const temp = []
         const spherical = new THREE.Spherical()
-        const phiSpan = Math.PI / (count + 10);
-        const thetaSpan = (Math.PI * 2) / count;
+        const phiSpan = Math.PI / (count * 2);
+        const thetaSpan = (Math.PI * 2) / count * 2;
 
-        const data = ["HTML", "CSS", "Javascript", "ReactJS", "React Native", "MYSQL", "MSSQL", "NodeJS", "REST API", "Figma", "JSON", "npm", "Git", "GitHub", "ES5/ES6", "Firebase", "Material"];
         data.forEach((v, index) => {
             temp.push([new THREE.Vector3().setFromSpherical(spherical.set(radius, phiSpan * index, thetaSpan * index)), v]);
         })
         return temp
     }, [count, radius]);
+    // const data = ["HTML", "CSS", "Javascript", "ReactJS", "React Native", "MYSQL", "MSSQL", "NodeJS", "REST API", "Figma", "JSON", "npm", "Git", "GitHub", "ES5/ES6", "Firebase", "Material", "Bootstrap", "Tailwind Css"];
+
+    // const words = useMemo(() => {
+
+    //     const temp = []
+    //     const spherical = new THREE.Spherical()
+    //     const phiSpan = Math.PI * 2 / (data.length);
+    //     const thetaSpan = (Math.PI * 2) / data.length;
+
+    //     data.forEach((v, index) => {
+    //         temp.push([new THREE.Vector3().setFromSpherical(spherical.set(radius, phiSpan * index, thetaSpan * index)), v]);
+    //     })
+    //     return temp
+    // }, [data.length, radius]);
 
     return words.map(([pos, word], index) => {
         return (
@@ -100,8 +115,8 @@ export default function SkillCanvas() {
                 >
                     <Center position={[5, 5, 10]}>
                         <Cloud
-                            count={6}
-                            radius={22} />
+                            count={5}
+                            radius={25} />
                         {/* <BoxContain /> */}
                     </Center>
                     <fog attach="fog" args={['#202025', 0, 500]} />

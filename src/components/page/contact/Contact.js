@@ -77,22 +77,12 @@ const Contact = () => {
   }
 
   const _onSendMessage = async () => {
-    if (user.name === "" || user.email === "" || user.text === "") {
-      setErrorMsg(true);
-      return
-    }
-
     if (!user.errorEmail && !user.errorName && !user.errorText) {
-      setErrorMsg(false);
-      setSending(1);
+
       let data = {
         sheetName: "Message from users",
         sheetUrl: process.env.REACT_APP_API_SHEETS,
         columns: [
-          // {
-          //   title: "TimeStamp",
-          //   value: moment().format("YYYY-MM-DD HH:mm:ss"),
-          // },
           {
             title: "Name",
             value: user.name,
