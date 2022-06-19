@@ -37,6 +37,24 @@ const Web = () => {
             publishDate: "2022-04-30",
             projectType: 'Company project',
         },
+        {
+            appName: 'Scan to Google Sheets',
+            des: `A professional website that connect users and Scan to Google Sheets application. This web side tell Scan to Google Sheets every thing about the application in details`,
+            details: `ReactJs, Tailwindcss, Material, Redux`,
+            link: "https://stggs-minhkhacld.vercel.app/",
+            picture: [
+                require('../../../../assets/picture/project/webapp/stggs/feature.PNG'),
+                require('../../../../assets/picture/project/webapp/stggs/features.PNG'),
+                require('../../../../assets/picture/project/webapp/stggs/doc.PNG'),
+                require('../../../../assets/picture/project/webapp/stggs/download.PNG'),
+                require('../../../../assets/picture/project/webapp/stggs/pricing.PNG'),
+                require('../../../../assets/picture/project/webapp/stggs/support.PNG'),
+            ],
+            icon: require('../../../../assets/picture/project/webapp/stggs/ic_launcher.png'),
+            feature: require('../../../../assets/picture/project/webapp/stggs/feature.PNG'),
+            publishDate: "2022-06-18",
+            projectType: 'Personal project',
+        },
     ]
 
     return (

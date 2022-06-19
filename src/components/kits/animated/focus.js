@@ -14,7 +14,7 @@ height:30px;
 border-radius:5px;
 animation:${animation} 2s ease-in-out infinite;
 position:relative;
-// bottom:5%;
+// bottom:1%;
 // right:5%;
 display:flex;
 flex-direction:row;

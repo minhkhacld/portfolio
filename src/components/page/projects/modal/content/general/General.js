@@ -33,9 +33,15 @@ const General = () => {
                 <span className="general-row-content">{store.app.projectType}</span>
             </div>
             {
-                store.app.link !== "" &&
+                store.app.link !== "" && store.app.appName !== "Scan to Google Sheets" &&
                 <div className="general-row">
                     <a href={store.app.link} className="general-row-link">View on Play Store</a>
+                </div>
+            }
+            {
+                store.app.link !== "" && store.app.appName === "Scan to Google Sheets" &&
+                <div className="general-row">
+                    <a href={store.app.link} className="general-row-link">View website</a>
                 </div>
             }
         </div>
