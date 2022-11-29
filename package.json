@@ -4,10 +4,23 @@
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.9.3",
+    "prop-types": "^15.8.1",
     "@emotion/styled": "^11.9.3",
     "@mui/material": "^5.8.3",
     "@react-three/drei": "^9.11.3",
     "@react-three/fiber": "^8.0.19",
+    "@hookform/resolvers": "^2.8.8",
+    "@iconify/react": "^3.2.1",
+    "@mui/lab": "^5.0.0-alpha.76",
+    "framer-motion": "^6.2.9",
+    "notistack": "^2.0.3",
+    "react-hook-form": "^7.29.0",
+    "react-image-lightbox": "^5.1.4",
+    "react-lazy-load-image-component": "^1.5.4",
+    "react-slick": "^0.28.0",
+    "simplebar": "^5.3.6",
+    "simplebar-react": "^2.3.6",
+    "slick-carousel": "^1.8.1",
     "@reduxjs/toolkit": "^1.8.1",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.1.1",
@@ -26,7 +39,8 @@
     "styled-components": "^5.3.5",
     "three": "^0.137.4",
     "vercel": "^24.0.0",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "yup": "^0.32.11"
   },
   "scripts": {
     "predeploy": "npm run build",
