@@ -1,105 +1,122 @@
-import React from 'react';
-import { FaBars } from 'react-icons/fa';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
-import useScreenSize from '../../kits/media/Device.Measuring';
-import './NavBar.css';
+import React from "react";
+import { FaBars } from "react-icons/fa";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import styled from "styled-components";
+import useScreenSize from "../../kits/media/Device.Measuring";
+import "./NavBar.css";
 
 const NavBar = () => {
+  const navBarArr = [
+    { path: "/", pathname: "", text: "About", id: "nav-home" },
+    { path: "/skill", pathname: "skill", text: "My skill", id: "nav-skill" },
+    {
+      path: "/projects",
+      pathname: "projects",
+      text: "Projects",
+      id: "nav-projects",
+    },
+    {
+      path: "/contact",
+      pathname: "contact",
+      text: "Contact",
+      id: "nav-contact",
+    },
+  ];
 
-    const navBarArr = [
-        { path: '/', pathname: "", text: "About", id: "nav-home", },
-        { path: '/skill', pathname: "skill", text: "My skill", id: "nav-skill", },
-        { path: '/projects', pathname: "projects", text: "Projects", id: "nav-projects", },
-        { path: '/contact', pathname: "contact", text: "Contact", id: "nav-contact", },
-    ];
+  const screenSize = useScreenSize();
+  const [menuOpen, setMenuOpen] = React.useState(false);
 
-    const screenSize = useScreenSize();
-    const [menuOpen, setMenuOpen] = React.useState(false);
+  React.useEffect(() => {
+    setMenuOpen(screenSize.isXSmall ? false : true);
+  }, [screenSize.isXSmall]);
 
-    React.useEffect(() => {
-        setMenuOpen(screenSize.isXSmall ? false : true);
-    }, [screenSize.isXSmall]);
+  const _onOpenMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
 
+  //assigning location variable
+  const location = useLocation();
+  const navigate = useNavigate();
 
-    const _onOpenMenu = () => {
-        setMenuOpen(!menuOpen);
-    };
+  //destructuring pathname from location
+  const { pathname } = location;
 
-    //assigning location variable
-    const location = useLocation();
-    const navigate = useNavigate();
+  //Javascript split method to get the name of the path in array
+  const splitLocation = pathname.split("/");
 
-    //destructuring pathname from location
-    const { pathname } = location;
-
-    //Javascript split method to get the name of the path in array
-    const splitLocation = pathname.split("/");
-
-    const _onSwitchRoute = (item) => {
-
-        if (screenSize.isXSmall) {
-            setMenuOpen(false)
-        };
-
-        navBarArr.forEach((d, index) => {
-            const frame = document.getElementById(`${item.id}-${index}`)
-            const navChild = document.getElementById(d.id);
-            if (d.id === item.id) {
-                navChild.style.color = 'var(--lightBlue)';
-            } else {
-                navChild.style.color = 'white';
-                frame.style.backgroundColor = 'var(--black)';
-                frame.style.borderBottom = 'none';
-            }
-        })
-    };
-
-    const _onGoToFirstPage = () => {
-        navigate('/');
-        if (screenSize.isXSmall) {
-            setMenuOpen(false)
-        }
-    };
-
-    let WIDTH = window.screen.width * 0.8 / 2;
-    let HEIGHT = window.screen.height * 0.8 / 2;
-    let TOTAL_LENGTH = WIDTH * 2 + HEIGHT * 2;
-
-    const WrapperSVG = styled.svg`
-    .shape{
-        stroke-dasharray: ${!screenSize.isXSmall && !screenSize.isSmall ? WIDTH / 2 : 0} ${TOTAL_LENGTH};
-        stroke-dashoffset: -${WIDTH + HEIGHT / 2};
-        stroke-width: 3px;
-        fill: transparent;
-        stroke: var(--lightBlue);
-        border-bottom: ${screenSize.isXSmall ? "none" : "5px solid black"};
-        transition: stroke-width .8s, stroke-dashoffset .8s, stroke-dasharray .8s;     
-    }
-    &:hover .shape{
-        stroke-width: 2px;
-        stroke-dashoffset: 0;
-        stroke-dasharray: ${TOTAL_LENGTH};
-    }  
-    .navbar-active-link-text{
-        fill: var(--lightBlue);
+  const _onSwitchRoute = (item) => {
+    if (screenSize.isXSmall) {
+      setMenuOpen(false);
     }
 
-    .navbar-link-text{
-        fill: white;
+    navBarArr.forEach((d, index) => {
+      const frame = document.getElementById(`${item.id}-${index}`);
+      const navChild = document.getElementById(d.id);
+      if (d.id === item.id) {
+        navChild.style.color = "var(--lightBlue)";
+      } else {
+        navChild.style.color = "white";
+        frame.style.backgroundColor = "var(--black)";
+        frame.style.borderBottom = "none";
+      }
+    });
+  };
+
+  const _onGoToFirstPage = () => {
+    navigate("/");
+    if (screenSize.isXSmall) {
+      setMenuOpen(false);
     }
-    `
-    return (
-        <div className="cv-nav-container">
-            <div className="cv-nav-left">
-                <div className="cv-nav-left-menu">
-                    <FaBars className="cv-nav-left-menu-icon" onClick={() => _onOpenMenu()} />
-                </div>
-                <div className="cv-nav-left-logo">
-                    {/* <img className="cv-nav-left-logo-picture" src={require('../../../assets/picture/logo.png')} alt={'Logo'}
-                        onClick={() => _onGoToFirstPage()}
-                    /> */}
-                    <svg width="512" height="512" onClick={() => _onGoToFirstPage()} className="cv-nav-left-logo-picture" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  };
+
+  let WIDTH = (window.screen.width * 0.8) / 2;
+  let HEIGHT = (window.screen.height * 0.8) / 2;
+  let TOTAL_LENGTH = WIDTH * 2 + HEIGHT * 2;
+
+  const WrapperSVG = styled.svg`
+    .shape {
+      stroke-dasharray: ${!screenSize.isXSmall && !screenSize.isSmall
+          ? WIDTH / 2
+          : 0}
+        ${TOTAL_LENGTH};
+      stroke-dashoffset: -${WIDTH + HEIGHT / 2};
+      stroke-width: 3px;
+      fill: transparent;
+      stroke: var(--lightBlue);
+      border-bottom: ${screenSize.isXSmall ? "none" : "5px solid black"};
+      transition: stroke-width 0.8s, stroke-dashoffset 0.8s,
+        stroke-dasharray 0.8s;
+    }
+    &:hover .shape {
+      stroke-width: 2px;
+      stroke-dashoffset: 0;
+      stroke-dasharray: ${TOTAL_LENGTH};
+    }
+    .navbar-active-link-text {
+      fill: var(--lightBlue);
+    }
+
+    .navbar-link-text {
+      fill: white;
+    }
+  `;
+  return (
+    <div className="cv-nav-container">
+      <div className="cv-nav-left">
+        <div className="cv-nav-left-menu">
+          <FaBars
+            className="cv-nav-left-menu-icon"
+            onClick={() => _onOpenMenu()}
+          />
+        </div>
+        <div className="cv-nav-left-logo">
+          <img
+            className="cv-nav-left-logo-picture"
+            src={require("../../../assets/picture/logo.png")}
+            alt={"Logo"}
+            onClick={() => _onGoToFirstPage()}
+          />
+          {/* <svg width="512" height="512" onClick={() => _onGoToFirstPage()} className="cv-nav-left-logo-picture" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g id="container">
                             <g id="Frame 2">
                                 <rect width="512" height="512" rx="10" fill="#1A1A1A" />
@@ -113,33 +130,60 @@ const NavBar = () => {
                                 <path id="Rectangle 1_4" d="M156.458 113.798C156.458 96.8319 142.704 83.0781 125.738 83.0781H123.72C106.754 83.0781 92.9999 96.8319 92.9999 113.798V406.572C92.9999 423.538 106.754 437.292 123.72 437.292H125.738C142.704 437.292 156.458 423.538 156.458 406.572V113.798Z" fill="#FFEF82" />
                             </g>
                         </g>
-                    </svg>
-
-                </div>
-            </div>
-
-            {menuOpen &&
-                <div className="cv-nav-right">
-                    {navBarArr.map((item, index) => {
-                        return (
-                            <Link key={index} to={item.path} className={splitLocation[splitLocation.length - 1] === item.pathname ? "navbar-active-link" : "navbar-link"}
-                                id={`${item.id}-${index}`}
-                                onClick={() => _onSwitchRoute(item)}
-                                style={{ textDecoration: 'none' }}>
-                                <WrapperSVG height="100%" width="100%" id={`${item.id}-${index}`}>
-                                    <rect className="shape" x="5%" y="10%" height="80%" width="90%" />
-                                    <text x="50%" y="50%"
-                                        className={splitLocation[splitLocation.length - 1] === item.pathname ? "navbar-active-link-text" : "navbar-link-text"} id={item.id}
-                                        dominantBaseline="middle" textAnchor="middle">{item.text}</text>
-                                </WrapperSVG>
-                            </Link>
-                        )
-                    })}
-
-                </div>
-            }
+                    </svg> */}
         </div>
-    )
-}
+      </div>
 
-export default NavBar
+      {menuOpen && (
+        <div className="cv-nav-right">
+          {navBarArr.map((item, index) => {
+            return (
+              <Link
+                key={index}
+                to={item.path}
+                className={
+                  splitLocation[splitLocation.length - 1] === item.pathname
+                    ? "navbar-active-link"
+                    : "navbar-link"
+                }
+                id={`${item.id}-${index}`}
+                onClick={() => _onSwitchRoute(item)}
+                style={{ textDecoration: "none" }}
+              >
+                <WrapperSVG
+                  height="100%"
+                  width="100%"
+                  id={`${item.id}-${index}`}
+                >
+                  <rect
+                    className="shape"
+                    x="5%"
+                    y="10%"
+                    height="80%"
+                    width="90%"
+                  />
+                  <text
+                    x="50%"
+                    y="50%"
+                    className={
+                      splitLocation[splitLocation.length - 1] === item.pathname
+                        ? "navbar-active-link-text"
+                        : "navbar-link-text"
+                    }
+                    id={item.id}
+                    dominantBaseline="middle"
+                    textAnchor="middle"
+                  >
+                    {item.text}
+                  </text>
+                </WrapperSVG>
+              </Link>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default NavBar;

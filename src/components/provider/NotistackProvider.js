@@ -6,8 +6,8 @@ import { alpha, useTheme } from "@mui/material/styles";
 import { Box, GlobalStyles, Collapse } from "@mui/material";
 // hooks
 
-import Iconify from "./Iconify";
-import { IconButtonAnimate } from "./animate";
+import Iconify from "../Iconify";
+import { IconButtonAnimate } from "../animate/index";
 
 // ----------------------------------------------------------------------
 

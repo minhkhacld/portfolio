@@ -81,6 +81,8 @@ function Cloud({ count, radius }) {
       "Material",
       "Bootstrap",
       "Tailwind Css",
+      "Devextreme",
+      "lodash",
     ];
 
     const temp = [];
@@ -160,7 +162,7 @@ export default function SkillCanvas() {
           className="chart-canvas"
         >
           <Center position={[5, 5, 10]}>
-            <Cloud count={5} radius={25} />
+            <Cloud count={6} radius={25} />
             {/* <BoxContain /> */}
           </Center>
           <fog attach="fog" args={["#202025", 0, 500]} />

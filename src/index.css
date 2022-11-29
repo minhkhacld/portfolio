@@ -42,3 +42,7 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--organ);
 }
+
+.dx-popup-container{
+  padding:8px !important
+}

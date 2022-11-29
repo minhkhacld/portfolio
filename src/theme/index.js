@@ -30,16 +30,16 @@ export default function ThemeProvider({ children }) {
       typography,
       breakpoints,
       shape: { borderRadius: 8 },
-      direction: themeDirection,
+      // direction: "rtl",
       shadows: isLight ? shadows.light : shadows.dark,
       customShadows: isLight ? customShadows.light : customShadows.dark,
     }),
-    [isLight, themeDirection]
+    []
   );
 
   const theme = createTheme(themeOptions);
 
-  theme.components = componentsOverride(theme);
+  // theme.components = componentsOverride(theme);
 
   return (
     <StyledEngineProvider injectFirst>

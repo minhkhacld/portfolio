@@ -7,7 +7,7 @@ import './SkillRange.css';
 const SkillRange = () => {
     const animation_Fe = keyframes`
     from{width:0%}
-    to{width:75%}
+    to{width:80%}
     `
     const animation_Be = keyframes`
     from{width:0%}
@@ -15,7 +15,7 @@ const SkillRange = () => {
     `
     const animation_Mb = keyframes`
     from{width:0%}
-    to{width:65%}
+    to{width:80%}
     `
     const WrapperFE = styled.div`
     background-color:var(--organ);
