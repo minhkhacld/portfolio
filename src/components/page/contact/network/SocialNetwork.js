@@ -1,34 +1,50 @@
-import React from 'react';
-import github from '../../../../assets/picture/contact/github.png';
-import instagram from '../../../../assets/picture/contact/instagram.png';
-import { ColCenter } from '../../../kits/stucture/component.stucture';
-import facebook from '../.././../../assets/picture/contact/facebook.png';
+import { Box, Stack } from "@mui/material";
+import React from "react";
+import github from "../../../../assets/picture/contact/github.png";
+import instagram from "../../../../assets/picture/contact/instagram.png";
+import Image from "../../../Image";
+import facebook from "../.././../../assets/picture/contact/facebook.png";
 
-import './SocialNetwork.css'
+import "./SocialNetwork.css";
 
 const SocialNetwork = () => {
-    const social = [
-        { name: "Facebook", piture: facebook, link: 'https://www.facebook.com/phamminh.kha/' },
-        { name: "Instagram", piture: instagram, link: 'https://www.instagram.com/minhkhacld/?hl=en' },
-        { name: "Github", piture: github, link: 'https://github.com/minhkhacld' },
-    ]
+  const social = [
+    {
+      name: "Facebook",
+      piture: facebook,
+      link: "https://www.facebook.com/phamminh.kha/",
+    },
+    {
+      name: "Instagram",
+      piture: instagram,
+      link: "https://www.instagram.com/minhkhacld/?hl=en",
+    },
+    { name: "Github", piture: github, link: "https://github.com/minhkhacld" },
+  ];
 
-    return (<>
-        {
-            social.map((item, index) => {
-                return (
-                    <ColCenter className='contact-social-picFrame' key={index}>
-                        <a href={item.link} style={{
-                            display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100%',                          
-                        }}>
-                            <img src={item.piture} alt={item.name} className='contact-social-picture' />
-                        </a>
-                    </ColCenter>
-                )
-            })
-        }
-    </>
-    )
-}
+  return (
+    <Stack
+      justifyContent={"flex-start"}
+      alignItems={"center"}
+      display={"flex"}
+      direction="row"
+      spacing={4}
+      height="100%"
+    >
+      {social.map((item, index) => {
+        return (
+          <Box
+            component={"a"}
+            href={item.link}
+            target={"_blank"}
+            sx={{ height: 40, display: "flex" }}
+          >
+            <Image src={item.piture} alt={item.name} />
+          </Box>
+        );
+      })}
+    </Stack>
+  );
+};
 
-export default SocialNetwork
+export default SocialNetwork;

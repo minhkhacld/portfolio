@@ -19,7 +19,7 @@ const RootStyle = styled("div")(({ theme }) => ({
     float: "left",
     "&:focus": { outline: "none" },
   },
-  zIndex: 10000000000,
+  zIndex: 1000,
   minHeight: 500,
 }));
 

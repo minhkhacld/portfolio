@@ -1,5 +1,6 @@
 import axios from "axios";
 import React from "react";
+import { useSnackbar } from "notistack";
 import { useLocation } from "react-router-dom";
 import Sending from "../../kits/animated/sending";
 import {
@@ -13,6 +14,9 @@ import Footer from "./footer/Footer";
 // import useScreenSize from '../../kits/media/Device.Measuring';
 
 const Contact = () => {
+  // hooks
+  const { enqueueSnackbar } = useSnackbar();
+
   const [user, setUser] = React.useState({
     name: "",
     errorName: false,
@@ -80,6 +84,7 @@ const Contact = () => {
   };
 
   const _onSendMessage = async () => {
+    setSending(1);
     if (!user.errorEmail && !user.errorName && !user.errorText) {
       let data = {
         sheetName: "Message from users",
@@ -113,13 +118,43 @@ const Contact = () => {
           // console.log(response);
           if (response.data.code === 1) {
             setSending(2);
+            enqueueSnackbar("Message has been sent!", {
+              variant: "success",
+              anchorOrigin: {
+                horizontal: "center",
+                vertical: "bottom",
+              },
+            });
+            setUser({
+              name: "",
+              errorName: false,
+              email: "",
+              errorEmail: false,
+              text: "",
+              errorText: false,
+            });
           }
         })
         .catch((err) => {
           console.log(err);
+          setSending(0);
+          enqueueSnackbar("Message sent error!", {
+            variant: "error",
+            anchorOrigin: {
+              horizontal: "center",
+              vertical: "bottom",
+            },
+          });
         });
     } else {
       setErrorMsg(true);
+      enqueueSnackbar("Message sent error!", {
+        variant: "error",
+        anchorOrigin: {
+          horizontal: "center",
+          vertical: "bottom",
+        },
+      });
     }
   };
 
@@ -131,6 +166,10 @@ const Contact = () => {
   // console.log('contact-user', user, errorMsg)
   const string =
     "I'm interested in full time job opportunities, especially large and ambitious projects. However if you have other request or question. Don't hesitate to contact me!";
+
+  function validateEmail(txt) {
+    return txt.length > 10 && txt.includes("@gmail.com") > 0;
+  }
 
   return (
     <ColLeft
@@ -153,32 +192,38 @@ const Contact = () => {
             </ColCenter>
             <ColLeft className="contact-string-msg">{string}</ColLeft>
             <ColCenter>
-              <label className="contact-form-inputGroup-label">Your name</label>
+              <label className="contact-form-inputGroup-label">
+                Who are you?
+              </label>
               <input
                 className="contact-form-inputGroup-input"
-                placeholder="Type your Name here"
+                placeholder="Type your name here"
                 value={user.name}
                 // style={{ borderBottom: user.errorName ? "0.25px solid #EE5007" : 'none' }}
                 onFocus={() => onFocusInput()}
                 onBlur={(e) => _onBlurUserName(e)}
                 onChange={(e) => _onChangeUserName(e)}
+                required
               />
               <label className="contact-form-inputGroup-label">
-                Your email
+                How do I contact you?
               </label>
               <input
                 className="contact-form-inputGroup-input"
-                placeholder="Type your email here"
+                placeholder="Type your Gmail here"
                 value={user.email}
                 // style={{ borderBottom: user.errorEmail ? "0.25px solid #EE5007" : 'none' }}
                 onFocus={() => onFocusInput()}
                 onBlur={(e) => _onBlurEmail(e)}
                 onChange={(e) => _onChangeEmail(e)}
+                type="email"
+                pattern=".+@gmail\.com"
+                required
               />
               <label className="contact-form-inputGroup-label">Message</label>
               <textarea
                 className="contact-form-inputGroup-textArea"
-                rows={10}
+                rows={6}
                 cols={5}
                 value={user.text}
                 // style={{ borderBottom: user.errorText ? "0.25px solid #EE5007" : 'none' }}
@@ -210,7 +255,16 @@ const Contact = () => {
                 className="contact-form-inputGroup-button"
                 type="button"
                 onClick={() => _onSendMessage()}
-                disabled={sending === 2 ? true : false}
+                // disabled={sending === 2 ? true : false}
+                disabled={
+                  user.name === "" ||
+                  !validateEmail(user.email) ||
+                  sending === 1
+                }
+                style={{
+                  opacity:
+                    user.name === "" || !validateEmail(user.email) ? 0.3 : 1,
+                }}
               >
                 {sending === 1 ? (
                   <Sending />
@@ -227,7 +281,6 @@ const Contact = () => {
         <ColCenter className="contact-message">
           {
             // screenSize.isMedium || screenSize.isLarge ? <EarthRound /> :
-            // <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15696.831225477945!2d106.10991672658137!3d10.405063581185795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310a9798fbd7cd25%3A0xb53c01a8018614b9!2sCai%20L%E1%BA%ADy%2C%20Tien%20Giang%2C%20Vietnam!5e0!3m2!1sen!2s!4v1652232080608!5m2!1sen!2s" className="cv-map" allowFullScreen="" title="myFrame" loading="lazy"></iframe>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16122.18414401547!2d106.72433877900598!3d10.709479408641924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752553219812db%3A0xac232219de55cfe8!2sEra%20Town%20Duc%20Khai%20Apartment!5e0!3m2!1sen!2s!4v1669734879045!5m2!1sen!2s"
               className="cv-map"

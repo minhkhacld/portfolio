@@ -1,17 +1,12 @@
+import { Box, Grid, Stack, Typography } from "@mui/material";
+import { Popup, ScrollView } from "devextreme-react";
+import moment from "moment";
 import React from "react";
-import { FaTimesCircle } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { setModal } from "../../../../redux/reducer";
-import { ColCenter } from "../../../kits/stucture/component.stucture";
-import Details from "./content/detail/Detail";
-import General from "./content/general/General";
-import "./Modal.css";
-import Modal from "react-modal";
-import { Backdrop, Box, Typography, Stack, Grid, Divider } from "@mui/material";
-import { Popup, ScrollView } from "devextreme-react";
 import Image from "../../../Image";
-import moment from "moment";
 import ProductDetailsCarousel from "../../../ProductDetailsCarousel";
+import "./Modal.css";
 
 // Modal.setAppElement("#root");
 const ProjectMobileModal = () => {
@@ -135,7 +130,9 @@ const ProjectMobileModal = () => {
                         Published date:
                       </Typography>
                       <Typography ml={1} component={"span"} variant="subtext2">
-                        {moment(store.app.publishDate).format("YYYY, MMM-DD")}
+                        {store.app.publishDate !== "TBD"
+                          ? moment(store.app.publishDate).format("YYYY, MMM-DD")
+                          : store.app.publishDate || "TBD"}
                       </Typography>
                     </Typography>
                   </Stack>
@@ -225,15 +222,17 @@ const ProjectMobileModal = () => {
                     </Stack>
                   ) : null}
                 </Stack>
-                <Divider orientation="vertical" />
+                {/* <Divider orientation="vertical" /> */}
               </Grid>
               <Grid item xs={12} md={8}>
                 <Box
                   sx={{
                     width: "100%",
-                    height: "100%",
+                    height: "85vh",
                     justifyContent: "center",
                     alignItems: "center",
+                    p: 2,
+                    // backgroundColor: (theme) => theme.palette.grey[200],
                   }}
                 >
                   <ProductDetailsCarousel store={store} />

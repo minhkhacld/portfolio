@@ -15,7 +15,15 @@ const Child = ({ app }) => {
 
   return (
     <div className="mobile-child">
-      <Box sx={{ width: "100%", overflow: "hidden", position: "relative" }}>
+      <Box
+        sx={{
+          width: "100%",
+          overflow: "hidden",
+          position: "relative",
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
         {!app?.isNew ? null : (
           <Box
             sx={{
@@ -31,11 +39,26 @@ const Child = ({ app }) => {
             }}
           >
             <Typography variant="body1" bold color={"white"}>
-              Comming Soon
+              New
             </Typography>
           </Box>
         )}
-        <img src={app.feature} className="mobile-child-image" alt={app.title} />
+        {app.feature !== "" && app.feature !== undefined ? (
+          <img
+            src={app.feature}
+            className="mobile-child-image"
+            alt={app.title}
+            style={{ height: 180 }}
+          />
+        ) : (
+          <div
+            className="mobile-child-image"
+            style={{
+              backgroundColor: "white",
+              height: 180,
+            }}
+          ></div>
+        )}
       </Box>
 
       <div className="mobile-child-circle" onClick={() => _onOpenModal(app)}>
