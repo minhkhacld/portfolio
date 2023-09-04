@@ -78,11 +78,12 @@ function Cloud({ count, radius }) {
       "GitHub",
       "ES5/ES6",
       "Firebase",
-      "Material",
       "Bootstrap",
       "Tailwind Css",
       "Devextreme",
-      "lodash",
+      "Capacitor JS",
+      "Material UI",
+      "Canvas",
     ];
 
     const temp = [];
@@ -149,7 +150,7 @@ export default function SkillCanvas() {
   return (
     <div
       className="skill-canvas"
-      // style={{ width: '49vw', height: '90vh', zIndex: 100 }}
+    // style={{ width: '49vw', height: '90vh', zIndex: 100 }}
     >
       <RotateInstruction screenSize={screenSize} />
       <React.Suspense fallback={null}>

@@ -93,7 +93,7 @@ const SkillRange = () => {
               <RowLeft className="exp-time">2021, Jul - Now</RowLeft>
               <p className="exp-description">
                 - Key person in build web UI with high performance, scalable
-                components for company websites and mobile apps using ReactJS
+                components for company websites and cross platforms mobile app using ReactJS/ Capacitor JS
                 technologies.
               </p>
               <p className="exp-description">
@@ -168,11 +168,11 @@ const SkillRange = () => {
                 - Run engineering build & pilot production to build new samples.
                 Define manpower, output and ST BOM of new products.
               </p>
-              <p className="exp-description">
+              {/* <p className="exp-description">
                 - Execute time study & improve LOB for production line,
                 continuously do improvement projects to increase efficiency &
                 save the cost.
-              </p>
+              </p> */}
               <p className="exp-description">
                 - With{" "}
                 <strong style={{ color: "var(--lightBlue)" }}>ambitious</strong>{" "}
