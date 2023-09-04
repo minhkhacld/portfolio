@@ -36,6 +36,7 @@ const SocialNetwork = () => {
           <Box
             component={"a"}
             href={item.link}
+            key={item?.name || index}
             target={"_blank"}
             sx={{ height: 40, display: "flex" }}
           >

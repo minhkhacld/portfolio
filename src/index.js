@@ -48,9 +48,9 @@ root.render(
         <ThemeProvider>
           <NotistackProvider>
             <BrowserRouter>
-              <React.StrictMode>
+              {/* <React.StrictMode> */}
                 <App />
-              </React.StrictMode>
+              {/* </React.StrictMode> */}
             </BrowserRouter>
           </NotistackProvider>
         </ThemeProvider>

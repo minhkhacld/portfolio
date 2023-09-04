@@ -12,10 +12,10 @@ const Projects = () => {
             paddingTop: path[path.length - 1] === "" ? 60 : 0
         }}>
             {path[path.length - 1] === "" &&
-                <div div className="part-skill">Projects</div>
+                <div className="part-skill">Projects</div>
             }
             <Mobile />
-            <Web />     
+            <Web />
         </div>
     )
 }

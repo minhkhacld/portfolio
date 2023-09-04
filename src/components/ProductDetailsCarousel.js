@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Slider from "react-slick";
 // @mui
 import { Box } from "@mui/material";
@@ -26,10 +26,10 @@ const RootStyle = styled("div")(({ theme }) => ({
 // ----------------------------------------------------------------------
 
 ProductDetailsCarousel.propTypes = {
-  store: PropTypes.object,
+  images: PropTypes.array,
 };
 
-export default function ProductDetailsCarousel({ store }) {
+export default function ProductDetailsCarousel({ images }) {
   const [openLightbox, setOpenLightbox] = useState(false);
 
   const [selectedImage, setSelectedImage] = useState(0);
@@ -44,12 +44,12 @@ export default function ProductDetailsCarousel({ store }) {
 
   const slider2 = useRef(null);
 
-  const imagesLightbox = store.app.picture || [];
+  const imagesLightbox = images || [];
 
   const handleOpenLightbox = (url) => {
     const imageIndex = imagesLightbox.findIndex((img) => img === url);
+    setSelectedImage(imageIndex || 0);
     setOpenLightbox(true);
-    setSelectedImage(imageIndex);
   };
 
   const settings1 = {
@@ -59,7 +59,9 @@ export default function ProductDetailsCarousel({ store }) {
     draggable: false,
     slidesToScroll: 1,
     adaptiveHeight: true,
-    beforeChange: (current, next) => setCurrentIndex(next),
+    beforeChange: (current, next) => {
+      setCurrentIndex(next)
+    },
   };
 
   const settings2 = {
@@ -90,6 +92,7 @@ export default function ProductDetailsCarousel({ store }) {
     slider2.current?.slickNext();
   };
 
+
   return (
     <RootStyle>
       <Box sx={{ p: 1 }}>
@@ -108,13 +111,18 @@ export default function ProductDetailsCarousel({ store }) {
                   key={img}
                   alt="large image"
                   src={img}
-                  ratio="16/9"
+                  // ratio="4/3"
                   onClick={() => handleOpenLightbox(img)}
-                  sx={{ cursor: "zoom-in" }}
+                  sx={{
+                    cursor: "zoom-in",
+                    maxHeight: 350,
+                  }}
                 />
               ))
             ) : (
-              <Image alt="large image" src={imagePlaceholder} ratio="16/9" />
+              <Image alt="large image" src={imagePlaceholder}
+                ratio="16/9"
+              />
             )}
           </Slider>
           {imagesLightbox.length > 0 && (
@@ -188,14 +196,21 @@ export default function ProductDetailsCarousel({ store }) {
         </Slider>
       </Box>
 
+
       <LightboxModal
         images={imagesLightbox}
-        mainSrc={imagesLightbox[selectedImage]}
+        mainSrc={
+          imagesLightbox[selectedImage] ||
+          imagesLightbox[0]}
         photoIndex={selectedImage}
         setPhotoIndex={setSelectedImage}
         isOpen={openLightbox}
-        onCloseRequest={() => setOpenLightbox(false)}
+        onCloseRequest={() => {
+          setOpenLightbox(false);
+          setSelectedImage(0);
+        }}
       />
+
     </RootStyle>
   );
 }

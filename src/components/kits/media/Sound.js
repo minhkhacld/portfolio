@@ -1,5 +1,6 @@
 import React from 'react'
 import { FaSoundcloud } from 'react-icons/fa';
+import { Stack } from '@mui/material';
 import { RowEvenly, Col } from '../stucture/component.stucture';
 import '../Kits.css';
 
@@ -25,15 +26,17 @@ const Sound = () => {
         }
     }
     return (
-        <RowEvenly className="cv-sound" onClick={() => playSound()}>
-            <audio id="myAudio" src={require("../../../assets/sound/sound.mp3")}></audio>
-            <FaSoundcloud size={30} style={styles.sound.icon} />
-            <p style={styles.sound.text}>Sound</p>
-            {play ?
-                <p style={styles.sound.on}>ON</p>
-                :
-                <p style={styles.sound.off}>OFF</p>
-            }
+        <RowEvenly className="cv-sound" style={{ width: 'auto' }} onClick={() => playSound()}>
+            <Stack direction={'row'} spacing={1} justifyContent={'center'} alignItems={'center'} p={1}>
+                <audio id="myAudio" src={require("../../../assets/sound/sound.mp3")}></audio>
+                <FaSoundcloud size={30} style={styles.sound.icon} />
+                <p style={styles.sound.text}>Sound</p>
+                {play ?
+                    <p style={styles.sound.on}>ON</p>
+                    :
+                    <p style={styles.sound.off}>OFF</p>
+                }
+            </Stack>
             <Col className="cv-sound-popup">
                 <p className="sound-popup-text">
                     Battle Metal by Alexander Nakarada | https://www.serpentsoundstudios.com

@@ -43,6 +43,7 @@ const Contact = () => {
 
   const _onBlurUserName = (e) => {
     const scrollbtn = document.getElementById("scroll-to-top");
+    if (scrollbtn === undefined || scrollbtn === null) return
     scrollbtn.style.display = "flex";
     if (e.target.value !== "") {
       setUser({ ...user, errorName: false });
@@ -59,6 +60,7 @@ const Contact = () => {
   };
   const _onBlurEmail = (e) => {
     const scrollbtn = document.getElementById("scroll-to-top");
+    if (scrollbtn === undefined || scrollbtn === null) return
     scrollbtn.style.display = "flex";
     if (e.target.value !== "") {
       setUser({ ...user, errorEmail: false });
@@ -75,6 +77,7 @@ const Contact = () => {
   };
   const _onBlurText = (e) => {
     const scrollbtn = document.getElementById("scroll-to-top");
+    if (scrollbtn === undefined || scrollbtn === null) return
     scrollbtn.style.display = "flex";
     if (e.target.value !== "") {
       setUser({ ...user, errorText: false });
@@ -160,7 +163,9 @@ const Contact = () => {
 
   const onFocusInput = () => {
     const scrollbtn = document.getElementById("scroll-to-top");
+    if (scrollbtn === undefined || scrollbtn === null) return
     scrollbtn.style.display = "none";
+
   };
 
   // console.log('contact-user', user, errorMsg)
@@ -287,7 +292,7 @@ const Contact = () => {
               allowFullScreen=""
               title="myFrame"
               loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
+              referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
           }
         </ColCenter>

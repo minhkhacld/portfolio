@@ -1,16 +1,11 @@
-import React from "react";
-import Contact from "../contact/Contact";
+import React, { memo } from "react";
+import ContactMuiInput from "../contact/ContactMuiInput";
 import Home from "../home/Home";
 import Projects from "../projects/Projects";
 import Skill from "../skill/Skill";
 import "./Main.css";
-import Helper from "../../kits/animated/Helper";
-import useScreenSize from "../../kits/media/Device.Measuring";
-import { Stack, Box, Typography, useTheme } from "@mui/material";
-import Page from "../../Page";
 
 const Main = () => {
-  const screenSize = useScreenSize();
 
   window.addEventListener("scroll", () => {
     const home = document.getElementById("home-section");
@@ -87,14 +82,6 @@ const Main = () => {
   });
 
   return (
-    // <Page title={'sadsads'}>
-    //   <Box>
-    //     <Home />
-    //     <Skill />
-    //     <Projects />
-    //     <Contact />
-    //   </Box>
-    // </Page>
     <div className="cv-main">
       <div className="main-part" id="home-section">
         <Home />
@@ -107,10 +94,11 @@ const Main = () => {
         <Projects />
       </div>
       <div className="main-part" id="contact-section">
-        <Contact />
+        {/* <Contact /> */}
+        <ContactMuiInput />
       </div>
     </div>
   );
 };
 
-export default Main;
+export default memo(Main);

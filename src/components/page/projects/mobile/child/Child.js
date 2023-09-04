@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { useDispatch } from "react-redux";
 import { setModal } from "../../../../../redux/reducer";
 import "./Child.css";
@@ -7,11 +7,13 @@ import { Box, Typography, useTheme } from "@mui/material";
 const Child = ({ app }) => {
   const dispatch = useDispatch();
   const theme = useTheme();
-  const _onOpenModal = (app) => {
+  const _onOpenModal = useCallback((app) => {
     dispatch(setModal({ isModalOpen: true, app: app }));
     const scrollbtn = document.getElementById("scroll-to-top");
-    scrollbtn.style.display = "none";
-  };
+    if (scrollbtn) {
+      scrollbtn.style.display = "none";
+    }
+  }, []);
 
   return (
     <div className="mobile-child">
@@ -38,7 +40,7 @@ const Child = ({ app }) => {
               py: 1,
             }}
           >
-            <Typography variant="body1" bold color={"white"}>
+            <Typography variant="body1" fontWeight={'bold'} color={"white"}>
               New
             </Typography>
           </Box>

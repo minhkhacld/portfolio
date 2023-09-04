@@ -1,14 +1,14 @@
 import { Box, Grid, Stack, Typography } from "@mui/material";
 import { Popup, ScrollView } from "devextreme-react";
 import moment from "moment";
-import React from "react";
+import React, { memo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setModal } from "../../../../redux/reducer";
 import Image from "../../../Image";
 import ProductDetailsCarousel from "../../../ProductDetailsCarousel";
 import "./Modal.css";
 
-// Modal.setAppElement("#root");
+
 const ProjectMobileModal = () => {
   const dispatch = useDispatch();
   const store = useSelector((store) => store.Reducer);
@@ -16,32 +16,12 @@ const ProjectMobileModal = () => {
   const closeModal = () => {
     dispatch(setModal({ isModalOpen: false, app: {} }));
     const scrollbtn = document.getElementById("scroll-to-top");
-    scrollbtn.style.display = "flex";
+    if (scrollbtn) {
+      scrollbtn.style.display = "flex";
+    }
   };
 
   return (
-    // <ColCenter className="modal-background">
-    //     <Modal
-    //         isOpen={store.isModalOpen}
-    //         // onAfterOpen={afterOpenModal}
-    //         onRequestClose={() => closeModal()}
-    //         className="modal-project-mobile"
-    //         contentLabel="Example Modal"
-    //     >
-    //         <div className="modal-title">
-    //             <div className="modal-title-text">Project details</div>
-    //             <div className="close-btn">
-    //                 <FaTimesCircle className="close-btn-icon" onClick={() => closeModal()} />
-    //             </div>
-    //         </div>
-    //         <div className="modal-content">
-    //             <General />
-    //             <Details />
-    //         </div>
-    //     </Modal>
-
-    // </ColCenter>
-
     <Box width={"100%"} height="100%">
       <Popup
         visible={store.isModalOpen}
@@ -53,6 +33,9 @@ const ProjectMobileModal = () => {
         title={"App details"}
         fullScreen
         hideOnParentScroll={false}
+        style={{
+          zIndex: 1000000
+        }}
       >
         <ScrollView width="100%" height="100%">
           <Stack direction={"row"} w="100%" height={"100%"} p={1}>
@@ -64,7 +47,7 @@ const ProjectMobileModal = () => {
                   height={"100%"}
                   spacing={2}
                 >
-                  <Box w="100%" justifyContent={"center"} alignItem="center">
+                  <Box w="100%" justifyContent={"center"} alignItems="center">
                     <Image
                       src={store.app.icon}
                       alt={store.app.title}
@@ -75,7 +58,9 @@ const ProjectMobileModal = () => {
                     direction={"row"}
                     display="flex"
                     justifyContent={"flex-start"}
-                    alignItems={"flex-start"}
+                    alignItems
+
+                    ={"flex-start"}
                   >
                     <Typography variant="body2" component={"div"}>
                       <Typography component={"span"} variant="subtitle1">
@@ -91,7 +76,8 @@ const ProjectMobileModal = () => {
                     direction={"row"}
                     display="flex"
                     justifyContent={"flex-start"}
-                    alignItems={"flex-start"}
+                    alignItems
+                    ={"flex-start"}
                   >
                     <Typography variant="body2" component={"div"}>
                       <Typography component={"span"} variant="subtitle1">
@@ -107,7 +93,8 @@ const ProjectMobileModal = () => {
                     direction={"row"}
                     display="flex"
                     justifyContent={"flex-start"}
-                    alignItems={"flex-start"}
+                    alignItems
+                    ={"flex-start"}
                   >
                     <Typography variant="body2" component={"div"}>
                       <Typography component={"span"} variant="subtitle1">
@@ -123,7 +110,8 @@ const ProjectMobileModal = () => {
                     direction={"row"}
                     display="flex"
                     justifyContent={"flex-start"}
-                    alignItems={"flex-start"}
+                    alignItems
+                    ={"flex-start"}
                   >
                     <Typography variant="body2" component={"div"}>
                       <Typography component={"span"} variant="subtitle1">
@@ -140,7 +128,8 @@ const ProjectMobileModal = () => {
                     direction={"row"}
                     display="flex"
                     justifyContent={"flex-start"}
-                    alignItems={"flex-start"}
+                    alignItems
+                    ={"flex-start"}
                   >
                     <Typography variant="body2" component={"div"}>
                       <Typography component={"span"} variant="subtitle1">
@@ -157,7 +146,8 @@ const ProjectMobileModal = () => {
                       direction={"row"}
                       display="flex"
                       justifyContent={"flex-start"}
-                      alignItems={"flex-start"}
+                      alignItems
+                      ={"flex-start"}
                     >
                       <Typography variant="body2" component={"div"}>
                         <Typography component={"span"} variant="subtitle1">
@@ -180,7 +170,8 @@ const ProjectMobileModal = () => {
                       direction={"row"}
                       display="flex"
                       justifyContent={"flex-start"}
-                      alignItems={"flex-start"}
+                      alignItems
+                      ={"flex-start"}
                     >
                       <Typography variant="body2" component={"div"}>
                         <Typography component={"span"} variant="subtitle1">
@@ -203,7 +194,8 @@ const ProjectMobileModal = () => {
                       direction={"row"}
                       display="flex"
                       justifyContent={"flex-start"}
-                      alignItems={"flex-start"}
+                      alignItems
+                      ={"flex-start"}
                     >
                       <Typography variant="body2" component={"div"}>
                         <Typography component={"span"} variant="subtitle1">
@@ -235,7 +227,9 @@ const ProjectMobileModal = () => {
                     // backgroundColor: (theme) => theme.palette.grey[200],
                   }}
                 >
-                  <ProductDetailsCarousel store={store} />
+                  {store?.app.picture.length > 0 &&
+                    <ProductDetailsCarousel images={store.app.picture} />
+                  }
                 </Box>
               </Grid>
             </Grid>
@@ -246,4 +240,5 @@ const ProjectMobileModal = () => {
   );
 };
 
+// export default memo(ProjectMobileModal);
 export default ProjectMobileModal;

@@ -16,7 +16,7 @@ export default function Skill() {
       }}
     >
       {path[path.length - 1] === "" &&
-        <div div className="part-skill">Skill</div>
+        <div className="part-skill">Skill</div>
       }
       <RowCenter className="skill-top-content">
         <Quote />

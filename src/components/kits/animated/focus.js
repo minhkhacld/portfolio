@@ -29,7 +29,7 @@ div{
     return (
         <Wrapper>
             <FaSync color="var(--lightBlue)" size={14} />
-            <div><span>Use</span><span> {screenSize.isXSmall || screenSize.isSmall ? "fingers" : "mouse"}</span> <span>to rote/zoom me</span></div>
+            <div><span>Use</span><span> {screenSize.isXSmall || screenSize.isSmall ? "fingers" : "mouse"}</span> <span>to rotate/zoom me</span></div>
         </Wrapper>
     )
 }

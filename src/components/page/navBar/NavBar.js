@@ -1,25 +1,28 @@
+import { Link as MuiLink } from '@mui/material';
 import React from "react";
 import { FaBars } from "react-icons/fa";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import useScreenSize from "../../kits/media/Device.Measuring";
 import "./NavBar.css";
 
 const NavBar = () => {
   const navBarArr = [
-    { path: "/", pathname: "", text: "About", id: "nav-home" },
-    { path: "/skill", pathname: "skill", text: "My skill", id: "nav-skill" },
+    { path: "/", pathname: "", text: "About", id: "nav-home", sectionId: 'home-section' },
+    { path: "/skill", pathname: "skill", text: "My skill", id: "nav-skill", sectionId: 'skill-section' },
     {
       path: "/projects",
       pathname: "projects",
       text: "Projects",
       id: "nav-projects",
+      sectionId: 'project-section'
     },
     {
       path: "/contact",
       pathname: "contact",
       text: "Contact",
       id: "nav-contact",
+      sectionId: 'contact-section'
     },
   ];
 
@@ -44,22 +47,35 @@ const NavBar = () => {
   //Javascript split method to get the name of the path in array
   const splitLocation = pathname.split("/");
 
+  // const _onSwitchRoute = (item) => {
+  //   if (screenSize.isXSmall) {
+  //     setMenuOpen(false);
+  //   }
+
+  //   navBarArr.forEach((d, index) => {
+  //     const frame = document.getElementById(`${item.id}-${index}`);
+  //     const navChild = document.getElementById(d.id);
+  //     if (d.id === item.id) {
+  //       navChild.style.color = "var(--lightBlue)";
+  //     } else {
+  //       navChild.style.color = "white";
+  //       frame.style.backgroundColor = "var(--black)";
+  //       frame.style.borderBottom = "none";
+  //     }
+  //   });
+  // };
   const _onSwitchRoute = (item) => {
     if (screenSize.isXSmall) {
       setMenuOpen(false);
     }
+    // const section = document.getElementById(item.sectionId);
+    // section.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'start' });
 
-    navBarArr.forEach((d, index) => {
-      const frame = document.getElementById(`${item.id}-${index}`);
-      const navChild = document.getElementById(d.id);
-      if (d.id === item.id) {
-        navChild.style.color = "var(--lightBlue)";
-      } else {
-        navChild.style.color = "white";
-        frame.style.backgroundColor = "var(--black)";
-        frame.style.borderBottom = "none";
-      }
-    });
+    const section = document.getElementById(item.sectionId);
+    let position = section.getBoundingClientRect();
+    // scrolls to 20px above element
+    window.scrollTo({ left: position.left, top: position.top + window.scrollY - 50, behavior: 'smooth' });
+
   };
 
   const _onGoToFirstPage = () => {
@@ -76,8 +92,8 @@ const NavBar = () => {
   const WrapperSVG = styled.svg`
     .shape {
       stroke-dasharray: ${!screenSize.isXSmall && !screenSize.isSmall
-          ? WIDTH / 2
-          : 0}
+      ? WIDTH / 2
+      : 0}
         ${TOTAL_LENGTH};
       stroke-dashoffset: -${WIDTH + HEIGHT / 2};
       stroke-width: 3px;
@@ -138,9 +154,9 @@ const NavBar = () => {
         <div className="cv-nav-right">
           {navBarArr.map((item, index) => {
             return (
-              <Link
+              <MuiLink
                 key={index}
-                to={item.path}
+                // to={item.path}
                 className={
                   splitLocation[splitLocation.length - 1] === item.pathname
                     ? "navbar-active-link"
@@ -149,6 +165,8 @@ const NavBar = () => {
                 id={`${item.id}-${index}`}
                 onClick={() => _onSwitchRoute(item)}
                 style={{ textDecoration: "none" }}
+                component={'a'}
+
               >
                 <WrapperSVG
                   height="100%"
@@ -177,7 +195,7 @@ const NavBar = () => {
                     {item.text}
                   </text>
                 </WrapperSVG>
-              </Link>
+              </MuiLink>
             );
           })}
         </div>

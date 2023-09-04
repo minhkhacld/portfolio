@@ -1,27 +1,17 @@
 import React from "react";
-import MouseParticles from "react-mouse-particles";
-import { Navigate, Route, Routes } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
+import LoadingScreen from "../LoadingScreen";
 import ScrollToTop from "../kits/animated/ScrollToTop";
+import ScrollToTopBig from "../kits/animated/ScrollToTopBig";
 import useScreenSize from "../kits/media/Device.Measuring";
 import Sound from "../kits/media/Sound";
 import { ColCenter } from "../kits/stucture/component.stucture";
-import Contact from "./contact/Contact";
-import Home from "./home/Home";
-import Main from "./main/Main";
 import "./MainPage.css";
+import Main from "./main/Main";
 import NavBar from "./navBar/NavBar";
 import ProjectMobileModal from "./projects/modal/ProjectMobile.Modal";
-import Projects from "./projects/Projects";
-import Skill from "./skill/Skill";
-import { useSelector } from "react-redux";
-import Modal from "react-modal";
-import ScrollToTopBig from "../kits/animated/ScrollToTopBig";
-import { useLocation } from "react-router-dom";
-import Appads from "../page/appads/App-ads";
-import PageTransition from "../kits/animated/PageTransition";
-import LoadingScreen from "../LoadingScreen";
 
-// Modal.setAppElement("#root");
 
 let delay = (function () {
   let timer = 1100;
@@ -50,9 +40,15 @@ const MainPage = () => {
       document.body.scrollHeight
     ) {
       // you're at the bottom of the page
-      document.getElementById("scroll-to-top-big-frame").style.display = "flex";
+      const scrollBtn = document.getElementById("scroll-to-top-big-frame")
+      if (scrollBtn) {
+        scrollBtn.style.display = "flex";
+      }
     } else {
-      document.getElementById("scroll-to-top-big-frame").style.display = "none";
+      const scrollBtn = document.getElementById("scroll-to-top-big-frame")
+      if (scrollBtn) {
+        scrollBtn.style.display = "none";
+      }
     }
   };
   window.addEventListener("load", function () {
@@ -63,33 +59,20 @@ const MainPage = () => {
     <div style={{ width: "100%", height: "100%" }}>
       {loading ? (
         // <PageTransition />
-        <LoadingScreen/>
+        <LoadingScreen />
       ) : (
         <ColCenter className="cv-container" id="cv-container">
           <NavBar />
           <Sound />
-          {/* <MouseParticles
-            g={2.3}
-            num={1}
-            radius={8}
-            life={1}
-            v={1.2}
-            color={[
-              "white",
-              "var(--lightBlue)",
-              "var(--organ)",
-              "var(--lightYellow)",
-            ]}
-            alpha={0.5}
-            level={6}
-          /> */}
-          {store.isModalOpen && <ProjectMobileModal />}
+          {/* {store.isModalOpen && <ProjectMobileModal />} */}
+
           {screenSize.isXSmall && <ScrollToTop />}
           {!screenSize.isXSmall && path[path.length - 1] === "" && (
             <ScrollToTopBig />
           )}
           <ColCenter className="cv-content-container">
-            <Routes>
+            <Main />
+            {/* <Routes>
               <Route path="/" element={<Main />} />
               <Route path="/about" element={<Home />} />
               <Route path="skill" element={<Skill />} />
@@ -97,18 +80,13 @@ const MainPage = () => {
               <Route path="contact" element={<Contact />} />
               <Route path="/app-ads.txt" element={<Appads />} />
               <Route path="*" element={<Navigate to="/" replace />} />
-            </Routes>
-            {/* <Routes>
-                        <Route path="/profilo" element={<Main />} />
-                        <Route path="/profilo/about" element={<Home />} />
-                        <Route path="/profilo/skill" element={<Skill />} />
-                        <Route path="/profilo/projects" element={<Projects />} />
-                        <Route path="/profilo/contact" element={<Contact />} />
-                        <Route path="*" element={<Navigate to="/profilo" />} />
-                    </Routes> */}
+            </Routes> */}
           </ColCenter>
         </ColCenter>
       )}
+
+      {store.isModalOpen && <ProjectMobileModal />}
+
     </div>
   );
 };

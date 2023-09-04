@@ -30,7 +30,7 @@ const Mobile = () => {
       feature: require("../../../../assets/picture/project/sta/feature.png"),
       publishDate: "2022-11-29",
       projectType: "Personal project",
-      isNew: true,
+      isNew: false,
     },
     {
       appName: "Scan To Google Sheets",

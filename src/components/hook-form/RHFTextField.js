@@ -25,7 +25,10 @@ export default function RHFTextField({ name, ...other }) {
           helperText={error?.message}
           {...other}
           InputLabelProps={{
-            style: { color: 'var(--label)' },
+            style: { color: 'var(--lightBlue)' },
+          }}
+          InputProps={{
+            style: { color: 'var(--lightBlue)' },
           }}
         />
       )}
