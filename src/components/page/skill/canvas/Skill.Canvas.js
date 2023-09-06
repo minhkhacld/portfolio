@@ -5,6 +5,7 @@ import {
   TrackballControls,
   OrbitControls,
 } from "@react-three/drei";
+import { Box } from "@mui/material";
 import { Canvas, useFrame } from "@react-three/fiber";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import * as THREE from "three";
@@ -148,9 +149,12 @@ function Cloud({ count, radius }) {
 export default function SkillCanvas() {
   const screenSize = useScreenSize();
   return (
-    <div
+    <Box
       className="skill-canvas"
-    // style={{ width: '49vw', height: '90vh', zIndex: 100 }}
+      sx={{
+        // overflow: "hidden",
+        maxHeight: { xs: "500px !important", sm: "auto !important" },
+      }}
     >
       <RotateInstruction screenSize={screenSize} />
       <React.Suspense fallback={null}>
@@ -160,7 +164,7 @@ export default function SkillCanvas() {
             position: [0, 0, 50],
             fov: screenSize.isXSmall || screenSize.isSmall ? 120 : 90,
           }}
-          className="chart-canvas"
+          // className="chart-canvas"
         >
           <Center position={[5, 5, 10]}>
             <Cloud count={6} radius={25} />
@@ -180,6 +184,6 @@ export default function SkillCanvas() {
           />
         </Canvas>
       </React.Suspense>
-    </div>
+    </Box>
   );
 }
