@@ -78,9 +78,6 @@ const NavBar = () => {
   //   });
   // };
   const _onSwitchRoute = (item) => {
-    if (screenSize.isXSmall) {
-      setMenuOpen(false);
-    }
     // const section = document.getElementById(item.sectionId);
     // section.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'start' });
 
@@ -92,6 +89,11 @@ const NavBar = () => {
       top: position.top + window.scrollY - 50,
       behavior: "smooth",
     });
+    if (screenSize.isXSmall) {
+      setMenuOpen(false);
+    }
+    navigate("/");
+
   };
 
   const _onGoToFirstPage = () => {
@@ -219,13 +221,15 @@ const NavBar = () => {
       <Stack className="cv-nav-left" direction={"row"} spacing={1}>
         <Box
           className="cv-nav-left-menu"
-          display={"flex"}
-          justifyContent={"center"}
-          alignItems={"center"}
           onClick={() => _onOpenMenu()}
-          component={"span"}
           sx={{
             paddingLeft: "8px !important",
+            display: {
+              xs: "flex !important",
+              sm: "none !important",
+            },
+            justifyContent: "center",
+            alignItems: "center",
           }}
         >
           <Iconify

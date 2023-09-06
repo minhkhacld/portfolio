@@ -8,7 +8,6 @@ import Image from "../../../Image";
 import ProductDetailsCarousel from "../../../ProductDetailsCarousel";
 import "./Modal.css";
 
-
 const ProjectMobileModal = () => {
   const dispatch = useDispatch();
   const store = useSelector((store) => store.Reducer);
@@ -34,7 +33,7 @@ const ProjectMobileModal = () => {
         fullScreen
         hideOnParentScroll={false}
         style={{
-          zIndex: 1000000
+          zIndex: 1000000,
         }}
       >
         <ScrollView width="100%" height="100%">
@@ -58,9 +57,7 @@ const ProjectMobileModal = () => {
                     direction={"row"}
                     display="flex"
                     justifyContent={"flex-start"}
-                    alignItems
-
-                    ={"flex-start"}
+                    alignItems={"flex-start"}
                   >
                     <Typography variant="body2" component={"div"}>
                       <Typography component={"span"} variant="subtitle1">
@@ -76,8 +73,7 @@ const ProjectMobileModal = () => {
                     direction={"row"}
                     display="flex"
                     justifyContent={"flex-start"}
-                    alignItems
-                    ={"flex-start"}
+                    alignItems={"flex-start"}
                   >
                     <Typography variant="body2" component={"div"}>
                       <Typography component={"span"} variant="subtitle1">
@@ -93,8 +89,7 @@ const ProjectMobileModal = () => {
                     direction={"row"}
                     display="flex"
                     justifyContent={"flex-start"}
-                    alignItems
-                    ={"flex-start"}
+                    alignItems={"flex-start"}
                   >
                     <Typography variant="body2" component={"div"}>
                       <Typography component={"span"} variant="subtitle1">
@@ -110,8 +105,7 @@ const ProjectMobileModal = () => {
                     direction={"row"}
                     display="flex"
                     justifyContent={"flex-start"}
-                    alignItems
-                    ={"flex-start"}
+                    alignItems={"flex-start"}
                   >
                     <Typography variant="body2" component={"div"}>
                       <Typography component={"span"} variant="subtitle1">
@@ -128,8 +122,7 @@ const ProjectMobileModal = () => {
                     direction={"row"}
                     display="flex"
                     justifyContent={"flex-start"}
-                    alignItems
-                    ={"flex-start"}
+                    alignItems={"flex-start"}
                   >
                     <Typography variant="body2" component={"div"}>
                       <Typography component={"span"} variant="subtitle1">
@@ -146,8 +139,7 @@ const ProjectMobileModal = () => {
                       direction={"row"}
                       display="flex"
                       justifyContent={"flex-start"}
-                      alignItems
-                      ={"flex-start"}
+                      alignItems={"flex-start"}
                     >
                       <Typography variant="body2" component={"div"}>
                         <Typography component={"span"} variant="subtitle1">
@@ -170,8 +162,7 @@ const ProjectMobileModal = () => {
                       direction={"row"}
                       display="flex"
                       justifyContent={"flex-start"}
-                      alignItems
-                      ={"flex-start"}
+                      alignItems={"flex-start"}
                     >
                       <Typography variant="body2" component={"div"}>
                         <Typography component={"span"} variant="subtitle1">
@@ -194,8 +185,7 @@ const ProjectMobileModal = () => {
                       direction={"row"}
                       display="flex"
                       justifyContent={"flex-start"}
-                      alignItems
-                      ={"flex-start"}
+                      alignItems={"flex-start"}
                     >
                       <Typography variant="body2" component={"div"}>
                         <Typography component={"span"} variant="subtitle1">
@@ -224,12 +214,13 @@ const ProjectMobileModal = () => {
                     justifyContent: "center",
                     alignItems: "center",
                     p: 2,
+                    mt: { xs: 2, sm: 0 },
                     // backgroundColor: (theme) => theme.palette.grey[200],
                   }}
                 >
-                  {store?.app.picture.length > 0 &&
+                  {store?.app.picture.length > 0 && (
                     <ProductDetailsCarousel images={store.app.picture} />
-                  }
+                  )}
                 </Box>
               </Grid>
             </Grid>

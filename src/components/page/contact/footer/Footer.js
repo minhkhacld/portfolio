@@ -1,9 +1,7 @@
 import { Box, Grid, Stack, Typography } from "@mui/material";
 import React from "react";
 import { FaEnvelope, FaMapMarked, FaMobileAlt } from "react-icons/fa";
-import {
-  RowLeft
-} from "../../../kits/stucture/component.stucture";
+import { RowLeft } from "../../../kits/stucture/component.stucture";
 import SocialNetwork from "../network/SocialNetwork";
 import "./Footer.css";
 
@@ -44,19 +42,37 @@ const Footer = () => {
             <Typography variant="subtitle2" color={"var(--lightBlue)"}>
               Contact me via:
             </Typography>
-            <RowLeft className="footer-contact-media">
+            <Stack
+              direction={"row"}
+              spacing={2}
+              justifyContent={"flex-start"}
+              alignItems={"center"}
+              className="footer-contact-media"
+            >
               <FaEnvelope className="contact-media-icon" />
               <a className="contact-media-text" href="mailto:pmkha92@gmail.com">
                 pmkha92@gmail.com
               </a>
-            </RowLeft>
-            <RowLeft className="footer-contact-media">
+            </Stack>
+            <Stack
+              direction={"row"}
+              spacing={2}
+              justifyContent={"flex-start"}
+              alignItems={"center"}
+              className="footer-contact-media"
+            >
               <FaMobileAlt className="contact-media-icon" />
               <a className="contact-media-text" href="tel:+84355210716">
                 +84355210716
               </a>
-            </RowLeft>
-            <RowLeft className="footer-contact-media">
+            </Stack>
+            <Stack
+              direction={"row"}
+              spacing={2}
+              justifyContent={"flex-start"}
+              alignItems={"center"}
+              className="footer-contact-media"
+            >
               <FaMapMarked className="contact-media-icon" />
               <a
                 className="contact-media-text"
@@ -64,7 +80,7 @@ const Footer = () => {
               >
                 Cai Lay, Tien Giang, Vietnam
               </a>
-            </RowLeft>
+            </Stack>
           </Stack>
         </Grid>
 

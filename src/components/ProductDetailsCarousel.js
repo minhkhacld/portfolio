@@ -60,7 +60,7 @@ export default function ProductDetailsCarousel({ images }) {
     slidesToScroll: 1,
     adaptiveHeight: true,
     beforeChange: (current, next) => {
-      setCurrentIndex(next)
+      setCurrentIndex(next);
     },
   };
 
@@ -92,7 +92,6 @@ export default function ProductDetailsCarousel({ images }) {
     slider2.current?.slickNext();
   };
 
-
   return (
     <RootStyle>
       <Box sx={{ p: 1 }}>
@@ -102,6 +101,8 @@ export default function ProductDetailsCarousel({ images }) {
             borderRadius: 1,
             overflow: "hidden",
             position: "relative",
+            justifyContent: "center",
+            alignItems: "center",
           }}
         >
           <Slider {...settings1} asNavFor={nav2} ref={slider1}>
@@ -115,14 +116,19 @@ export default function ProductDetailsCarousel({ images }) {
                   onClick={() => handleOpenLightbox(img)}
                   sx={{
                     cursor: "zoom-in",
-                    maxHeight: 350,
+                    maxHeight: {
+                      xs: 800,
+                      md: "60vh",
+                    },
+                    minHeight: {
+                      xs: 400,
+                      md: "50vh",
+                    },
                   }}
                 />
               ))
             ) : (
-              <Image alt="large image" src={imagePlaceholder}
-                ratio="16/9"
-              />
+              <Image alt="large image" src={imagePlaceholder} ratio="16/9" />
             )}
           </Slider>
           {imagesLightbox.length > 0 && (
@@ -196,12 +202,9 @@ export default function ProductDetailsCarousel({ images }) {
         </Slider>
       </Box>
 
-
       <LightboxModal
         images={imagesLightbox}
-        mainSrc={
-          imagesLightbox[selectedImage] ||
-          imagesLightbox[0]}
+        mainSrc={imagesLightbox[selectedImage] || imagesLightbox[0]}
         photoIndex={selectedImage}
         setPhotoIndex={setSelectedImage}
         isOpen={openLightbox}
@@ -210,7 +213,6 @@ export default function ProductDetailsCarousel({ images }) {
           setSelectedImage(0);
         }}
       />
-
     </RootStyle>
   );
 }

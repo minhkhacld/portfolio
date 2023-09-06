@@ -38,7 +38,7 @@ const SocialNetwork = () => {
             href={item.link}
             key={item?.name || index}
             target={"_blank"}
-            sx={{ height: 40, display: "flex" }}
+            sx={{ height: 40, width: 40, display: "flex" }}
           >
             <Image src={item.piture} alt={item.name} />
           </Box>
