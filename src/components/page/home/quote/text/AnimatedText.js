@@ -24,7 +24,7 @@ const AnimatedText = ({ text }) => {
         animation-fill-mode: forwards;
         animation-iteration-count: 1;
         color:var(--lightBlue);
-        font-size:${screenSize.isXSmall || screenSize.isSmall ? 50 : screenSize.isMedium ? 60 : 80}px;
+        font-size:${screenSize.isXSmall || screenSize.isSmall ? 40 : screenSize.isMedium ? 60 : 80}px;
         font-weight:bold;
         z-index:1;   
     }    
@@ -56,7 +56,7 @@ const AnimatedText = ({ text }) => {
                                 <img
                                     className="animated-text-logo"
                                     src={require('../../../../../assets/picture/smallLogo.png')} alt="logo" style={{
-                                        height: screenSize.isXSmall || screenSize.isSmall ? 43 : 60,
+                                        height: screenSize.isXSmall || screenSize.isSmall ? 30 : 45,
                                     }} />
                         }</span>
                 )

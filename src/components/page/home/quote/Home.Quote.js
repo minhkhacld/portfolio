@@ -5,6 +5,7 @@ import { Col, ColCenter } from '../../../kits/stucture/component.stucture';
 import AnimatedText from './text/AnimatedText';
 import Button from '@mui/material/Button';
 import myCV from '../../../../assets/pdf/Software_Developer_Pham_Minh_Kha.pdf';
+import { Stack, Box } from '@mui/material';
 
 const HomeQuote = () => {
     const navigate = useNavigate();
@@ -20,10 +21,10 @@ const HomeQuote = () => {
 
     const text1Str = "Hi,";
     const text2Str = "I'm Kha,";
-    const text3Str = "web developer";
+    const text3Str = "web/mobile dev";
 
     return (
-        <Col className="home-quote">
+        <Stack className="home-quote" sx={{ padding: { xs: '8px !important', sm: '16px !important' }, }}>
             {/* <RotateFrame from={0} to={360} />
             <RotateFrame from={5} to={365} />
             <RotateFrame from={10} to={370} /> */}
@@ -32,10 +33,12 @@ const HomeQuote = () => {
             <AnimatedText text={text3Str} />
             <ColCenter onClick={() => _onGoToContact()} className="home-quote-link" style={{ textTransform: 'capitalize', }}>Contact me</ColCenter>
 
-            <a href={myCV} download="Kha's Resume" style={{ marginTop: '1.5rem', textDecoration: 'none', }}>
-                <Button variant="outlined" color="info" className="btn-download-cv">Download my CV</Button>
-            </a>
-        </Col>
+            <Box mt={2}>
+                <a href={myCV} download="Kha's Resume" style={{ marginTop: '1.5rem !important', textDecoration: 'none', }}>
+                    <Button variant="outlined" color="info" className="btn-download-cv">Download my CV</Button>
+                </a>
+            </Box>
+        </Stack>
     )
 }
 
