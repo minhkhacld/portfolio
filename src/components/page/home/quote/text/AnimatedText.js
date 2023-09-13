@@ -56,7 +56,7 @@ const AnimatedText = ({ text }) => {
                                 <img
                                     className="animated-text-logo"
                                     src={require('../../../../../assets/picture/smallLogo.png')} alt="logo" style={{
-                                        height: screenSize.isXSmall || screenSize.isSmall ? 30 : 45,
+                                        height: screenSize.isXSmall || screenSize.isSmall ? 30 : 60,
                                     }} />
                         }</span>
                 )

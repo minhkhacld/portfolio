@@ -24,7 +24,7 @@ const HomeQuote = () => {
     const text3Str = "web/mobile dev";
 
     return (
-        <Stack className="home-quote" sx={{ padding: { xs: '8px !important', sm: '16px !important' }, }}>
+        <Stack className="home-quote" sx={{ padding: { xs: '8px !important', sm: '24px !important' }, }}>
             {/* <RotateFrame from={0} to={360} />
             <RotateFrame from={5} to={365} />
             <RotateFrame from={10} to={370} /> */}
