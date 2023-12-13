@@ -106,30 +106,33 @@ export default function ProductDetailsCarousel({ images }) {
           }}
         >
           <Slider {...settings1} asNavFor={nav2} ref={slider1}>
+
             {imagesLightbox.length > 0 ? (
               imagesLightbox.map((img) => (
-                <Image
-                  key={img}
-                  alt="large image"
-                  src={img}
-                  // ratio="4/3"
-                  onClick={() => handleOpenLightbox(img)}
-                  sx={{
-                    cursor: "zoom-in",
-                    maxHeight: {
-                      xs: 800,
-                      md: "60vh",
-                    },
-                    minHeight: {
-                      xs: 400,
-                      md: "50vh",
-                    },
-                  }}
-                />
+                <Box key={img}>
+                  <Image
+                    alt="large image"
+                    src={img}
+                    ratio="21/9"
+                    onClick={() => handleOpenLightbox(img)}
+                    sx={{
+                      cursor: "zoom-in",
+                      maxHeight: {
+                        xs: 800,
+                        md: "60vh",
+                      },
+                      minHeight: {
+                        xs: 400,
+                        md: "50vh",
+                      },
+                    }}
+                  />
+                </Box>
               ))
             ) : (
               <Image alt="large image" src={imagePlaceholder} ratio="16/9" />
             )}
+
           </Slider>
           {imagesLightbox.length > 0 && (
             <CarouselArrowIndex

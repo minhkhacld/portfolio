@@ -20,6 +20,7 @@
     "devextreme": "22.1.6",
     "devextreme-react": "22.1.6",
     "framer-motion": "^6.2.9",
+    "google-map-react": "^2.2.1",
     "moment": "^2.29.3",
     "notistack": "^2.0.3",
     "nprogress": "^0.2.0",

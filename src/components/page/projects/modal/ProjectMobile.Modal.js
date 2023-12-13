@@ -59,7 +59,7 @@ const ProjectMobileModal = () => {
                     justifyContent={"flex-start"}
                     alignItems={"flex-start"}
                   >
-                    <Typography variant="body2" component={"div"}>
+                    <Typography variant="body2" component={"div"} >
                       <Typography component={"span"} variant="subtitle1">
                         App name:
                       </Typography>
@@ -75,11 +75,12 @@ const ProjectMobileModal = () => {
                     justifyContent={"flex-start"}
                     alignItems={"flex-start"}
                   >
-                    <Typography variant="body2" component={"div"}>
+                    <Typography variant="body2" component={"span"} whiteSpace={'pre-wrap'}>
                       <Typography component={"span"} variant="subtitle1">
                         Description:
                       </Typography>
-                      <Typography ml={1} component={"span"} variant="subtext2">
+                      <Typography ml={1} component={"span"} variant="subtext2" whiteSpace={'pre-wrap'}
+                      >
                         {store.app.des}
                       </Typography>
                     </Typography>

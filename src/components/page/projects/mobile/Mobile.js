@@ -6,6 +6,26 @@ import { FaMobileAlt } from "react-icons/fa";
 const Mobile = () => {
   const data = [
     {
+      appName: "Email Reader",
+      des: `Read email, outlooks file with a single touch
+🚩 What can you do with Email Reader: 
+✅ Read any email file with extension .msg, .eml
+✅ Save or share email file contents`,
+      details: `React native, nodejs`,
+      playStore: "https://play.google.com/store/apps/details?id=com.simplemsgreader",
+      appStore: "https://apps.apple.com/us/app/email-reader/id6472813131",
+      picture: [
+        require("../../../../assets/picture/project/msg-reader/android_feature.png"),
+        require("../../../../assets/picture/project/msg-reader/home.png"),
+        require("../../../../assets/picture/project/msg-reader/email_contents.png"),
+      ],
+      icon: require("../../../../assets/picture/project/msg-reader/logo.png"),
+      feature: require("../../../../assets/picture/project/msg-reader/android_feature.png"),
+      publishDate: "2023-10-20",
+      projectType: "Personal project",
+      isNew: true,
+    },
+    {
       appName: "Sheets to App",
       des: `Powerful and fully customized mobile application for your business or any idea using spreadsheet
       * How's it works?
