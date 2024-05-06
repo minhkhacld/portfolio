@@ -85,6 +85,7 @@ function Cloud({ count, radius }) {
       "Capacitor JS",
       "Material UI",
       "Canvas",
+      "CapacitorJS"
     ];
 
     const temp = [];

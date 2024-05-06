@@ -6,6 +6,25 @@ import { FaMobileAlt } from "react-icons/fa";
 const Mobile = () => {
   const data = [
     {
+      appName: "Attendance Spreadsheets",
+      des: `This mobile app simplifies student attendance tracking and automatically syncs data with your Google Sheets.`,
+      details: `React native, nodejs`,
+      playStore: "https://play.google.com/store/apps/details?id=com.minhkhacld.attendancetracker",
+      appStore: "https://apps.apple.com/us/app/attendance-spreadsheet/id6496849751",
+      picture: [
+        require("../../../../assets/picture/project/atdtk/feature.png"),
+        require("../../../../assets/picture/project/atdtk/touch_to_track.png"),
+        require("../../../../assets/picture/project/atdtk/multi_class_management.png"),
+        require("../../../../assets/picture/project/atdtk/managemnet_student_info.png"),
+        require("../../../../assets/picture/project/atdtk/update_with_note.png"),
+      ],
+      icon: require("../../../../assets/picture/project/atdtk/logo.png"),
+      feature: require("../../../../assets/picture/project/atdtk/feature.png"),
+      publishDate: "2024-05-06",
+      projectType: "Personal project",
+      isNew: true,
+    },
+    {
       appName: "Email Reader",
       des: `Read email, outlooks file with a single touch
 🚩 What can you do with Email Reader: 
@@ -23,7 +42,7 @@ const Mobile = () => {
       feature: require("../../../../assets/picture/project/msg-reader/android_feature.png"),
       publishDate: "2023-10-20",
       projectType: "Personal project",
-      isNew: true,
+      isNew: false,
     },
     {
       appName: "Sheets to App",
