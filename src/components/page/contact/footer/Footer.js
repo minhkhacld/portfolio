@@ -76,9 +76,10 @@ const Footer = () => {
               <FaMapMarked className="contact-media-icon" />
               <a
                 className="contact-media-text"
-                href="https://goo.gl/maps/tqDBgbc6t4qvt8668"
+                href="https://maps.app.goo.gl/5V1DQu5zaTYexSG3A"
+                target="_blank"
               >
-                Cai Lay, Tien Giang, Vietnam
+                7th District, Ho Chi Minh City, Vietnam
               </a>
             </Stack>
           </Stack>

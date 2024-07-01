@@ -83,35 +83,43 @@ const SkillRange = () => {
           <Grid item sm={12} md={4}>
             <Stack
               sx={{
-                backgroundColor: " #2a2a2a",
+                backgroundColor: "#2a2a2a",
                 color: "white",
+                minHeight: 400,
               }}
               p={2}
             >
               <RowLeft className="exp-title">Front End Developer</RowLeft>
               <RowLeft className="exp-company">Motives Viet Nam</RowLeft>
-              <RowLeft className="exp-time">2021, Jul - Now</RowLeft>
+              <RowLeft className="exp-time">2022, Jul - Now</RowLeft>
               <p className="exp-description">
-                - Key person in build web UI with high performance, scalable
-                components for company websites and cross platforms mobile app using ReactJS/ Capacitor JS
-                technologies.
+                - Key contributor in cross platform mobile app development using
+                ReactJS and Capacitor framework.
               </p>
               <p className="exp-description">
-                - Build reusable components and front-end libraries for future
-                use.
+                - Designed and implemented user interfaces for the company website,
+                ensuring a seamless user experience.
               </p>
               <p className="exp-description">
-                - Assist in improving app architectures. Explore existing
-                systems, determines areas of maintainability scalability
-                extensibility.
+                - Collaborated with cross-functional teams to gather requirements and
+                develop new features.
+              </p>
+              <p className="exp-description">
+                - Conducted code reviews, maintained existing applications, and
+                mentored junior developers.
+                Ensured app performance, sec
+              </p>
+              <p className="exp-description">
+                - Worked closely with business analysis to deliver high-quality solutions.
               </p>
             </Stack>
           </Grid>
           <Grid item sm={12} md={4}>
             <Stack
               sx={{
-                backgroundColor: " #2a2a2a",
+                backgroundColor: "#2a2a2a",
                 color: "white",
+                minHeight: 400,
               }}
               p={2}
             >
@@ -149,8 +157,9 @@ const SkillRange = () => {
             {/* <Col className="exp-job"> */}
             <Stack
               sx={{
-                backgroundColor: " #2a2a2a",
+                backgroundColor: "#2a2a2a",
                 color: "white",
+                minHeight: 400,
               }}
               p={2}
             >
